@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        .checked,
+        .hovered {
+            color: orange;
+        }
+
+        .shut {
+            color: black !important;
+        }
+
+        .stars {
+            color: black;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <div class="stars">
+        <span id="star1" onclick="rate('star',1)" onmouseover="hoverRate('star',1)" onmouseout="clearRate('star')"
+            class="fa fa-star"></span>
+        <span id="star2" onclick="rate('star',2)" onmouseover="hoverRate('star',2)" onmouseout="clearRate('star')"
+            class="fa fa-star"></span>
+        <span id="star3" onclick="rate('star',3)" onmouseover="hoverRate('star',3)" onmouseout="clearRate('star')"
+            class="fa fa-star"></span>
+        <span id="star4" onclick="rate('star',4)" onmouseover="hoverRate('star',4)" onmouseout="clearRate('star')"
+            class="fa fa-star"></span>
+        <span id="star5" onclick="rate('star',5)" onmouseover="hoverRate('star',5)" onmouseout="clearRate('star')"
+            class="fa fa-star"></span>
+
+    </div>
+
+    <br>
+    <!-- <span id="star1" onclick="rate(1)" class="fa fa-star"></span>
+    <span id="star2" onclick="rate(2)" class="fa fa-star"></span>
+    <span id="star3" onclick="rate(3)"   class="fa fa-star"></span>
+    <span id="star4" onclick="rate(4)"  class="fa fa-star"></span>
+    <span id="star5" onclick="rate(5)" class="fa fa-star"></span> -->
+
+    <div class="stars">
+        <span id="st1" onclick="rate('st',1)" onmouseover="hoverRate('st',1)" onmouseout="clearRate('st')"
+            class="fa fa-star"></span>
+        <span id="st2" onclick="rate('st',2)" onmouseover="hoverRate('st',2)" onmouseout="clearRate('st')"
+            class="fa fa-star"></span>
+        <span id="st3" onclick="rate('st',3)" onmouseover="hoverRate('st',3)" onmouseout="clearRate('st')"
+            class="fa fa-star"></span>
+        <span id="st4" onclick="rate('st',4)"" onmouseover=" hoverRate('st',4)" onmouseout="clearRate('st')"
+            class="fa fa-star"></span>
+        <span id="st5" onclick="rate('st',5)" onmouseover="hoverRate('st',5)" onmouseout="clearRate('st')"
+            class="fa fa-star"></span>
+
+    </div>
+
+
+</body>
+
+
+<script>
+    function rate(idName, id) {
+        console.log("called");
+        let tmp;
+        let idR = 0;
+        for (let i = 1; i <= id; i++) {
+            tmp = document.getElementById(idName + i);
+            tmp.classList.add("checked");
+            // if(!tmp.hasAttribute("checked")){
+            //     tmp.setAttribute("checked");
+            // }
+        }
+
+        for (let i = id + 1; i <= 5; i++) {
+            tmp = document.getElementById(idName + i);
+            // if(tmp.hasAttribute("checked")){
+            //     tmp.removeAttribute("checked");
+            // }
+            tmp.classList.remove("checked");
+
+        }
+    }
+
+    function hoverRate(idName, id) {
+        let tmp;
+        for (let i = 1; i <= id; i++) {
+            tmp = document.getElementById(idName + i);
+            tmp.classList.remove("shut");
+            tmp.classList.add("hovered");
+            // if(!tmp.hasAttribute("checked")){
+            //     tmp.setAttribute("checked");
+            // }
+        }
+
+        for (let i = id + 1; i <= 5; i++) {
+            tmp = document.getElementById(idName + i);
+            tmp.classList.add("shut");
+            // if(tmp.hasAttribute("checked")){
+            //     tmp.removeAttribute("checked");
+            // }
+            tmp.classList.remove("hovered");
+        }
+    }
+
+    function clearRate(idName) {
+        for (let i = 1; i % 6 != 0; i++) {
+            let tmp = document.getElementById(idName + i);
+            tmp.classList.remove("hovered");
+            if (tmp.classList.contains("checked")) {
+                tmp.classList.remove("shut");
+            }
+
+        }
+    }
+</script>
+
+</html>
