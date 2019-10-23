@@ -106,8 +106,9 @@
     
             .jumbotron {
                 margin: 0 auto;
-                padding: 0;
+                padding: 0 0 10px 0;
                 border: 1px solid #007F9D;
+                
             }
     
             .del {
@@ -166,6 +167,11 @@
             table{
                 margin-bottom: 2%;
             }
+
+            .btn{
+                position: relative;
+                margin-left: 10px;
+            }
         </style>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
@@ -221,101 +227,6 @@
             
             <div class="card-registry">
 
-                    <div class="reg-element">
-                        <!-- <div class="editable">
-                            <span class="del" aria-hidden="true">&times;</span>
-                        </div> -->
-            
-                        <div class="jumbotron">
-                            <div class="card-body">
-                                <sup class="card-title">is716XXX</sup>
-            
-                                <table width="30%">
-                                    
-                                    <tr>
-                                        <td>
-                                            <p class="sub d-inline-block"><b>Experiencia General: </b> </p>
-                                        </td>
-                                        <td>
-                                            <div class="progress">
-                                                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 85%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="sub d-inline-block"><b>Dificultad: </b> </p>
-                                        </td>
-                                        <td>
-                                            <div class="progress">
-                                                    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 50%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="sub d-inline-block"><b>Preparación: </b> </p>
-                                        </td>
-                                        <td>
-                                            <div class="progress">
-                                                    <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 99%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="sub d-inline-block"><b>Carga de Trabajo: </b> </p>
-                                        </td>
-                                        <td>
-                                            <div class="progress">
-                                                    <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="sub d-inline-block"><b>Flexibilidad: </b> </p>
-                                        </td>
-                                        <td>                                
-                                            <div class="progress">
-                                                    <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 80%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p class="sub d-inline-block"><b>Ritmo de la Clase: </b> </p>
-                                        </td>
-                                        <td>                               
-                                            <span class="fa fa-bolt g"></span>
-                                            <span class="fa fa-bolt g"></span>
-                                            <span class="fa fa-bolt g"></span>
-                                            <span class="fa fa-bolt g"></span>
-                                            <span class="fa fa-bolt g"></span>
-                                        </td>
-                                    </tr>
-                                </table>
-            
-                                <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="defaultChecked2" checked>
-                                        <label class="custom-control-label" for="defaultChecked2">Volvería a tomarla</label>
-                                </div>
-                                
-                                <div class="form-group">
-                                    
-                                        <label for="because"><b>¿Por qué?</b></label>
-                                        <textarea class="form-control" id="because" rows="2" placeholder="Nos interesa saber porque la volverías a meter :D"></textarea>
-                                </div>          
-                                
-                                <div class="form-group">
-                                        <label for="reseña"><b>Reseña:</b></label>
-                                        <textarea class="form-control" id="reseña" rows="4" placeholder="Ingresa tu reseña según tu experiencia :)"></textarea>
-                                </div>
-
-                            </div>
-                        </div>
-            
-                    </div>
-            
             
                     <div class="reg-element">
                             <!-- <div class="editable">
@@ -407,7 +318,9 @@
                                                 <textarea class="form-control" id="reseña" rows="4" placeholder="Ingresa tu reseña según tu experiencia :)"></textarea>
                                         </div>
         
+                                        <button class="btn my-2 my-sm-0" type="submit">Postear Reseña</button>
                                     </div>
+                                    
                                 </div>
                                 
                 </div>
