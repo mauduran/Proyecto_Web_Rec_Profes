@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         html,
         body {
@@ -125,6 +126,9 @@
         .card-registry .reg-element:nth-child(odd)>.jumbotron {
             background: white;
         }
+        .reg-element{
+            position: relative;
+        }
 
         .jumbotron {
             margin: 0 auto;
@@ -148,7 +152,7 @@
 
         .profes {
             padding-bottom: 5px;
-            margin-top: 1%;
+            margin-top: 0%;
         }
 
         .profes div {
@@ -161,14 +165,36 @@
 
         .profes div:hover {
             background: #007F9D;
-
         }
+
+        .del{
+            font-size: 2em;
+            color: red;
+        }
+
+        .ed{
+            position: relative;
+            top: -2px;
+        }
+
+        .editable{
+            position: absolute;
+            top:0%;
+            left: 97%;
+            float: left;
+            
+            
+        }
+
+        
+
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
 </head>
 
 <body>
 
+        
     <div class="form-contain">
         <form action="">
             <h1>Encuentra una materia.</h1>
@@ -199,6 +225,12 @@
 
     <div class="card-registry">
         <div class="reg-element">
+                
+            <div class="editable">
+                    <span class="ed"><i class="fa fa-pen"></i></span>
+                <span class="del" aria-hidden="true">&times;</span>
+            </div>
+
             <div class="jumbotron" data-toggle="collapse" data-target="#collapse1">
                 <div class="card-body">
                     <h5 class="card-title">Desarrollo de Aplicaciones y Servicios Web</h5>
@@ -262,6 +294,10 @@
 
         <div class="reg-element">
                 <div class="jumbotron" data-toggle="collapse" data-target="#collapse2">
+                        <div class="editable">
+                                <span class="ed"><i class="fa fa-pen"></i></span>
+                            <span class="del" aria-hidden="true">&times;</span>
+                        </div>
                     <div class="card-body">
                         <h5 class="card-title">Desarrollo de Aplicaciones de Escritorio</h5>
                         <p class="card-text "><b>Carrera: </b>Ingeniería en Sistemas Computacionales</p>
@@ -329,6 +365,10 @@
 
         <div class="reg-element">
                 <div class="jumbotron" data-toggle="collapse" data-target="#collapse3">
+                        <div class="editable">
+                                <span class="ed"><i class="fa fa-pen"></i></span>
+                            <span class="del" aria-hidden="true">&times;</span>
+                        </div>
                     <div class="card-body">
                         <h5 class="card-title">Programación Orientada a Objetos</h5>
                         <p class="card-text "><b>Carrera: </b>Ingeniería en Sistemas Computacionales</p>

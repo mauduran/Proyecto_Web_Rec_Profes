@@ -163,6 +163,27 @@
             background: #007F9D;
 
         }
+
+        .del{
+            font-size: 2em;
+            color: red;
+        }
+
+        reg-element{
+            position: relative;
+        }
+
+        .ed{
+            position: relative;
+            top: -2px;
+        }
+
+        .editable{
+            position: absolute;
+            right: 1%;
+            
+            
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -200,6 +221,10 @@
     <div class="card-registry">
 
             <div class="reg-element">
+                    <div class="editable">
+                            <span class="ed"><i class="fa fa-pen"></i></span>
+                        <span class="del" aria-hidden="true">&times;</span>
+                    </div>
                     <div class="jumbotron" data-toggle="collapse" data-target="#collapse1">
                         <div class="card-body">
                             <h5 class="card-title">Ana Gabriela Cabral</h5>
@@ -243,8 +268,14 @@
         
             </div>
 
+            
 
         <div class="reg-element">
+                <div class="editable">
+
+                        <span class="ed"><i class="fa fa-pen"></i></span>
+                    <span class="del" aria-hidden="true">&times;</span>
+                </div>
                 <div class="jumbotron" data-toggle="collapse" data-target="#collapse2">
                     <div class="card-body">
                         <h5 class="card-title">Mauricio Durán Padilla</h5>
@@ -286,7 +317,12 @@
 
 
         <div class="reg-element">
+                <div class="editable">
+                        <span class="ed"><i class="fa fa-pen"></i></span>
+                    <span class="del" aria-hidden="true">&times;</span>
+                </div>
                 <div class="jumbotron" data-toggle="collapse" data-target="#collapse3">
+                    
                     <div class="card-body">
                         <h5 class="card-title">Anahí Santana Quintanilla</h5>
                         <p class="sub"><b>Departamento: </b> Sistemas Compputacionales</p>
@@ -326,6 +362,10 @@
         </div>
 
         <div class="reg-element">
+                <div class="editable">
+                        <span class="ed"><i class="fa fa-pen"></i></span>
+                    <span class="del" aria-hidden="true">&times;</span>
+                </div>
                 <div class="jumbotron" data-toggle="collapse" data-target="#collapse4">
                     <div class="card-body">
                         <h5 class="card-title">Edgardo del Parral Menendez</h5>
