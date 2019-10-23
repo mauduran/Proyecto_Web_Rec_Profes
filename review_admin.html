@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Usuarios</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        html,
+        body {
+            width: 100%;
+        }
+
+
+        form {
+            display: block;
+            margin: auto;
+
+        }
+
+        .form-contain {
+            background-color: aliceblue;
+            width: 90%;
+            padding: 20px;
+            margin: 10px;
+            margin-left: 5%;
+            border: 3px solid black;
+            border-radius: 2%;
+        }
+
+        .form-row {
+            margin-top: 2%;
+
+        }
+
+        .form-contain h1 {
+            text-align: justify;
+            font-weight: 400;
+            font-family: Helvetica, sans-serif;
+        }
+
+
+        .center {
+            margin: auto;
+            margin-top: 1%;
+        }
+
+        .btn {
+            background-color: #007F9D;
+            color: white;
+        }
+
+        .btn:hover {
+            color: #007F9D;
+            background: white;
+            border: 1px solid #007F9D;
+
+        }
+
+        .btn:active {
+            position: relative;
+            top: 1px;
+        }
+
+        .pagination {
+            margin-left: 10%;
+        }
+
+        .pagination a {
+            color: #007F9D;
+        }
+
+        .cur a {
+            background-color: #007F9D;
+            color: white;
+        }
+
+        .cur a:hover {
+            background-color: #007F9D;
+            color: white;
+        }
+
+
+        .card-registry {
+            position: relative;
+            width: 90%;
+            margin: 0% auto 1% auto;
+        }
+
+        .sub {
+            margin: 0 2%;
+            text-align: justify;
+        }
+
+        .card-registry .reg-element:nth-child(even)>.jumbotron {
+            background: #007F9D;
+            color: white;
+        }
+
+        .card-registry .reg-element:nth-child(odd)>.jumbotron {
+            background: white;
+        }
+
+        .jumbotron {
+            margin: 0 auto;
+            padding: 0;
+            border: 1px solid #007F9D;
+        }
+
+        .del {
+            font-size: 2em;
+            color: red;
+        }
+
+
+        .ed {
+            position: relative;
+            top: -2px;
+        }
+
+        .editable {
+            position: absolute;
+            right: 1%;
+        }
+
+        span.fa-star.bg {
+            font-size: 1.5em;
+
+        }
+
+        span.fa-star {
+            color: orange;
+        }
+
+        span.fa-star.in {
+            display: none;
+        }
+
+        h4 {
+            font-weight: 400;
+        }
+
+        .g {
+            color: orange !important;
+        }
+
+        .o {
+            color: rgb(255, 94, 0) !important;
+        }
+
+        .r {
+            color: rgb(197, 0, 0) !important;
+        }
+
+        .grp {
+            margin-right: 3%;
+        }
+
+        tr{
+            margin-right: 2%;
+        }
+
+        table{
+            margin-bottom: 2%;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="form-contain">
+
+        <h1>Programación Orientada a Objetos</h1>
+        <h2>Ana Gabriela Cabral</h2>
+
+        <div class="grp d-inline-block">
+            <h4 class="d-inline-block">Experiencia General:</h4>
+            <span class="fa fa-star bg g"></span>
+            <h5 class="d-inline-block">4.54</h5>
+        </div>
+
+        <div class="grp d-inline-block">
+            <h4 class="d-inline-block">Nivel de Dificultad:</h4>
+            <span class="fa fa-star bg r"></span>
+            <h5 class="d-inline-block">4.92</h5>
+        </div>
+
+
+
+        <div class="grp d-inline-block">
+            <h4 class="d-inline-block">Preparación:</h4>
+            <span class="fa fa-star bg g"></span>
+            <h5 class="d-inline-block">4.38</h5>
+        </div>
+
+        <div class="grp d-inline-block">
+            <h4 class="d-inline-block">Carga Trabajo:</h4>
+            <span class="fa fa-star bg o"></span>
+            <h5 class="d-inline-block">3.5</h5>
+        </div>
+
+        <div class="grp d-inline-block">
+            <h4 class="d-inline-block">Flexibilidad:</h4>
+            <span class="fa fa-star bg o"></span>
+            <h5 class="d-inline-block">3.0</h5>
+        </div>
+
+
+        <div class="grp d-inline-block">
+            <h4 class="d-inline-block">Ritmo de la clase:</h4>
+            <span class="fa fa-star bg r"></span>
+            <h5 class="d-inline-block">4.8</h5>
+        </div>
+
+        
+    </div>
+
+    
+
+
+    <div class="card-registry">
+
+        <div class="reg-element">
+            <div class="editable">
+                <span class="del" aria-hidden="true">&times;</span>
+            </div>
+
+            <div class="jumbotron">
+                <div class="card-body">
+                    <sup class="card-title">is716XXX</sup>
+
+                    <table width="30%">
+                        
+                        <tr>
+                            <td>
+                                <p class="sub d-inline-block"><b>Experiencia General: </b> </p>
+                            </td>
+                            <td>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star in"></span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="sub d-inline-block"><b>Dificultad: </b> </p>
+                            </td>
+                            <td>
+                                <span class="fa fa-star r"></span>
+                                <span class="fa fa-star r"></span>
+                                <span class="fa fa-star r"></span>
+                                <span class="fa fa-star r"></span>
+                                <span class="fa fa-star r"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="sub d-inline-block"><b>Preparación: </b> </p>
+                            </td>
+                            <td><span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star in"></span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="sub d-inline-block"><b>Carga de Trabajo: </b> </p>
+                            </td>
+                            <td>
+                                <span class="fa fa-star o"></span>
+                                <span class="fa fa-star o"></span>
+                                <span class="fa fa-star o"></span>
+                                <span class="fa fa-star o in"></span>
+                                <span class="fa fa-star o in"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><p class="sub d-inline-block"><b>Flexibilidad: </b> </p></td>
+                            <td>                                
+                                <span class="fa fa-star o"></span>
+                                <span class="fa fa-star o"></span>
+                                <span class="fa fa-star o"></span>
+                                <span class="fa fa-star o in"></span>
+                                <span class="fa fa-star o in"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><p class="sub d-inline-block"><b>Ritmo de la Clase: </b> </p></td>
+                            <td>                               
+                                <span class="fa fa-star r"></span>
+                                <span class="fa fa-star r"></span>
+                                <span class="fa fa-star r"></span>
+                                <span class="fa fa-star r"></span>
+                                <span class="fa fa-star r"></span>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <h5><b>Volvería a tomarla:</b> Sí</h5>
+
+                    <br>
+
+                    <h5><b>Reseña:</b></h5><h5> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi accusamus alias debitis culpa in, voluptates hic aut commodi obcaecati magni, fugiat pariatur officia! Rem sit distinctio quas, nostrum inventore corporis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni neque asperiores dolorem hic nisi blanditiis maxime nesciunt, sit eos officiis! Corporis totam mollitia tempore quisquam fuga eum, facere omnis enim? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam distinctio sit in, sapiente repellat sunt neque omnis magni deleniti repellendus adipisci consectetur nesciunt sed nisi porro ab. Fugiat, vitae sed.</h5>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="reg-element">
+                <div class="editable">
+                    <span class="del" aria-hidden="true">&times;</span>
+                </div>
+    
+                <div class="jumbotron">
+                    <div class="card-body">
+                        <sup class="card-title">ie715XXX</sup>
+    
+                        <table width="30%">
+                            
+                            <tr>
+                                <td>
+                                    <p class="sub d-inline-block"><b>Experiencia General: </b> </p>
+                                </td>
+                                <td>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star in"></span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="sub d-inline-block"><b>Dificultad: </b> </p>
+                                </td>
+                                <td>
+                                    <span class="fa fa-star r"></span>
+                                    <span class="fa fa-star r"></span>
+                                    <span class="fa fa-star r"></span>
+                                    <span class="fa fa-star r" in></span>
+                                    <span class="fa fa-star r in"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="sub d-inline-block"><b>Preparación: </b> </p>
+                                </td>
+                                <td><span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span>
+                                    <span class="fa fa-star"></span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="sub d-inline-block"><b>Carga de Trabajo: </b> </p>
+                                </td>
+                                <td>
+                                    <span class="fa fa-star o"></span>
+                                    <span class="fa fa-star o"></span>
+                                    <span class="fa fa-star o"></span>
+                                    <span class="fa fa-star o"></span>
+                                    <span class="fa fa-star o in"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><p class="sub d-inline-block"><b>Flexibilidad: </b> </p></td>
+                                <td>                                
+                                    <span class="fa fa-star o"></span>
+                                    <span class="fa fa-star o"></span>
+                                    <span class="fa fa-star o"></span>
+                                    <span class="fa fa-star o"></span>
+                                    <span class="fa fa-star o in"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><p class="sub d-inline-block"><b>Ritmo de la Clase: </b> </p></td>
+                                <td>                               
+                                    <span class="fa fa-star r"></span>
+                                    <span class="fa fa-star r"></span>
+                                    <span class="fa fa-star r"></span>
+                                    <span class="fa fa-star r"></span>
+                                    <span class="fa fa-star r in"></span>
+                                </td>
+                            </tr>
+                        </table>
+    
+                        <h5><b>Volvería a tomarla:</b> Sí</h5>
+                        <h5><b>Optativa</b> </h5>
+                        <br>
+    
+                        <h5><b>Reseña:</b></h5><h5> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi accusamus alias debitis culpa in, voluptates hic aut commodi obcaecati magni, fugiat pariatur officia! Rem sit distinctio quas, nostrum inventore corporis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni neque asperiores dolorem hic nisi blanditiis maxime nesciunt, sit eos officiis! Corporis totam mollitia tempore quisquam fuga eum, facere omnis enim? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam distinctio sit in, sapiente repellat sunt neque omnis magni deleniti repellendus adipisci consectetur nesciunt sed nisi porro ab. Fugiat, vitae sed.</h5>
+                    </div>
+                </div>
+    
+            </div>
+
+    </div>
+
+
+    <nav aria-label=" Page navigation">
+        <ul class="pagination">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+            <li class="page-item cur" style="background-color:#007F9D"><a class="page-link" href="#">1</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">2</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="https://kit.fontawesome.com/3651e59011.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
