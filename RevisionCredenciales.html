@@ -26,7 +26,7 @@
         }
 
         .pagination {
-            margin-left: 50%;
+            margin-left: 45%;
 
         }
 
@@ -84,12 +84,75 @@
         #credencial {
             width: 100%;
         }
+
+        .navbar {
+            background: #007F9D;
+        }
+
+        #logo{
+            width: 40px;
+            margin-right: 1%;
+        }
+
+        .btn{
+            background-color: white;
+            color:  #007F9D;
+        }
+
+        .btn:hover{
+            color: white;
+            background: #005366;
+            border: 1px solid white;
+
+        }
+
+        .btn:active{
+            position: relative;
+            top: 1px;
+        }
+        
+        .form-inline{
+            width: 40%;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
 
+        <nav class="navbar navbar-expand-sm navbar-dark">
+                <img id="logo" src="iteso.png" alt="">
+                <a class="navbar-brand" href="#">Rate my Profe ITESO</a>
+        
+                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+                    aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
+        
+                <form class="form-inline  order-0 mx-auto ">
+                    <input class="form-control w-75 input-lg mr-lg-3" type="text" placeholder="Buscar Profe o Materia">
+                    <button class="btn my-2 my-sm-0" type="submit">Search</button>
+                </form>
+        
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Materias</a>
+                        </li>
+        
+                        <li class="nav-item">
+                                <a class="nav-link" href="#">Profesores</a>
+                        </li>
+            
+        
+                        <li class="nav-item">
+                                <a class="nav-link" href="#">Administrar</a>
+                        </li>
+        
+        
+                    </ul>
+            </nav>
+    
     <h1>Solicitudes de ingreso</h1>
 
     <div class="card-registry">
@@ -104,7 +167,7 @@
 
 
         <div class="reg-element">
-            <div class="jumbotron" data-toggle="modal" data-target="#Modal0">
+            <div class="jumbotron" data-toggle="modal" data-target="#Modal1">
                 <div class="card-body">
                     <h5 class="card-title">Mauricio Durán Padilla</h5>
                 </div>
@@ -236,9 +299,9 @@
 
                     <div class="col-5">
                         <p><strong>Expediente</strong></p>
-                        <p>715896</p>
+                        <p>715773</p>
                         <p><strong>Correo</strong></p>
-                        <p>rifasSeRifa@iteso.mx</p>
+                        <p>is715773@iteso.mx</p>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -264,14 +327,14 @@ aria-hidden="true">
         <div class="modal-body">
             <div class="row">
                 <div class="col-5">
-                    <img src="2.jpeg" id="credencial" class="img-fluid" alt="">
+                    <img src="3.png" id="credencial" class="img-fluid" alt="">
                 </div>
 
                 <div class="col-5">
                     <p><strong>Expediente</strong></p>
-                    <p>715896</p>
+                    <p>754852</p>
                     <p><strong>Correo</strong></p>
-                    <p>rifasSeRifa@iteso.mx</p>
+                    <p>holis@iteso.mx</p>
                 </div>
             </div>
             <div class="modal-footer">
