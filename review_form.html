@@ -1,355 +1,480 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <title>Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <style>
-            html,
-            body {
-                width: 100%;
-            }
-    
-            form {
-                display: block;
-                margin: auto;
-    
-            }
-    
-            .form-contain {
-                background-color: aliceblue;
-                width: 90%;
-                padding: 20px;
-                margin: 10px;
-                margin-left: 5%;
-                border: 3px solid black;
-                border-radius: 2%;
-            }
-    
-            .form-row {
-                margin-top: 2%;
-    
-            }
-    
-            .form-contain h1 {
-                text-align: justify;
-                font-weight: 400;
-                font-family: Helvetica, sans-serif;
-            }
-    
-    
-            .center {
-                margin: auto;
-                margin-top: 1%;
-            }
-    
-            .btn {
-                background-color: #007F9D;
-                color: white;
-            }
-    
-            .btn:hover {
-                color: #007F9D;
-                background: white;
-                border: 1px solid #007F9D;
-    
-            }
-    
-            .btn:active {
-                position: relative;
-                top: 1px;
-            }
-    
-            .pagination {
-                margin-left: 10%;
-            }
-    
-            .pagination a {
-                color: #007F9D;
-            }
-    
-            .cur a {
-                background-color: #007F9D;
-                color: white;
-            }
-    
-            .cur a:hover {
-                background-color: #007F9D;
-                color: white;
-            }
-    
-    
-            .card-registry {
-                position: relative;
-                width: 90%;
-                margin: 0% auto 1% auto;
-            }
-    
-            .sub {
-                margin: 0 2%;
-                text-align: justify;
-            }
-    
-            .card-registry .reg-element:nth-child(even)>.jumbotron {
-                background: #007F9D;
-                color: white;
-            }
-    
-            .card-registry .reg-element:nth-child(odd)>.jumbotron {
-                background: white;
-            }
-    
-            .jumbotron {
-                margin: 0 auto;
-                padding: 0 0 10px 0;
-                border: 1px solid #007F9D;
-                
-            }
-    
-            .del {
-                font-size: 2em;
-                color: red;
-            }
-    
-    
-            .ed {
-                position: relative;
-                top: -2px;
-            }
-    
-            .editable {
-                position: absolute;
-                right: 1%;
-            }
-    
-            span.fa-star.bg {
-                font-size: 1.5em;
-    
-            }
-    
-            span.fa-star {
-                color: orange;
-            }
-    
-            span.fa-star.in {
-                display: none;
-            }
-    
-            h4 {
-                font-weight: 400;
-            }
-    
-            .g {
-                color: orange !important;
-            }
-    
-            .o {
-                color: rgb(255, 94, 0) !important;
-            }
-    
-            .r {
-                color: rgb(197, 0, 0) !important;
-            }
-    
-            .grp {
-                margin-right: 3%;
-            }
-    
-            tr{
-                margin-right: 2%;
-            }
-    
-            table{
-                margin-bottom: 2%;
-            }
+        html,
+        body {
+            width: 100%;
+        }
 
-            .btn{
-                position: relative;
-                margin-left: 10px;
-            }
-        </style>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        
-  </head>
-  <body>
-      
-        <div class="form-contain">
+        form {
+            display: block;
+            margin: auto;
 
-                <h1>Programación Orientada a Objetos</h1>
-                <h2>Ana Gabriela Cabral</h2>
-        
-                <div class="grp d-inline-block">
-                    <h4 class="d-inline-block">Experiencia General:</h4>
-                    <span class="fa fa-star bg g"></span>
-                    <h5 class="d-inline-block">4.54</h5>
-                </div>
-        
-                <div class="grp d-inline-block">
-                    <h4 class="d-inline-block">Nivel de Dificultad:</h4>
-                    <span class="fa fa-star bg r"></span>
-                    <h5 class="d-inline-block">4.92</h5>
-                </div>
-        
-        
-        
-                <div class="grp d-inline-block">
-                    <h4 class="d-inline-block">Preparación:</h4>
-                    <span class="fa fa-star bg g"></span>
-                    <h5 class="d-inline-block">4.38</h5>
-                </div>
-        
-                <div class="grp d-inline-block">
-                    <h4 class="d-inline-block">Carga Trabajo:</h4>
-                    <span class="fa fa-star bg o"></span>
-                    <h5 class="d-inline-block">3.5</h5>
-                </div>
-        
-                <div class="grp d-inline-block">
-                    <h4 class="d-inline-block">Flexibilidad:</h4>
-                    <span class="fa fa-star bg o"></span>
-                    <h5 class="d-inline-block">3.0</h5>
-                </div>
-        
-        
-                <div class="grp d-inline-block">
-                    <h4 class="d-inline-block">Ritmo de la clase:</h4>
-                    <span class="fa fa-star bg r"></span>
-                    <h5 class="d-inline-block">4.8</h5>
-                </div>
-        
-                
-            </div>
-            
-            <div class="card-registry">
+        }
 
-            
-                    <div class="reg-element">
-                            <!-- <div class="editable">
+        .form-contain {
+            background-color: aliceblue;
+            width: 90%;
+            padding: 20px;
+            margin: 10px;
+            margin-left: 5%;
+            border: 3px solid black;
+            border-radius: 2%;
+        }
+
+        .form-row {
+            margin-top: 2%;
+
+        }
+
+        .form-contain h1 {
+            text-align: justify;
+            font-weight: 400;
+            font-family: Helvetica, sans-serif;
+        }
+
+
+        .center {
+            margin: auto;
+            margin-top: 1%;
+        }
+
+        .btn {
+            background-color: #007F9D;
+            color: white;
+        }
+
+        .btn:hover {
+            color: #007F9D;
+            background: white;
+            border: 1px solid #007F9D;
+
+        }
+
+        .btn:active {
+            position: relative;
+            top: 1px;
+        }
+
+
+        .cur a {
+            background-color: #007F9D;
+            color: white;
+        }
+
+        .cur a:hover {
+            background-color: #007F9D;
+            color: white;
+        }
+
+
+        .card-registry {
+            position: relative;
+            width: 90%;
+            margin: 0% auto 1% auto;
+        }
+
+        .sub {
+            margin: 0 2%;
+            text-align: justify;
+        }
+
+        .card-registry .reg-element:nth-child(even)>.jumbotron {
+            background: #007F9D;
+            color: white;
+        }
+
+        .card-registry .reg-element:nth-child(odd)>.jumbotron {
+            background: white;
+        }
+
+        .jumbotron {
+            margin: 0 auto;
+            padding: 0 0 10px 0;
+            border: 1px solid #007F9D;
+
+        }
+
+        .del {
+            font-size: 2em;
+            color: red;
+        }
+
+
+        .ed {
+            position: relative;
+            top: -2px;
+        }
+
+        .editable {
+            position: absolute;
+            right: 1%;
+        }
+
+        span.bg {
+            font-size: 1.5em;
+
+        }
+
+        .grp .fa,
+        .grp .fas {
+            color: #007f9d;
+        }
+
+        h4 {
+            font-weight: 400;
+        }
+
+        .grp {
+            margin-right: 3%;
+        }
+
+        tr {
+            margin-right: 2%;
+        }
+
+        table {
+            margin-bottom: 2%;
+        }
+
+        .btn {
+            position: relative;
+            margin-left: 10px;
+        }
+
+
+        .checked,
+        .hovered {
+            color: #007f9d;
+        }
+
+
+        .shut {
+            color: black !important;
+        }
+
+        .stars {
+            color: black;
+        }
+
+        .missing {
+            color: red !important;
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <script src="https://kit.fontawesome.com/6f7b00284b.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="form-contain">
+
+        <h1>Programación Orientada a Objetos</h1>
+        <h2>Ana Gabriela Cabral</h2>
+
+        <div class="grp d-inline-block">
+            <h4 class="d-inline-block">Experiencia General:</h4>
+            <span class="fa fa-star bg g"></span>
+            <h5 class="d-inline-block">4.54</h5>
+        </div>
+
+        <div class="grp d-inline-block">
+            <h4 class="d-inline-block">Nivel de Dificultad:</h4>
+            <span class="fa fa-exclamation-triangle bg"></span>
+            <h5 class="d-inline-block">4.92</h5>
+        </div>
+
+
+
+        <div class="grp d-inline-block">
+            <h4 class="d-inline-block">Preparación:</h4>
+            <span class="fas fa-graduation-cap bg "></span>
+            <h5 class="d-inline-block">4.38</h5>
+        </div>
+
+        <div class="grp d-inline-block">
+            <h4 class="d-inline-block">Carga Trabajo:</h4>
+            <span class="fas fa-book bg"></span>
+            <h5 class="d-inline-block">3.5</h5>
+        </div>
+
+        <div class="grp d-inline-block">
+            <h4 class="d-inline-block">Flexibilidad:</h4>
+            <span class="fas fa-balance-scale bg"></span>
+            <h5 class="d-inline-block">3.0</h5>
+        </div>
+
+
+        <div class="grp d-inline-block">
+            <h4 class="d-inline-block">Ritmo de la clase:</h4>
+            <span class="fas fa-running bg"></span>
+            <h5 class="d-inline-block">4.8</h5>
+        </div>
+
+
+
+    </div>
+
+    <div class="card-registry">
+
+
+        <div class="reg-element">
+            <!-- <div class="editable">
                                 <span class="del" aria-hidden="true">&times;</span>
                             </div> -->
-                
-                            <div class="jumbotron">
-                                    <div class="card-body">
-                                        <sup class="card-title">is716XXX</sup>
-                    
-                                        <table width="30%">
-                                            
-                                            <tr>
-                                                <td>
-                                                    <p class="sub d-inline-block"><b>Experiencia General: </b> </p>
-                                                </td>
-                                                <td>
-                                                    <div class="progress">
-                                                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 85%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <p class="sub d-inline-block"><b>Dificultad: </b> </p>
-                                                </td>
-                                                <td>
-                                                    <div class="progress">
-                                                            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 50%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <p class="sub d-inline-block"><b>Preparación: </b> </p>
-                                                </td>
-                                                <td>
-                                                    <div class="progress">
-                                                            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 99%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <p class="sub d-inline-block"><b>Carga de Trabajo: </b> </p>
-                                                </td>
-                                                <td>
-                                                    <div class="progress">
-                                                            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <p class="sub d-inline-block"><b>Flexibilidad: </b> </p>
-                                                </td>
-                                                <td>                                
-                                                    <div class="progress">
-                                                            <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 80%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <p class="sub d-inline-block"><b>Ritmo de la Clase: </b> </p>
-                                                </td>
-                                                <td>                               
-                                                    <span class="fa fa-bolt g"></span>
-                                                    <span class="fa fa-bolt g"></span>
-                                                    <span class="fa fa-bolt g"></span>
-                                                    <span class="fa fa-bolt g"></span>
-                                                    <span class="fa fa-bolt g"></span>
-                                                </td>
-                                            </tr>
-                                        </table>
-                    
-                                        <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" class="custom-control-input" id="defaultChecked2" checked>
-                                                <label class="custom-control-label" for="defaultChecked2">Volvería a tomarla</label>
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            
-                                                <label for="because"><b>¿Por qué?</b></label>
-                                                <textarea class="form-control" id="because" rows="2" placeholder="Nos interesa saber porque la volverías a meter :D"></textarea>
-                                        </div>          
-                                        
-                                        <div class="form-group">
-                                                <label for="reseña"><b>Reseña:</b></label>
-                                                <textarea class="form-control" id="reseña" rows="4" placeholder="Ingresa tu reseña según tu experiencia :)"></textarea>
-                                        </div>
-        
-                                        <button class="btn my-2 my-sm-0" type="submit">Postear Reseña</button>
-                                    </div>
-                                    
+
+            <div class="jumbotron">
+                <div class="card-body">
+                    <sup class="card-title">is716XXX</sup>
+
+                    <table width="30%">
+
+                        <tr>
+                            <td>
+                                <p class="sub d-inline-block"><b>Experiencia General: </b> </p>
+                            </td>
+                            <td>
+                                <input hidden type="radio" name="exp" value="1" id="exp1">
+                                <input hidden type="radio" name="exp" value="2" id="exp2">
+                                <input hidden type="radio" name="exp" value="3" id="exp3">
+                                <input hidden type="radio" name="exp" value="4" id="exp4">
+                                <input hidden type="radio" name="exp" value="5" id="exp5">
+
+
+                                <div class="stars">
+                                    <label for="exp1"><span id="st1" onclick="rate('st',1)"
+                                            onmouseover="hoverRate('st',1)" onmouseout="clearRate('st')"
+                                            class="fa fa-star"></span></label>
+                                    <label for="exp2"><span id="st2" onclick="rate('st',2)"
+                                            onmouseover="hoverRate('st',2)" onmouseout="clearRate('st')"
+                                            class="fa fa-star"></span></label>
+                                    <label for="exp3"><span id="st3" onclick="rate('st',3)"
+                                            onmouseover="hoverRate('st',3)" onmouseout="clearRate('st')"
+                                            class="fa fa-star"></span></label>
+                                    <label for="exp4"><span id="st4" onclick="rate('st',4)"" onmouseover="
+                                            hoverRate('st',4)" onmouseout="clearRate('st')"
+                                            class="fa fa-star"></span></label>
+                                    <label for="exp5"><span id="st5" onclick="rate('st',5)"
+                                            onmouseover="hoverRate('st',5)" onmouseout="clearRate('st')"
+                                            class="fa fa-star"></span></label>
+
                                 </div>
-                                
+
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="sub d-inline-block"><b>Dificultad: </b> </p>
+                            </td>
+                            <td>
+                                <input hidden type="radio" name="dif" value="1" id="dif1">
+                                <input hidden type="radio" name="dif" value="2" id="dif2">
+                                <input hidden type="radio" name="dif" value="3" id="dif3">
+                                <input hidden type="radio" name="dif" value="4" id="dif4">
+                                <input hidden type="radio" name="dif" value="5" id="dif5">
+
+                                <div class="stars">
+                                    <label for="dif1"><span id="dn1" onclick="rate('dn',1)"
+                                            onmouseover="hoverRate('dn',1)" onmouseout="clearRate('dn')"
+                                            class="fas fa-exclamation-triangle"></span></label>
+                                    <label for="dif2"><span id="dn2" onclick="rate('dn',2)"
+                                            onmouseover="hoverRate('dn',2)" onmouseout="clearRate('dn')"
+                                            class="fas fa-exclamation-triangle"></span></label>
+                                    <label for="dif3"><span id="dn3" onclick="rate('dn',3)"
+                                            onmouseover="hoverRate('dn',3)" onmouseout="clearRate('dn')"
+                                            class="fas fa-exclamation-triangle"></span></label>
+                                    <label for="dif4"><span id="dn4" onclick="rate('dn',4)"" onmouseover="
+                                            hoverRate('dn',4)" onmouseout="clearRate('dn')"
+                                            class="fas fa-exclamation-triangle"></span></label>
+                                    <label for="dif5"><span id="dn5" onclick="rate('dn',5)"
+                                            onmouseover="hoverRate('dn',5)" onmouseout="clearRate('dn')"
+                                            class="fas fa-exclamation-triangle"></span></label>
+
+                                </div>
+
+                                <!-- <div class="progress">
+                                                            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 50%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div> -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="sub d-inline-block"><b>Preparación: </b> </p>
+                            </td>
+                            <td>
+                                <input hidden type="radio" name="prep" value="1" id="prep1">
+                                <input hidden type="radio" name="prep" value="2" id="prep2">
+                                <input hidden type="radio" name="prep" value="3" id="prep3">
+                                <input hidden type="radio" name="prep" value="4" id="prep4">
+                                <input hidden type="radio" name="prep" value="5" id="prep5">
+                                <div class="stars">
+                                    <label for="prep1"><span id="gd1" onclick="rate('gd',1)"
+                                            onmouseover="hoverRate('gd',1)" onmouseout="clearRate('gd')"
+                                            class="fa fa-graduation-cap"></span></label>
+                                    <label for="prep2"><span id="gd2" onclick="rate('gd',2)"
+                                            onmouseover="hoverRate('gd',2)" onmouseout="clearRate('gd')"
+                                            class="fa fa-graduation-cap"></span></label>
+                                    <label for="prep3"><span id="gd3" onclick="rate('gd',3)"
+                                            onmouseover="hoverRate('gd',3)" onmouseout="clearRate('gd')"
+                                            class="fa fa-graduation-cap"></span></label>
+                                    <label for="prep4"><span id="gd4" onclick="rate('gd',4)"" onmouseover="
+                                            hoverRate('gd',4)" onmouseout="clearRate('gd')"
+                                            class="fa fa-graduation-cap"></span></label>
+                                    <label for="prep5"><span id="gd5" onclick="rate('gd',5)"
+                                            onmouseover="hoverRate('gd',5)" onmouseout="clearRate('gd')"
+                                            class="fa fa-graduation-cap"></span></label>
+                                </div>
+                                <!-- <div class="progress">
+                                                            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 99%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div> -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="sub d-inline-block"><b>Carga de Trabajo: </b> </p>
+                            </td>
+                            <td>
+                                <input hidden type="radio" name="trab" value="1" id="trab1">
+                                <input hidden type="radio" name="trab" value="2" id="trab2">
+                                <input hidden type="radio" name="trab" value="3" id="trab3">
+                                <input hidden type="radio" name="trab" value="4" id="trab4">
+                                <input hidden type="radio" name="trab" value="5" id="trab5">
+
+                                <div class="stars">
+                                    <label for="trab1"><span id="bk1" onclick="rate('bk',1)"
+                                            onmouseover="hoverRate('bk',1)" onmouseout="clearRate('bk')"
+                                            class="fas fa-book"></span></label>
+                                    <label for="trab2"><span id="bk2" onclick="rate('bk',2)"
+                                            onmouseover="hoverRate('bk',2)" onmouseout="clearRate('bk')"
+                                            class="fas fa-book"></span></label>
+                                    <label for="trab3"><span id="bk3" onclick="rate('bk',3)"
+                                            onmouseover="hoverRate('bk',3)" onmouseout="clearRate('bk')"
+                                            class="fas fa-book"></span></label>
+                                    <label for="trab4"><span id="bk4" onclick="rate('bk',4)"" onmouseover="
+                                            hoverRate('bk',4)" onmouseout="clearRate('bk')"
+                                            class="fas fa-book"></span></label>
+                                    <label for="trab4"><span id="bk5" onclick="rate('bk',5)"
+                                            onmouseover="hoverRate('bk',5)" onmouseout="clearRate('bk')"
+                                            class="fas fa-book"></span></label>
+
+
+                                </div>
+
+                                <!-- <div class="progress">
+                                                            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div> -->
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="sub d-inline-block"><b>Flexibilidad: </b> </p>
+                            </td>
+                            <td>
+                                <input hidden type="radio" name="flx" value="1" id="flx1">
+                                <input hidden type="radio" name="flx" value="2" id="flx2">
+                                <input hidden type="radio" name="flx" value="3" id="flx3">
+                                <input hidden type="radio" name="flx" value="4" id="flx4">
+                                <input hidden type="radio" name="flx" value="5" id="flx5">
+                                <div class="stars">
+                                    <label for="flx1"><span id="bl1" onclick="rate('bl',1)"
+                                            onmouseover="hoverRate('bl',1)" onmouseout="clearRate('bl')"
+                                            class="fa fa-balance-scale"></span></label>
+                                    <label for="flx2"><span id="bl2" onclick="rate('bl',2)"
+                                            onmouseover="hoverRate('bl',2)" onmouseout="clearRate('bl')"
+                                            class="fa fa-balance-scale"></span></label>
+                                    <label for="flx3"><span id="bl3" onclick="rate('bl',3)"
+                                            onmouseover="hoverRate('bl',3)" onmouseout="clearRate('bl')"
+                                            class="fa fa-balance-scale"></span></label>
+                                    <label for="flx4"><span id="bl4" onclick="rate('bl',4)"" onmouseover="
+                                            hoverRate('bl',4)" onmouseout="clearRate('bl')"
+                                            class="fa fa-balance-scale"></span></label>
+                                    <label for="flx5"><span id="bl5" onclick="rate('bl',5)"
+                                            onmouseover="hoverRate('bl',5)" onmouseout="clearRate('bl')"
+                                            class="fa fa-balance-scale"></span></label>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="sub d-inline-block"><b>Ritmo de la Clase: </b> </p>
+                            </td>
+                            <td>
+                                <input hidden type="radio" name="rit" value="1" id="rit1">
+                                <input hidden type="radio" name="rit" value="2" id="rit2">
+                                <input hidden type="radio" name="rit" value="3" id="rit3">
+                                <input hidden type="radio" name="rit" value="4" id="rit4">
+                                <input hidden type="radio" name="rit" value="5" id="rit5">
+                                <div class="stars">
+                                    <label for="rit1"><span id="rn1" onclick="rate('rn',1)" onmouseover="hoverRate('rn',1)"
+                                        onmouseout="clearRate('rn')" class="fa  fa-running"></span></label>
+                                    <label for="rit2"><span id="rn2" onclick="rate('rn',2)" onmouseover="hoverRate('rn',2)"
+                                        onmouseout="clearRate('rn')" class="fa  fa-running"></span></label>
+                                    <label for="rit3"><span id="rn3" onclick="rate('rn',3)" onmouseover="hoverRate('rn',3)"
+                                        onmouseout="clearRate('rn')" class="fa  fa-running"></span></label>
+                                    <label for="rit4"><span id="rn4" onclick="rate('rn',4)"" onmouseover=" hoverRate('rn',4)"
+                                        onmouseout="clearRate('rn')" class="fa  fa-running"></span></label>
+                                    <label for="rit5"><span id="rn5" onclick="rate('rn',5)" onmouseover="hoverRate('rn',5)"
+                                        onmouseout="clearRate('rn')" class="fa  fa-running"></span></label>
+                                </div>
+
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="optativa" >
+                            <label class="custom-control-label" for="optativa">Optativa</label>
+                        </div>
+
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="takeAgain" checked>
+                        <label class="custom-control-label" for="takeAgain">Volvería a tomarla</label>
+                    </div>
+
+    
+                    <div class="form-group">
+
+                        <label for="because"><b>¿Por qué?</b></label>
+                        <textarea class="form-control" id="because" rows="2"
+                            placeholder="Nos interesa saber porque la volverías a meter :D"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reseña"><b>Reseña:</b></label>
+                        <textarea class="form-control" id="reseña" rows="4"
+                            placeholder="Ingresa tu reseña según tu experiencia :)"></textarea>
+                    </div>
+
+                    <button class="btn my-2 my-sm-0" type="submit">Postear Reseña</button>
                 </div>
-            
-            
-                <nav aria-label=" Page navigation">
-                    <ul class="pagination">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                        </li>
-                        <li class="page-item cur" style="background-color:#007F9D"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#">2</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </li>
-                    </ul>
-                </nav>            
-            
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+
+            </div>
+
+        </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+        <script src="rate.js"></script>
+</body>
+
 </html>
