@@ -10,14 +10,14 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    
   </head>
   <body>
      
       <div class="container">
-          <div class="row">
-                <div class="col-sm-6 col-md-6">
-                        <div class="alert alert-success">
+
+                <div>
+                        <div class="alert alert-success" id="registro_exito">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
                                 ×</button>
                            <span class="glyphicon glyphicon-ok-sign"></span> <strong>Registro exitoso</strong>
@@ -27,7 +27,7 @@
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-6">
-                          <div class="alert alert-success">
+                          <div class="alert alert-success" id="alta_exito">
                               <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
                                   ×</button>
                              <span class="glyphicon glyphicon-ok-sign"></span> <strong>Alta exitosa</strong>
@@ -36,7 +36,7 @@
                           </div>
                       </div>
               <div class="col-sm-6 col-md-6">
-                  <div class="alert alert-info">
+                  <div class="alert alert-info" id="valida">
                       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
                           ×</button>
                       <span class="glyphicon glyphicon-info-sign"></span> <strong>Recuerda</strong>
@@ -45,7 +45,7 @@
                   </div>
               </div>
               <div class="col-sm-6 col-md-6">
-                  <div class="alert alert-warning">
+                  <div class="alert alert-warning" id="continuar">
                       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
                           ×</button>
                       <span class="glyphicon glyphicon-question-sign"></span> <strong>¿Desea continuar?</strong>
@@ -54,7 +54,7 @@
                   </div>
               </div>
               <div class="col-sm-6 col-md-6">
-                  <div class="alert alert-danger">
+                  <div class="alert alert-danger" id="registro_incorrect">
                       <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
                           ×</button>
                       <span class="glyphicon glyphicon-remove-sign"></span> <strong>Incorrecto</strong>
@@ -62,7 +62,7 @@
                       <p>No se han llenado los campos correctamente.</p>
                   </div>
               </div>
-          </div>
+
       </div>
     
      <!-- Optional JavaScript -->

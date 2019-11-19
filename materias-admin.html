@@ -160,6 +160,7 @@
             color: white;
             width: 90%;
             margin: 0 0 2px 2%;
+            position: relative;
 
         }
 
@@ -170,29 +171,32 @@
         .del{
             font-size: 2em;
             color: red;
-            margin-left: 2px;
+            /* margin-left: 2px; */
+            cursor: pointer;
         }
 
-        .ed{
+        /* .right{
+            float: right;
             position: relative;
-            top: -2px;
-            margin-right: 2px;
-        }
+            right: 0%;
+        } */
 
         .editable{
             position: absolute;
             top:0%;
             left: 97%;
             float: left;
-            
+            cursor: pointer;
+        }
+
+        .go_right{
+            display: inline-block;
+            position: absolute;
+            right: 1%;
+            top: -5px;
             
         }
 
-        .space{
-            margin-right: 72%;
-        }
-
-        
 
     </style>
     
@@ -273,12 +277,12 @@
 
                     <div class="profes">
                         <div>
+                            <span class="del go_right" aria-hidden="true">&times;</span>
                             <span class="input-group-addon"><i class="fa fa-star""></i></span>
                             <p>4.8</p>
                             <p class="space">Edgar Medina Rifas</p>
                             
-                            <span class="ed"><i class="fa fa-pen"></i></span>
-                            <span class="del" aria-hidden="true">&times;</span>
+                            
                             
                             
                         </div>
@@ -287,8 +291,7 @@
                                 <span class=" input-group-addon"><i class="fa fa-star""></i></span>
                                 <p>3.9</p>
                                 <p class="space">Mauricio Durán Padilla</p>
-                                <span class="ed"><i class="fa fa-pen"></i></span>
-                                <span class="del" aria-hidden="true">&times;</span>
+                                <span class="del go_right" aria-hidden="true">&times;</span>
                                 
                         </div>
 
@@ -296,8 +299,7 @@
                                 <span class=" input-group-addon"><i class="fa fa-star""></i></span>
                                 <p>2.2</p>
                                 <p class="space">Juan Perez Ramírez</p> 
-                                <span class="ed"><i class="fa fa-pen"></i></span>
-                                <span class="del" aria-hidden="true">&times;</span>
+                                <span class="del go_right" aria-hidden="true">&times;</span>
                         </div>
 
                     </div>
@@ -345,12 +347,10 @@
     
                         <div class="profes">
                             <div>
-                                <span class="input-group-addon"><i class="fa fa-star""></i></span>
+                                    <span class="input-group-addon"><i class="fa fa-star""></i></span>
                                 <p>4.1</p>
                                 <p class="space">Edgar Medina Rifas</p>
-                                <span class="ed"><i class="fa fa-pen"></i></span>
-                                <span class="del" aria-hidden="true">&times;</span>
-                                
+                                <span class="del go_right" aria-hidden="true">&times;</span>
                                 
                             </div>
     
@@ -358,8 +358,7 @@
                                     <span class=" input-group-addon"><i class="fa fa-star""></i></span>
                                     <p>3.3</p>
                                     <p class="space">Mauricio Durán Padilla</p>
-                                    <span class="ed"><i class="fa fa-pen"></i></span>
-                                    <span class="del" aria-hidden="true">&times;</span>
+                                    <span class="del go_right" aria-hidden="true">&times;</span>
                                     
                                     
                             </div>
@@ -368,8 +367,7 @@
                                     <span class=" input-group-addon"><i class="fa fa-star""></i></span>
                                     <p>3.4</p>
                                     <p class="space">Juan Perez Ramírez</p>
-                                    <span class="ed"><i class="fa fa-pen"></i></span>
-                                    <span class="del" aria-hidden="true">&times;</span>
+                                    <span class="del go_right" aria-hidden="true">&times;</span>
                                     
                                     
                             </div>
@@ -425,7 +423,6 @@
                                 <span class="input-group-addon"><i class="fa fa-star""></i></span>
                                 <p>3.4</p>
                                 <p class="space">Edgar Medina Rifas</p>
-                                <span class="ed"><i class="fa fa-pen"></i></span>
                                 <span class="del" aria-hidden="true">&times;</span>
                                 
                                 
@@ -435,7 +432,6 @@
                                     <span class=" input-group-addon"><i class="fa fa-star""></i></span>
                                     <p>4.6</p>
                                     <p class="space">Mauricio Durán Padilla</p>
-                                    <span class="ed"><i class="fa fa-pen"></i></span>
                                     <span class="del" aria-hidden="true">&times;</span>
                                     
                                     
@@ -445,7 +441,6 @@
                                     <span class=" input-group-addon"><i class="fa fa-star""></i></span>
                                     <p>3.3</p>
                                     <p class="space">Juan Perez Ramírez</p>
-                                    <span class="ed"><i class="fa fa-pen"></i></span>
                                     <span class="del" aria-hidden="true">&times;</span>
                                     
                                     

@@ -25,6 +25,12 @@
 
         }
 
+        .editable {
+            cursor: pointer;
+            position: absolute;
+            right: 1%;
+        }
+
         .form-contain {
             background-color: aliceblue;
             width: 90%;
@@ -100,8 +106,7 @@
         }
 
         .card-registry .reg-element:nth-child(even)>.jumbotron {
-            background: #007F9D;
-            color: white;
+            background: #c2e5ed;
         }
 
         .card-registry .reg-element:nth-child(odd)>.jumbotron {
@@ -130,16 +135,19 @@
             right: 1%;
         }
 
-        span.fa-star.bg {
+        span.fa.bg,
+        span.fas.bg {
             font-size: 1.5em;
 
         }
 
-        span.fa-star {
-            color: orange;
+        span.fa,
+        span.fas {
+            color: #007F9D;
         }
 
-        span.fa-star.in {
+        span.fa.in,
+        span.fas.in {
             display: none;
         }
 
@@ -147,28 +155,25 @@
             font-weight: 400;
         }
 
-        .g {
-            color: orange !important;
-        }
-
-        .o {
-            color: rgb(255, 94, 0) !important;
-        }
-
-        .r {
-            color: rgb(197, 0, 0) !important;
-        }
 
         .grp {
             margin-right: 3%;
         }
 
-        tr{
+        tr {
             margin-right: 2%;
         }
 
-        table{
+        table {
             margin-bottom: 2%;
+        }
+
+        .btn {
+            margin: 0 0 5% 5%;
+        }
+
+        .card-registry {
+            margin-top: 10px;
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -189,7 +194,7 @@
 
         <div class="grp d-inline-block">
             <h4 class="d-inline-block">Nivel de Dificultad:</h4>
-            <span class="fa fa-star bg r"></span>
+            <span class="fa fa-exclamation-triangle bg"></span>
             <h5 class="d-inline-block">4.92</h5>
         </div>
 
@@ -197,48 +202,53 @@
 
         <div class="grp d-inline-block">
             <h4 class="d-inline-block">Preparación:</h4>
-            <span class="fa fa-star bg g"></span>
+            <span class="fas fa-graduation-cap bg"></span>
             <h5 class="d-inline-block">4.38</h5>
         </div>
 
         <div class="grp d-inline-block">
             <h4 class="d-inline-block">Carga Trabajo:</h4>
-            <span class="fa fa-star bg o"></span>
+            <span class="fas fa-book bg"></span>
             <h5 class="d-inline-block">3.5</h5>
         </div>
 
         <div class="grp d-inline-block">
             <h4 class="d-inline-block">Flexibilidad:</h4>
-            <span class="fa fa-star bg o"></span>
+            <span class="fas fa-balance-scale bg"></span>
             <h5 class="d-inline-block">3.0</h5>
         </div>
 
 
         <div class="grp d-inline-block">
             <h4 class="d-inline-block">Ritmo de la clase:</h4>
-            <span class="fa fa-star bg r"></span>
+            <span class="fas fa-running bg"></span>
             <h5 class="d-inline-block">4.8</h5>
         </div>
 
-        
+
     </div>
 
-    
+
+    <button class="btn my-2 my-sm-0" type="submit">Añadir Reseña</button>
 
 
     <div class="card-registry">
 
+
         <div class="reg-element">
-            <div class="editable">
-                    <span class="ed"><i class="fa fa-pen"></i></span>
-            </div>
+            <!-- <div class="editable">
+                    <span class="del" aria-hidden="true">&times;</span>
+                </div> -->
 
             <div class="jumbotron">
                 <div class="card-body">
-                    <sup class="card-title">is716XXX</sup>
+                        <div class="editable">
+                                <span class="ed"><i class="fa fa-pen"></i></span>
+                        </div>
+                    <sup class="card-title">ie715XXX</sup>
 
                     <table width="30%">
-                        
+
                         <tr>
                             <td>
                                 <p class="sub d-inline-block"><b>Experiencia General: </b> </p>
@@ -255,79 +265,93 @@
                                 <p class="sub d-inline-block"><b>Dificultad: </b> </p>
                             </td>
                             <td>
-                                <span class="fa fa-star r"></span>
-                                <span class="fa fa-star r"></span>
-                                <span class="fa fa-star r"></span>
-                                <span class="fa fa-star r"></span>
-                                <span class="fa fa-star r"></span>
+                                <span class="fas fa-exclamation-triangle"></span>
+                                <span class="fas fa-exclamation-triangle"></span>
+                                <span class="fas fa-exclamation-triangle"></span>
+                                <span class="fas fa-exclamation-triangle in" ></span>
+                                <span class="fas fa-exclamation-triangle in"></span>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <p class="sub d-inline-block"><b>Preparación: </b> </p>
                             </td>
-                            <td><span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star in"></span></td>
+                            <td>
+                                <span class="fa fa-graduation-cap""></span>
+                                        <span class=" fa fa-graduation-cap""></span>
+                                <span class="fa fa-graduation-cap""></span>
+                                    <span class=" fa fa-graduation-cap""></span>
+                                <span class="fa fa-graduation-cap""></span>
+                                    
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class=" sub d-inline-block"><b>Carga de Trabajo: </b> </p>
+                            </td>
+                            <td>
+                                <span class="fas fa-book"></span>
+                                <span class="fas fa-book"></span>
+                                <span class="fas fa-book"></span>
+                                <span class="fas fa-book"></span>
+                                <span class="fas fa-book in"></span>
+                            </td>
                         </tr>
                         <tr>
                             <td>
-                                <p class="sub d-inline-block"><b>Carga de Trabajo: </b> </p>
+                                <p class="sub d-inline-block"><b>Flexibilidad: </b> </p>
                             </td>
                             <td>
-                                <span class="fa fa-star o"></span>
-                                <span class="fa fa-star o"></span>
-                                <span class="fa fa-star o"></span>
-                                <span class="fa fa-star o in"></span>
-                                <span class="fa fa-star o in"></span>
+                                <span class="fa fa-balance-scale"></span>
+                                <span class="fa fa-balance-scale"></span>
+                                <span class="fa fa-balance-scale"></span>
+                                <span class="fa fa-balance-scale"></span>
+                                <span class="fa fa-balance-scale in"></span>
                             </td>
                         </tr>
                         <tr>
-                            <td><p class="sub d-inline-block"><b>Flexibilidad: </b> </p></td>
-                            <td>                                
-                                <span class="fa fa-star o"></span>
-                                <span class="fa fa-star o"></span>
-                                <span class="fa fa-star o"></span>
-                                <span class="fa fa-star o in"></span>
-                                <span class="fa fa-star o in"></span>
+                            <td>
+                                <p class="sub d-inline-block"><b>Ritmo de la Clase: </b> </p>
                             </td>
-                        </tr>
-                        <tr>
-                            <td><p class="sub d-inline-block"><b>Ritmo de la Clase: </b> </p></td>
-                            <td>                               
-                                <span class="fa fa-star r"></span>
-                                <span class="fa fa-star r"></span>
-                                <span class="fa fa-star r"></span>
-                                <span class="fa fa-star r"></span>
-                                <span class="fa fa-star r"></span>
+                            <td>
+                                <span class="fa  fa-running"></span>
+                                <span class="fa  fa-running"></span>
+                                <span class="fa  fa-running"></span>
+                                <span class="fa  fa-running"></span>
+                                <span class="fa  fa-runningin"></span>
                             </td>
                         </tr>
                     </table>
 
                     <h5><b>Volvería a tomarla:</b> Sí</h5>
-
+                    <h5><b>Optativa</b> </h5>
                     <br>
 
-                    <h5><b>Reseña:</b></h5><h5> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi accusamus alias debitis culpa in, voluptates hic aut commodi obcaecati magni, fugiat pariatur officia! Rem sit distinctio quas, nostrum inventore corporis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni neque asperiores dolorem hic nisi blanditiis maxime nesciunt, sit eos officiis! Corporis totam mollitia tempore quisquam fuga eum, facere omnis enim? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam distinctio sit in, sapiente repellat sunt neque omnis magni deleniti repellendus adipisci consectetur nesciunt sed nisi porro ab. Fugiat, vitae sed.</h5>
+                    <h5><b>Reseña:</b></h5>
+                    <h5> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi accusamus alias debitis culpa
+                        in, voluptates hic aut commodi obcaecati magni, fugiat pariatur officia! Rem sit distinctio
+                        quas, nostrum inventore corporis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                        neque asperiores dolorem hic nisi blanditiis maxime nesciunt, sit eos officiis! Corporis totam
+                        mollitia tempore quisquam fuga eum, facere omnis enim? Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Quisquam distinctio sit in, sapiente repellat sunt neque omnis magni deleniti
+                        repellendus adipisci consectetur nesciunt sed nisi porro ab. Fugiat, vitae sed.</h5>
                 </div>
             </div>
 
         </div>
 
-
         <div class="reg-element">
-                <div class="editable">
-                        <span class="ed"><i class="fa fa-pen"></i></span>
-                </div>
+
     
                 <div class="jumbotron">
                     <div class="card-body">
+                            <div class="editable">
+                                    <span class="ed"><i class="fa fa-pen"></i></span>
+                            </div>
                         <sup class="card-title">ie715XXX</sup>
     
                         <table width="30%">
-                            
+    
                             <tr>
                                 <td>
                                     <p class="sub d-inline-block"><b>Experiencia General: </b> </p>
@@ -344,53 +368,60 @@
                                     <p class="sub d-inline-block"><b>Dificultad: </b> </p>
                                 </td>
                                 <td>
-                                    <span class="fa fa-star r"></span>
-                                    <span class="fa fa-star r"></span>
-                                    <span class="fa fa-star r"></span>
-                                    <span class="fa fa-star r" in></span>
-                                    <span class="fa fa-star r in"></span>
+                                    <span class="fas fa-exclamation-triangle"></span>
+                                    <span class="fas fa-exclamation-triangle"></span>
+                                    <span class="fas fa-exclamation-triangle"></span>
+                                    <span class="fas fa-exclamation-triangle in" ></span>
+                                    <span class="fas fa-exclamation-triangle in"></span>
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <p class="sub d-inline-block"><b>Preparación: </b> </p>
                                 </td>
-                                <td><span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span></td>
+                                <td>
+                                    <span class="fa fa-graduation-cap""></span>
+                                            <span class=" fa fa-graduation-cap""></span>
+                                    <span class="fa fa-graduation-cap""></span>
+                                        <span class=" fa fa-graduation-cap""></span>
+                                    <span class="fa fa-graduation-cap""></span>
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <p class=" sub d-inline-block"><b>Carga de Trabajo: </b> </p>
+                                </td>
+                                <td>
+                                    <span class="fas fa-book"></span>
+                                    <span class="fas fa-book"></span>
+                                    <span class="fas fa-book"></span>
+                                    <span class="fas fa-book"></span>
+                                    <span class="fas fa-book in"></span>
+                                </td>
                             </tr>
                             <tr>
                                 <td>
-                                    <p class="sub d-inline-block"><b>Carga de Trabajo: </b> </p>
+                                    <p class="sub d-inline-block"><b>Flexibilidad: </b> </p>
                                 </td>
                                 <td>
-                                    <span class="fa fa-star o"></span>
-                                    <span class="fa fa-star o"></span>
-                                    <span class="fa fa-star o"></span>
-                                    <span class="fa fa-star o"></span>
-                                    <span class="fa fa-star o in"></span>
+                                    <span class="fa fa-balance-scale"></span>
+                                    <span class="fa fa-balance-scale"></span>
+                                    <span class="fa fa-balance-scale"></span>
+                                    <span class="fa fa-balance-scale"></span>
+                                    <span class="fa fa-balance-scale in"></span>
                                 </td>
                             </tr>
                             <tr>
-                                <td><p class="sub d-inline-block"><b>Flexibilidad: </b> </p></td>
-                                <td>                                
-                                    <span class="fa fa-star o"></span>
-                                    <span class="fa fa-star o"></span>
-                                    <span class="fa fa-star o"></span>
-                                    <span class="fa fa-star o"></span>
-                                    <span class="fa fa-star o in"></span>
+                                <td>
+                                    <p class="sub d-inline-block"><b>Ritmo de la Clase: </b> </p>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td><p class="sub d-inline-block"><b>Ritmo de la Clase: </b> </p></td>
-                                <td>                               
-                                    <span class="fa fa-star r"></span>
-                                    <span class="fa fa-star r"></span>
-                                    <span class="fa fa-star r"></span>
-                                    <span class="fa fa-star r"></span>
-                                    <span class="fa fa-star r in"></span>
+                                <td>
+                                    <span class="fa  fa-running"></span>
+                                    <span class="fa  fa-running"></span>
+                                    <span class="fa  fa-running"></span>
+                                    <span class="fa  fa-running"></span>
+                                    <span class="fa  fa-runningin"></span>
                                 </td>
                             </tr>
                         </table>
@@ -399,7 +430,14 @@
                         <h5><b>Optativa</b> </h5>
                         <br>
     
-                        <h5><b>Reseña:</b></h5><h5> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi accusamus alias debitis culpa in, voluptates hic aut commodi obcaecati magni, fugiat pariatur officia! Rem sit distinctio quas, nostrum inventore corporis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni neque asperiores dolorem hic nisi blanditiis maxime nesciunt, sit eos officiis! Corporis totam mollitia tempore quisquam fuga eum, facere omnis enim? Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam distinctio sit in, sapiente repellat sunt neque omnis magni deleniti repellendus adipisci consectetur nesciunt sed nisi porro ab. Fugiat, vitae sed.</h5>
+                        <h5><b>Reseña:</b></h5>
+                        <h5> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi accusamus alias debitis culpa
+                            in, voluptates hic aut commodi obcaecati magni, fugiat pariatur officia! Rem sit distinctio
+                            quas, nostrum inventore corporis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
+                            neque asperiores dolorem hic nisi blanditiis maxime nesciunt, sit eos officiis! Corporis totam
+                            mollitia tempore quisquam fuga eum, facere omnis enim? Lorem ipsum dolor sit amet consectetur
+                            adipisicing elit. Quisquam distinctio sit in, sapiente repellat sunt neque omnis magni deleniti
+                            repellendus adipisci consectetur nesciunt sed nisi porro ab. Fugiat, vitae sed.</h5>
                     </div>
                 </div>
     
