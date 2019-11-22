@@ -154,7 +154,23 @@
       "flexibilidad": "4",
       "ritmo": "4.5",
       "id": 3
+    },
+
+    {
+      "profesor": "Ivan Piza",
+      "materia": "Programación Orientada a Objetos",
+      "numReviews": "1",
+      "experiencia general": "4.8",
+      "dificultad": "4",
+      "preparación": "4",
+      "carga trabajo": "3.5",
+      "flexibilidad": "4",
+      "ritmo": "4.5",
+      "id": 3
     }
+
+
+    
   ],
   "Reviews": [
     {

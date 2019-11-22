@@ -237,37 +237,7 @@
 
 
     <div class="card-registry" id="profes-container">
-        <div class="reg-element">
-            <div class="jumbotron" data-toggle="collapse" data-target="#collapse1">
-                <div class="card-body">
-                    <h5 class="card-title">Ivan Piza</h5>
-                    <p class="sub"><b>Departamento: </b> Sistemas, Electrónica e Informática</p>
 
-                </div>
-            </div>
-
-            <div class="collapse" id="collapse1">
-                <div class="card">
-                    <p class="sub"><b>Antigüedad: </b> 15 años.</p>
-
-                    <div class="materias">
-                        <div>
-                            <span class="input-group-addon"><i class="fa fa-star"></i></span>
-                            <p>5.0</p>
-                            <p>Programación Orientada a Objetos</p>
-                        </div>
-
-                        <div>
-                            <span class=" input-group-addon"><i class="fa fa-star"></i></span>
-                            <p>5.0</p>
-                            <p>Estrategias Algoritmicas</p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
 
         <!-- <div class="reg-element">
             <div class="jumbotron" data-toggle="collapse" data-target="#collapse2">
@@ -347,12 +317,62 @@
             } else {
                 let profes = JSON.parse(xhreq.response);
 
+                let id = 1;
+
+                let id2 = 1;
+
                 profes.forEach(element => {
-                    console.log(element.nombre);
-                    console.log(element.departamento);
-                    element.materias.forEach(el => {
-                        console.log("- " +el);
-                    });
+
+                    let registro = document.createElement('div');
+                    registro.classList.add("reg-element");
+                    registro.innerHTML = `        
+                        <div class="jumbotron" data-toggle="collapse" data-target="#collapse${id}">
+                            <div class="card-body">
+                                <h5 class="card-title">${element.nombre}</h5>
+                                <p class="sub"><b>Departamento: </b> ${element.departamento}</p>
+                            </div>
+                        </div>
+
+                        <div class="collapse" id="collapse${id}">
+                            <div class="card">
+                                <p class="sub"><b>Antigüedad: </b>${id}</p>
+                                <div class="materias" id="materias${id}">
+
+                                </div>
+                            </div>
+                        </div>`;
+
+                    document.getElementById("profes-container").appendChild(registro);
+
+                    let requestDetalle = new XMLHttpRequest();
+
+                    requestDetalle.open('GET', "http://localhost:3000/detalleMaterias?profesor=" + element
+                        .nombre);
+
+                    requestDetalle.setRequestHeader('Content-Type', 'application/json');
+
+                    // 4. Enviar solicitud
+                    requestDetalle.send();
+
+                    requestDetalle.onload = function () {
+                        if (requestDetalle.status == 200) {
+                            let detalle = JSON.parse(requestDetalle.response);
+
+                            detalle.forEach(el => {
+                                let materia = document.createElement('div');
+                                materia.innerHTML = `<span class="input-group-addon"><i class="fa fa-star"></i></span>
+                            <p>${el["experiencia general"]}</p>
+                            <p>${el.materia}</p>`;
+
+                                document.getElementById("materias" + id2).appendChild(materia);
+                            });
+
+                            id2++;
+                        }
+
+
+                    }
+                    id++;
                 });
 
             }
