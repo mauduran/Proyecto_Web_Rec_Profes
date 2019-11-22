@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="styles/pages.css">
     <style>
         html,
         body {
@@ -67,24 +68,6 @@
         .btn:active {
             position: relative;
             top: 1px;
-        }
-
-        .pagination {
-            margin-left: 10%;
-        }
-
-        .pagination a {
-            color: #007F9D;
-        }
-
-        .cur a {
-            background-color: #007F9D;
-            color: white;
-        }
-
-        .cur a:hover {
-            background-color: #007F9D;
-            color: white;
         }
 
         .card,
@@ -253,7 +236,7 @@
     </div>
 
 
-    <div class="card-registry">
+    <div class="card-registry" id="profes-container">
         <div class="reg-element">
             <div class="jumbotron" data-toggle="collapse" data-target="#collapse1">
                 <div class="card-body">
@@ -286,7 +269,7 @@
 
         </div>
 
-        <div class="reg-element">
+        <!-- <div class="reg-element">
             <div class="jumbotron" data-toggle="collapse" data-target="#collapse2">
                 <div class="card-body">
                     <h5 class="card-title">Oscar González</h5>
@@ -311,7 +294,7 @@
                 </div>
             </div>
 
-        </div>
+        </div> -->
     </div>
 
     Î
@@ -338,6 +321,44 @@
             </li>
         </ul>
     </nav>
+
+    <script>
+        let container = document.getElementById("profes-container");
+
+        let xhreq = new XMLHttpRequest();
+
+        // 2. Configurar: PUT actualizar archivo
+        xhreq.open('GET', "http://localhost:3000/profes");
+
+        xhreq.setRequestHeader('Content-Type', 'application/json');
+
+        // 4. Enviar solicitud
+        xhreq.send();
+
+        // 5. Una vez recibida la respuesta del servidor
+        xhreq.onload = function () {
+
+            if (xhreq.status != 200) { // analizar el estatus de la respuesta HTTP
+                // alert("Usuario Error")
+                // Ocurrió un error
+                alert("Error. No se pueden mostrar los departamentos");
+
+
+            } else {
+                let profes = JSON.parse(xhreq.response);
+
+                profes.forEach(element => {
+                    console.log(element.nombre);
+                    console.log(element.departamento);
+                    element.materias.forEach(el => {
+                        console.log("- " +el);
+                    });
+                });
+
+            }
+
+        }
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
