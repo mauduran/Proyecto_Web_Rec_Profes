@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    
+
     <title>Alta de Maestro</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -79,16 +79,16 @@
                             <div class="input-group col-sm-11 form-group">
                                 <span class="input-group-addon"><i class="fas fa-user-tie"></i></span>
                                 <input type=" text" placeholder="Nombre del maestro..." class="form-control input-lg"
-                                    id="NombreMaestro">
+                                    id="NombreMaestro" value="">
                             </div>
                         </div>
                         <div class="row">
                             <div class="input-group col-sm-11 form-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-inbox"></i></span>
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-inbox" ></i></span>
                                 <!-- <input type="text" placeholder="Departamento..." id="Departamento"
                                     class="form-control input-lg"> -->
 
-                                <select id="selectDpto" class="form-control" id="exampleFormControlSelect1">
+                                <select id="selectDpto" class="form-control" id="exampleFormControlSelect1" value ="">
                                     <option selected disabled>Departamento</option>
                                 </select>
                             </div>
@@ -97,21 +97,22 @@
                         <div class="row">
                             <div class="input-group col-sm-11 form-group">
                                 <span class="input-group-addon"><i class="fas fa-calendar-check"></i></span>
-                                <input type="number" placeholder="Años de experiencia..." id="exp"
-                                    class="form-control input-lg">
+                                <input type="number" placeholder="Años de experiencia..." 
+                                    class="form-control input-lg" id="exp" value="">
                             </div>
                         </div>
 
                     </div>
-                    <button type="button" class="btn btn-lg  btn-info" id="botonCancelar" href="index.html">Cancelar</button>
+                    <button type="button" class="btn btn-lg  btn-info" id="botonCancelar">Cancelar</button>
                     <button type="button" class="btn btn-lg  btn-info" id="botonEnviar">Enviar</button>
                 </form>
             </div>
         </div>
-    </div>
+    </div>   
     <!-- Optional JavaScript -->
     <script src="scripts/AltaMaestro.js"></script>
     <script src="scripts/selectDpto.js"></script>
+    <script src="scripts/displayNavBar.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -122,8 +123,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 
-    
-
+ 
 </body>
 
 </html>
