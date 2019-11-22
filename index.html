@@ -1,43 +1,16 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <title>Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/nav.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Bree+Serif&display=swap" rel="stylesheet">
+
+
     <style>
-        .navbar {
-            background: #007F9D;
-        }
-
-        #logo{
-            width: 40px;
-            margin-right: 1%;
-        }
-
-        .btn{
-            background-color: white !important;
-            color:  #007F9D;
-        }
-
-        .btn:hover{
-            color: white !important;
-            background: #005366 !important;
-            margin-top: 1px !important;
-            border: 1px solid white;
-
-        }
-
-        .btn:active{
-            position: relative;
-            top: 1px;
-        }
-        
-        .form-inline{
-            width: 40%;
-        }
-
         form {
             display: block;
             margin: auto;
@@ -71,10 +44,11 @@
         .view {
             height: 100%;
         }
+
         h1 {
             letter-spacing: 8px;
             color: beige;
-            
+
         }
 
         h5 {
@@ -86,7 +60,7 @@
             width: 80px;
         }
 
-        #main{
+        #main {
             margin-top: 35%;
             color: beige;
             font-family: 'Bree Serif', serif;
@@ -95,77 +69,63 @@
         }
     </style>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
-  <body>
-      
-    <nav class="navbar navbar-expand-sm navbar-dark">
-        <img id="logo" src="/img/iteso.png" alt="">
-        
-        <a class="navbar-brand" href="index.html"><b>Rate my Profe ITESO</b></a>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
 
-        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
-            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
-
-        <form class="form-inline  order-0 mx-auto ">
-            <input class="form-control w-75 input-lg mr-lg-3" type="text" placeholder="Buscar Profe o Materia">
-            <button class="btn my-2 my-sm-0" type="submit">Search</button>
-        </form>
-
-            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="materias.html">Materias</a>
-                </li>
-
-                <li class="nav-item">
-                        <a class="nav-link" href="profes.html">Profesores</a>
-                </li>
-    
-
-                <li class="nav-item">
-                        <a class="nav-link" href="sign_up.html">Sign Up</a>
-                </li>
+<body>
 
 
-            </ul>
+    <nav class="navbar navbar-expand-sm navbar-dark" id="navbar">
+
     </nav>
-          <!-- Full Page Intro -->
-          <div class="view" style="background-image: url('/img/class-classroom-conference-716276.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
-            <!-- Mask & flexbox options-->
-            <div class="mask rgba-black-light align-items-center">
-              <!-- Content -->
-              <div class="container">
+    <!-- Full Page Intro -->
+    <div class="view"
+        style="background-image: url('/img/class-classroom-conference-716276.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+        <!-- Mask & flexbox options-->
+        <div class="mask rgba-black-light align-items-center">
+            <!-- Content -->
+            <div class="container">
                 <!--Grid row-->
                 <div class="row">
-                  <!--Grid column-->
-                  <div class="col-md-12 mb-4 white-text text-center" id="main">
-                    
-                    <h1 class="h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown" data-wow-delay="0.3s"><strong>¡Comienza a evaluar a tus maestros!</strong></h1>
-                    <hr class="hr-light my-4 wow fadeInDown" data-wow-delay="0.4s">
-                    <h5 class="text-uppercase mb-4 white-text wow fadeInDown" data-wow-delay="0.4s"><strong>-El nuevo recomendación de profes ITESO-</strong></h5>
+                    <!--Grid column-->
+                    <div class="col-md-12 mb-4 white-text text-center" id="main">
 
-                  </div>
-                  <!--Grid column-->
+                        <h1 class="h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown"
+                            data-wow-delay="0.3s"><strong>¡Comienza a evaluar a tus maestros!</strong></h1>
+                        <hr class="hr-light my-4 wow fadeInDown" data-wow-delay="0.4s">
+                        <h5 class="text-uppercase mb-4 white-text wow fadeInDown" data-wow-delay="0.4s"><strong>-El
+                                nuevo recomendación de profes ITESO-</strong></h5>
+
+                    </div>
+                    <!--Grid column-->
                 </div>
                 <!--Grid row-->
-              </div>
-              <!-- Content -->
             </div>
-            <!-- Mask & flexbox options-->
-          </div>
-          <!-- Full Page Intro -->
-        </header>
-        <!-- Main navigation -->
-        <!--Main Layout-->
+            <!-- Content -->
+        </div>
+        <!-- Mask & flexbox options-->
+    </div>
+    <!-- Full Page Intro -->
+    </header>
+    <!-- Main navigation -->
+    <!--Main Layout-->
 
-        <!--Main Layout-->
+    <!--Main Layout-->
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+    <script src="scripts/displayNavBar.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+
+</body>
+
 </html>
