@@ -396,7 +396,7 @@
                                     let materia = document.createElement('div');
                                     materia.innerHTML = `<span class="input-group-addon"><i class="fa fa-star"></i></span>
                             <p>${el["experiencia general"]}</p>
-                            <p>${el.materia}</p>`;
+                            <p>${el.materia}</p><anchor style="margin-left:150px;"><b>${el.numReviews + " "}</b>Reseñas</anchor>`;
 
                                     document.getElementById("materias" + id2).appendChild(
                                         materia);
