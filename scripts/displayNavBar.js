@@ -62,6 +62,9 @@ if (localStorage.role == "Coordinador" || localStorage.role == "Estudiante") {
                     <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal">Administrar</a>
             </li>
 
+            <li class="nav-item">
+            <a class="nav-link" onclick=logout()>Log Out</a>
+        </li>
 
         </ul>`;
 
@@ -101,6 +104,7 @@ if (localStorage.role == "Coordinador" || localStorage.role == "Estudiante") {
             <li class="nav-item">
                     <a class="nav-link" href="sign_up.html">Sign Up</a>
             </li>
+
 
 
         </ul>`;
