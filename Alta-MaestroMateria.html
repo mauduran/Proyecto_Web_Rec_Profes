@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>ALta maestro-materia</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,55 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet"> 
     <script src="https://kit.fontawesome.com/cd94a35fa6.js" crossorigin="anonymous"></script>
     <!------ Include the above in your HEAD tag ---------->
-
-    <style>
-       h1{
-        font-family: 'Kaushan Script', cursive;
-        text-align: Center;
-        font-size: 50px;
-       } 
-       
-        html,
-        body,
-        form {
-            width: 100%;
-        }
-
-        #botonCancelar {
-            position: relative;
-            left: 10%;
-            margin: 2%;
-            width: 30%
-        }
-
-        #botonEnviar {
-            position: relative;
-            left: 25%;
-            margin: 2%;
-            width: 30%
-        }
-
-        html,
-        body {
-            background-color: #c2e5ed;
-        }
-
-        .container {
-            margin-top: 10%;
-        }
-
-        .input-group:not(:first-child) {
-            margin-left: 5%;
-        }
-
-        .input-group:first-child {
-            margin-left: 5%;
-        }
-
-        .input-group {
-            margin: 1% auto;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/altas.css">
 </head>
 
 <body>
@@ -77,7 +29,7 @@
                         <div class="input-group col-sm-10 form-group">
 
                             <span class="input-group-addon"><i class="fas fa-user-tie"></i></span>
-                            <select class="form-control"  id="selectProfe">
+                            <select class="form-control"  id="selectProfe" value="">
                                     <option disabled selected >Profesor</option>
                             </select>
                         </div>
@@ -86,7 +38,7 @@
                     <div class="row">
                         <div class="input-group col-sm-10 form-group">
                             <span class="input-group-addon"><i class="fas fa-journal-whills"></i></span>
-                            <select class="form-control" id="selectMateria">
+                            <select class="form-control" id="selectMateria" value="">
                                     <option disabled selected>Materia</option>
                             </select>
                         </div>
@@ -101,11 +53,12 @@
         </div>
     </div>
     <!-- Optional JavaScript -->
+    <script src="scripts/selectProfe.js"></script>
+    <script src="scripts/selectMaterias.js"></script>
+    <script src="scripts/AltaMateria.js"></script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="scripts/selectProfe.js"></script>
-    <script src="scripts/selectMaterias.js"></script>
 </body>
 </html>
