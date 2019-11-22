@@ -1,6 +1,6 @@
 let nav = document.getElementById("navbar");
 
- if (localStorage.role == "Coordinador" || localStorage.role == "Estudiante") {
+if (localStorage.role == "Coordinador" || localStorage.role == "Estudiante") {
     nav.innerHTML = `<img id="logo" src="/img/iteso.png" alt="">
     <a class="navbar-brand" href="#">Rate my Profe ITESO</a>
 
@@ -29,8 +29,41 @@ let nav = document.getElementById("navbar");
         </li>
 
         </ul>`;
-} else if(localStorage.role == "Admin"){
-    document.body.innerHTML = `<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+} else if (localStorage.role == "Admin") {
+
+
+    nav.innerHTML = `<img id="logo" src="/img/iteso.png" alt="">
+    <a class="navbar-brand" href="#">Rate my Profe ITESO</a>
+
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+        aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
+
+    <form class="form-inline  order-0 mx-auto ">
+        <input class="form-control w-75 input-lg mr-lg-3" type="text" placeholder="Buscar Profe o Materia">
+        <button class="btn my-2 my-sm-0" type="submit">Search</button>
+    </form>
+
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="materias.html">Materias</a>
+            </li>
+
+            <li class="nav-item">
+                    <a class="nav-link" href="profes.html">Profesores</a>
+            </li>
+
+
+            <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal">Administrar</a>
+            </li>
+
+
+        </ul>`;
+
+    document.body.innerHTML += `<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -85,39 +118,9 @@ let nav = document.getElementById("navbar");
             </div>
         </div>
     </div>
-</div>` + document.body.innerHTML;
+</div>`;
 
-    nav.innerHTML = `<img id="logo" src="/img/iteso.png" alt="">
-    <a class="navbar-brand" href="#">Rate my Profe ITESO</a>
-
-    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
-        aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
-
-    <form class="form-inline  order-0 mx-auto ">
-        <input class="form-control w-75 input-lg mr-lg-3" type="text" placeholder="Buscar Profe o Materia">
-        <button class="btn my-2 my-sm-0" type="submit">Search</button>
-    </form>
-
-        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="materias.html">Materias</a>
-            </li>
-
-            <li class="nav-item">
-                    <a class="nav-link" href="profes.html">Profesores</a>
-            </li>
-
-
-            <li class="nav-item">
-                    <a class="nav-link" href="#" data-toggle="modal" data-target="#exampleModal">Administrar</a>
-            </li>
-
-
-        </ul>`;
-}else {
+} else {
     nav.innerHTML = `<img id="logo" src="/img/iteso.png" alt="">
     <a class="navbar-brand" href="#">Rate my Profe ITESO</a>
 
@@ -155,7 +158,7 @@ let nav = document.getElementById("navbar");
 }
 
 
-function logout(){
+function logout() {
     localStorage.expediente = undefined;
     localStorage.role = undefined;
     window.location.reload();
