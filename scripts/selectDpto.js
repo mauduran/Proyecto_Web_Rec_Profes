@@ -23,7 +23,7 @@ xhr.onload = function () {
         let dptos = JSON.parse(xhr.response);
 
         dptos.forEach(element => {
-            select.innerHTML+= '<option value="'+element+'">'+element+' </option>';
+            select.innerHTML+= '<option value="'+element.nombre+'">'+element.nombre+' </option>';
         });
 
     }

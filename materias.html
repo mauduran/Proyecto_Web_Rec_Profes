@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="styles/nav.css">
     <style>
         html,
         body {
@@ -164,10 +165,74 @@
 
         }
     </style>
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
+
 <body>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Administar</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mensajes del coordinador</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Alta de materias</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Alta de maestros</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Alta maestro-materia</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>Revisión credenciales</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>Administración de materias</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">7</th>
+                                <td>Administracion de reviews</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">8</th>
+                                <td>Administración de usuarios</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-sm navbar-dark" id="navbar">
+
+    </nav>
+    
 
     <div class="form-contain">
         <form action="">
@@ -249,62 +314,62 @@
         </div>
 
         <div class="reg-element">
-                <div class="jumbotron" data-toggle="collapse" data-target="#collapse2">
-                    <div class="card-body">
-                        <h5 class="card-title">Desarrollo de Aplicaciones y Servicios Web</h5>
-                        <p class="card-text "><b>Departamento: </b>Electrónica, Sistemas e Informática</p>
-                        <p class="card-text "><b>Créditos: </b>8</p>
-    
-                    </div>
+            <div class="jumbotron" data-toggle="collapse" data-target="#collapse2">
+                <div class="card-body">
+                    <h5 class="card-title">Desarrollo de Aplicaciones y Servicios Web</h5>
+                    <p class="card-text "><b>Departamento: </b>Electrónica, Sistemas e Informática</p>
+                    <p class="card-text "><b>Créditos: </b>8</p>
+
                 </div>
-    
-                <div class="collapse" id="collapse2">
-                    <div class="card">
-                        <p class="sub"><b>Descripción: </b>Descripción:
-                            Los usuarios de las aplicaciones web interactuan a través de una interface gráfica que permite
-                            capturar
-                            y validar la información a ser almacenada en el servidor o bien desplegar la informacion
-                            recibida de
-                            este. El servidor es responsable de procesar la de información, administrar las bases de datos,
-                            administrar los repositorios de archivos, autentificar a los usuarios, entre otros. El servidor
-                            debe
-                            procesar la petición del cliente y enviar la respuesta solicitada. En esta asignatura harás uso
-                            de
-                            tus
-                            conocimientos de programación orientada a objetos y del diseño de bases de datos para crear
-                            proyectos
-                            más robustos, ya que conocerás y emplearás las principales herramientas y frameworks de
-                            desarrollo
-                            de
-                            aplicaciones web. Podrás desarrollar tus propias aplicaciones y servicios web en donde se
-                            administren
-                            los recursos del servidor. Además, podrás desarrollar tus propias páginas web interactivas,
-                            permitiendo
-                            que el usuario almacene, visualice y modifique la información de una base de datos.</p>
-    
-                        <div class="profes">
-    
-                            <div>
-                                <span class="input-group-addon"><i class="fa fa-star"></i></span>
-                                <p>4.3</p>
-                                <p>Anahí Santana</p>
-                            </div>
-    
-                            <div>
-                                <span class="input-group-addon"><i class="fa fa-star"></i></span>
-                                <p>5.0</p>
-                                <p>Ivan Piza</p>
-                            </div>
-    
-                        </div>
-                    </div>
-                </div>
-    
             </div>
+
+            <div class="collapse" id="collapse2">
+                <div class="card">
+                    <p class="sub"><b>Descripción: </b>Descripción:
+                        Los usuarios de las aplicaciones web interactuan a través de una interface gráfica que permite
+                        capturar
+                        y validar la información a ser almacenada en el servidor o bien desplegar la informacion
+                        recibida de
+                        este. El servidor es responsable de procesar la de información, administrar las bases de datos,
+                        administrar los repositorios de archivos, autentificar a los usuarios, entre otros. El servidor
+                        debe
+                        procesar la petición del cliente y enviar la respuesta solicitada. En esta asignatura harás uso
+                        de
+                        tus
+                        conocimientos de programación orientada a objetos y del diseño de bases de datos para crear
+                        proyectos
+                        más robustos, ya que conocerás y emplearás las principales herramientas y frameworks de
+                        desarrollo
+                        de
+                        aplicaciones web. Podrás desarrollar tus propias aplicaciones y servicios web en donde se
+                        administren
+                        los recursos del servidor. Además, podrás desarrollar tus propias páginas web interactivas,
+                        permitiendo
+                        que el usuario almacene, visualice y modifique la información de una base de datos.</p>
+
+                    <div class="profes">
+
+                        <div>
+                            <span class="input-group-addon"><i class="fa fa-star"></i></span>
+                            <p>4.3</p>
+                            <p>Anahí Santana</p>
+                        </div>
+
+                        <div>
+                            <span class="input-group-addon"><i class="fa fa-star"></i></span>
+                            <p>5.0</p>
+                            <p>Ivan Piza</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
     </div>
 
-    
+
 
 
 
@@ -332,6 +397,7 @@
         </ul>
     </nav>
 
+    <script src="scripts/displayNavBar.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
@@ -344,6 +410,7 @@
     </script>
     <script src="https://kit.fontawesome.com/3651e59011.js" crossorigin="anonymous">
     </script>
+
 
     <script src="scripts/selectDpto.js">
     </script>
