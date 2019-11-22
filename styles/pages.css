@@ -1,0 +1,17 @@
+.pagination {
+    margin-left: 5%;
+}
+
+.pagination a {
+    color: #007F9D;
+}
+
+.cur a {
+    background-color: #007F9D;
+    color: white;
+}
+
+.cur a:hover {
+    background-color: #007F9D;
+    color: white;
+}
