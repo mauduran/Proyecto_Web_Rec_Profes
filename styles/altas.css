@@ -1,0 +1,46 @@
+h1 {
+    font-family: 'Kaushan Script', cursive;
+    text-align: Center;
+    font-size: 50px;
+}
+
+html,
+body,
+form {
+    width: 100%;
+}
+
+#botonCancelar {
+    position: relative;
+    left: 10%;
+    margin: 2%;
+    width: 30%
+}
+
+#botonEnviar {
+    position: relative;
+    left: 25%;
+    margin: 2%;
+    width: 30%
+}
+
+html,
+body {
+    background-color: #c2e5ed;
+}
+
+.container {
+    margin-top: 10%;
+}
+
+.input-group:not(:first-child) {
+    margin-left: 5%;
+}
+
+.input-group:first-child {
+    margin-left: 5%;
+}
+
+.input-group {
+    margin: 1% auto;
+}
