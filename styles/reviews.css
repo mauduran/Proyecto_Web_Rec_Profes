@@ -105,9 +105,13 @@ span.fas.bg {
 
 }
 
-span.fa,
-span.fas {
+
+span.fas, span.fa {
     color: #007F9D;
+}
+
+label span.fas, label span.fa {
+    color: black;
 }
 
 span.fa.in,

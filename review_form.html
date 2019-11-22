@@ -11,15 +11,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="styles/reviews.css">
-    <style>
 
-        .btn{
+    <style>
+        .btn {
             margin-left: 0% !important;
         }
+
         .checked,
         .hovered {
-            color: #007f9d;
+            color: #007f9d !important;
         }
 
 
@@ -27,14 +27,13 @@
             color: black !important;
         }
 
-        .stars {
-            color: black;
-        }
-
         .missing {
             color: red !important;
         }
     </style>
+
+    <link rel="stylesheet" href="styles/reviews.css">
+
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <script src="https://kit.fontawesome.com/6f7b00284b.js" crossorigin="anonymous"></script>
 
@@ -279,16 +278,21 @@
                                 <input hidden type="radio" name="rit" value="4" id="rit4">
                                 <input hidden type="radio" name="rit" value="5" id="rit5">
                                 <div class="stars">
-                                    <label for="rit1"><span id="rn1" onclick="rate('rn',1)" onmouseover="hoverRate('rn',1)"
-                                        onmouseout="clearRate('rn')" class="fa  fa-running"></span></label>
-                                    <label for="rit2"><span id="rn2" onclick="rate('rn',2)" onmouseover="hoverRate('rn',2)"
-                                        onmouseout="clearRate('rn')" class="fa  fa-running"></span></label>
-                                    <label for="rit3"><span id="rn3" onclick="rate('rn',3)" onmouseover="hoverRate('rn',3)"
-                                        onmouseout="clearRate('rn')" class="fa  fa-running"></span></label>
-                                    <label for="rit4"><span id="rn4" onclick="rate('rn',4)"" onmouseover=" hoverRate('rn',4)"
-                                        onmouseout="clearRate('rn')" class="fa  fa-running"></span></label>
-                                    <label for="rit5"><span id="rn5" onclick="rate('rn',5)" onmouseover="hoverRate('rn',5)"
-                                        onmouseout="clearRate('rn')" class="fa  fa-running"></span></label>
+                                    <label for="rit1"><span id="rn1" onclick="rate('rn',1)"
+                                            onmouseover="hoverRate('rn',1)" onmouseout="clearRate('rn')"
+                                            class="fa  fa-running"></span></label>
+                                    <label for="rit2"><span id="rn2" onclick="rate('rn',2)"
+                                            onmouseover="hoverRate('rn',2)" onmouseout="clearRate('rn')"
+                                            class="fa  fa-running"></span></label>
+                                    <label for="rit3"><span id="rn3" onclick="rate('rn',3)"
+                                            onmouseover="hoverRate('rn',3)" onmouseout="clearRate('rn')"
+                                            class="fa  fa-running"></span></label>
+                                    <label for="rit4"><span id="rn4" onclick="rate('rn',4)"" onmouseover="
+                                            hoverRate('rn',4)" onmouseout="clearRate('rn')"
+                                            class="fa  fa-running"></span></label>
+                                    <label for="rit5"><span id="rn5" onclick="rate('rn',5)"
+                                            onmouseover="hoverRate('rn',5)" onmouseout="clearRate('rn')"
+                                            class="fa  fa-running"></span></label>
                                 </div>
 
                             </td>
@@ -296,16 +300,16 @@
                     </table>
 
                     <div class="custom-control custom-checkbox">
-                            <input type="checkbox" class="custom-control-input" id="optativa" >
-                            <label class="custom-control-label" for="optativa">Optativa</label>
-                        </div>
+                        <input type="checkbox" class="custom-control-input" id="optativa">
+                        <label class="custom-control-label" for="optativa">Optativa</label>
+                    </div>
 
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="takeAgain" checked>
                         <label class="custom-control-label" for="takeAgain">Volvería a tomarla</label>
                     </div>
 
-    
+
                     <div class="form-group">
 
                         <label for="because"><b>¿Por qué?</b></label>
