@@ -98,6 +98,13 @@
       "creditos": "8",
       "departamento": "Electrónica, Sistemas e Informática",
       "id": 3
+    },
+    {
+      "nombre": "Estrategias Algorítmicas",
+      "descripción": "",
+      "creditos": "8",
+      "departamento": "Electrónica, Sistemas e Informática",
+      "id": 4
     }
   ],
   "carreras": [

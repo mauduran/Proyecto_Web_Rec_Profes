@@ -28,12 +28,25 @@ function cancelar() {
 }
 
 function guardarMateria() {
-    let maestro = {
+    let materia = {
         "nombre": nombreMa.value,
         "descripción": "",
         "creditos": creditos.value,
         "departamento": departamento.value
     }
-
+    saveMateria(materia);
 };
 
+function saveMateria(datos) {
+    let xhr = new XMLHttpRequest();
+    xhr.open('POST', "http://localhost:3000/materias");
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send([JSON.stringify(datos)]);
+    xhr.onload = function () {
+        if (xhr.status != 201) {
+            alert(xhr.status + ': ' + xhr.statusText);
+        } else {
+            alert("Materia registada exitosamente");
+        }
+    }
+};
