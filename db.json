@@ -1,0 +1,144 @@
+{
+    "users": [
+        {
+            "nombre": "Mauricio",
+            "apellido": "Duran",
+            "rol": "Estudiante",
+            "numReviews": "0",
+            "password": "mduranp",
+            "expediente": "716122",
+            "carrera": "Ingeniería en Sistemas Computacionales",
+            "email": "is716122@iteso.mx",
+            "img-url": "/img/716122"
+        },
+        {
+            "nombre": "Edgar",
+            "apellido": "Medina",
+            "rol": "Admin",
+            "numReviews": "0",
+            "password": "soyRifas",
+            "expediente": "715172",
+            "carrera": "Ingeniería en Sistemas Computacionales",
+            "email": "is715172@iteso.mx",
+            "img-url": "/img/715172"
+        },
+        {
+            "nombre": "Anahí",
+            "apellido": "Santana",
+            "rol": "Coordinador",
+            "numReviews": "0",
+            "password": "aSantana",
+            "expediente": "715772",
+            "carrera": "Ingeniería en Sistemas Computacionales",
+            "email": "is715772@iteso.mx",
+            "img-url": "/img/715772"
+        }
+    ],
+    "profes": [
+        {
+            "nombre": "Oscar González",
+            "departamento": "Electrónica, Sistemas e Informática",
+            "añosExp": "1",
+            "materias": [
+                "Desarrollo de Aplicaciones y Servicios Web",
+                "Programación Orientada a Objetos"
+            ]
+        },
+
+        {
+            "nombre": "Elsa Perez",
+            "departamento": "Eje de Debates",
+            "añosExp": "15",
+            "materias": [ "Etica Identidad y Profesión"]
+        }
+    ],
+    "departamentos": [
+        "Eje de Debates",
+        "Electrónica, Sistemas e Informática"
+    ],
+    "materias": [
+        {
+            "nombre": "Programación Orientada a Objetos",
+            "descripción": "",
+            "creditos": "8",
+            "departamento": "Electrónica, Sistemas e Informática"
+        },
+
+
+        {
+            "nombre": "Ética, Identidad y Profesión",
+            "descripción": "",
+            "creditos": "8",
+            "departamento": "Eje de Debates"
+        },
+
+        {
+            "nombre": "Desarrollo de Aplicaciones y Servicios Web",
+            "descripción": "",
+            "creditos": "8",
+            "departamento": "Electrónica, Sistemas e Informática"
+        }
+    ],
+
+    "carreras": [
+        "Ingeniería en Sistemas Computacionales",
+        "Arquitectura",
+        "Relaciones Internacionales"
+    ],
+
+    "detalleMaterias":[
+        {
+            "profesor": "Oscar González",
+            "materia" : "Desarrollo de Aplicaciones y Servicios Web",
+            "numReviews": "0",
+            "experiencia general": "0",
+            "dificultad": "0",
+            "preparación": "0",
+            "carga trabajo": "0",
+            "flexibilidad": "0",
+            "ritmo": "0"
+        },
+
+        {
+            "profesor": "Elsa Perez",
+            "materia" : "Etica Identidad y Profesión",
+            "numReviews": "3",
+            "experiencia general": "3.5",
+            "dificultad": "1.4",
+            "preparación": "5",
+            "carga trabajo": "4",
+            "flexibilidad": "3.0",
+            "ritmo": "5"
+        },
+        {
+            "profesor": "Elsa Perez",
+            "materia" : "Sexualidad y Sociedad",
+            "numReviews": "1",
+            "experiencia general": "4",
+            "dificultad": "4",
+            "preparación": "4",
+            "carga trabajo": "3.5",
+            "flexibilidad": "4",
+            "ritmo": "4.5"
+        }
+    ],
+
+    "Reviews":[
+        {
+            "expedienteEstudiante": "716122",
+            "profesor": "Oscar González",
+            "materia" : "Desarrollo de Aplicaciones y Servicios Web",
+            "experiencia general": "5",
+            "dificultad": "4",
+            "preparación": "5",
+            "carga trabajo": "4",
+            "flexibilidad": "3",
+            "ritmo": "1",
+            "takeAgain" : "Si",
+            "Optativa": "No",
+            "Reseña": "Es muy buen profesor, aprendes bien y los exámenes son sencillos"
+        }
+
+
+    ]
+}
