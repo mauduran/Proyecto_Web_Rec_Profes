@@ -7,21 +7,21 @@
     margin-right: 1%;
 }
 
-.btn{
+nav .btn{
     background-color: white !important;
     color:  #007F9D !important;
 }
 
-.btn:hover{
-    color: white;
-    background: #005366;
-    border: 1px solid white;
+nav .btn:hover{
+    color: white !important;
+    background: #005366 !important;
+    border: 1px solid white !important;
 
 }
 
-.btn:active{
-    position: relative;
-    top: 1px;
+nav .btn:active{
+    position: relative !important;
+    top: 1px !important;
 }
 
 .form-inline{

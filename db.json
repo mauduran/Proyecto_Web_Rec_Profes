@@ -9,7 +9,8 @@
             "expediente": "716122",
             "carrera": "Ingeniería en Sistemas Computacionales",
             "email": "is716122@iteso.mx",
-            "img-url": "/img/716122"
+            "img-url": "/img/716122",
+            "id": 1
         },
         {
             "nombre": "Edgar",
@@ -20,7 +21,8 @@
             "expediente": "715172",
             "carrera": "Ingeniería en Sistemas Computacionales",
             "email": "is715172@iteso.mx",
-            "img-url": "/img/715172"
+            "img-url": "/img/715172",
+            "id": 2
         },
         {
             "nombre": "Anahí",
@@ -31,7 +33,8 @@
             "expediente": "715772",
             "carrera": "Ingeniería en Sistemas Computacionales",
             "email": "is715772@iteso.mx",
-            "img-url": "/img/715772"
+            "img-url": "/img/715772",
+            "id": 3
         }
     ],
     "profes": [
@@ -42,103 +45,146 @@
             "materias": [
                 "Desarrollo de Aplicaciones y Servicios Web",
                 "Programación Orientada a Objetos"
-            ]
+            ],
+            "id": 1
         },
-
         {
             "nombre": "Elsa Perez",
             "departamento": "Eje de Debates",
             "añosExp": "15",
-            "materias": [ "Etica Identidad y Profesión"]
+            "materias": [
+                "Etica Identidad y Profesión"
+            ],
+            "id": 2
         }
     ],
     "departamentos": [
-        "Eje de Debates",
-        "Electrónica, Sistemas e Informática"
+        {
+            "nombre": "Eje de Debates",
+            "id": 1
+        },
+
+        {
+            "nombre": "Electrónica, Sistemas e Informática",
+            "id": 2
+        }
     ],
     "materias": [
         {
             "nombre": "Programación Orientada a Objetos",
             "descripción": "",
             "creditos": "8",
-            "departamento": "Electrónica, Sistemas e Informática"
+            "departamento": "Electrónica, Sistemas e Informática",
+            "id": 1
         },
-
-
         {
             "nombre": "Ética, Identidad y Profesión",
             "descripción": "",
             "creditos": "8",
-            "departamento": "Eje de Debates"
+            "departamento": "Eje de Debates",
+            "id": 2
         },
-
         {
             "nombre": "Desarrollo de Aplicaciones y Servicios Web",
             "descripción": "",
             "creditos": "8",
-            "departamento": "Electrónica, Sistemas e Informática"
+            "departamento": "Electrónica, Sistemas e Informática",
+            "id": 3
         }
     ],
-
     "carreras": [
-        "Ingeniería en Sistemas Computacionales",
-        "Arquitectura",
-        "Relaciones Internacionales"
+        {
+            "nombre": "Ingeniería en Sistemas Computacionales",
+            "id": 1
+        },
+        {
+            "nombre": "Arquitectura",
+            "id": 2
+        },
+        {
+            "nombre": "Relaciones Internacionales",
+            "id": 3
+        }
     ],
-
-    "detalleMaterias":[
+    "detalleMaterias": [
         {
             "profesor": "Oscar González",
-            "materia" : "Desarrollo de Aplicaciones y Servicios Web",
+            "materia": "Desarrollo de Aplicaciones y Servicios Web",
             "numReviews": "0",
             "experiencia general": "0",
             "dificultad": "0",
             "preparación": "0",
             "carga trabajo": "0",
             "flexibilidad": "0",
-            "ritmo": "0"
+            "ritmo": "0",
+            "id": 1
         },
-
         {
             "profesor": "Elsa Perez",
-            "materia" : "Etica Identidad y Profesión",
+            "materia": "Etica Identidad y Profesión",
             "numReviews": "3",
             "experiencia general": "3.5",
             "dificultad": "1.4",
             "preparación": "5",
             "carga trabajo": "4",
             "flexibilidad": "3.0",
-            "ritmo": "5"
+            "ritmo": "5",
+            "id": 2
         },
         {
             "profesor": "Elsa Perez",
-            "materia" : "Sexualidad y Sociedad",
+            "materia": "Sexualidad y Sociedad",
             "numReviews": "1",
             "experiencia general": "4",
             "dificultad": "4",
             "preparación": "4",
             "carga trabajo": "3.5",
             "flexibilidad": "4",
-            "ritmo": "4.5"
+            "ritmo": "4.5",
+            "id": 3
         }
     ],
-
-    "Reviews":[
+    "Reviews": [
         {
             "expedienteEstudiante": "716122",
             "profesor": "Oscar González",
-            "materia" : "Desarrollo de Aplicaciones y Servicios Web",
+            "materia": "Desarrollo de Aplicaciones y Servicios Web",
             "experiencia general": "5",
             "dificultad": "4",
             "preparación": "5",
             "carga trabajo": "4",
             "flexibilidad": "3",
             "ritmo": "1",
-            "takeAgain" : "Si",
+            "takeAgain": "Si",
             "Optativa": "No",
-            "Reseña": "Es muy buen profesor, aprendes bien y los exámenes son sencillos"
+            "Reseña": "Es muy buen profesor, aprendes bien y los exámenes son sencillos",
+            "id": 1
         }
-
-
+    ],
+    "Requests": [
+        {
+            "nombre": "Pedro",
+            "apellido": "Picapiedra",
+            "rol": "Estudiante",
+            "numReviews": "0",
+            "password": "ppicapiedra",
+            "expediente": "716122",
+            "carrera": "Arquitectura",
+            "email": "is717122@iteso.mx",
+            "img-url": "/img/717122",
+            "id": 1
+        },
+        {
+            "nombre": "apa",
+            "apellido": "Picapiedra",
+            "rol": "Estudiante",
+            "numReviews": "0",
+            "password": "ppicapiedra",
+            "expediente": "716122",
+            "carrera": "Arquitectura",
+            "email": "is717122@iteso.mx",
+            "img-url": "/img/717122",
+            "id": 2
+        }
     ]
 }

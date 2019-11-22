@@ -13,8 +13,6 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"
         id="bootstrap-css">
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
     <!------ Include the above in your HEAD tag ---------->
 
@@ -66,41 +64,15 @@
             margin: 1% auto;
         }
     </style>
+
+    <link rel="stylesheet" href="styles/nav.css">
 </head>
 
 <body>
-        <nav class="navbar navbar-expand-sm navbar-dark">
-                <img id="logo" src="/img/iteso.png" alt="">
-                <a class="navbar-brand" href="#">Rate my Profe ITESO</a>
-        
-                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
-                    aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
-        
-                <form class="form-inline  order-0 mx-auto ">
-                    <input class="form-control w-75 input-lg mr-lg-3" type="text" placeholder="Buscar Profe o Materia">
-                    <button class="btn my-2 my-sm-0" type="submit">Search</button>
-                </form>
-        
-                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="materias.html">Materias</a>
-                        </li>
-        
-                        <li class="nav-item">
-                                <a class="nav-link" href="profes.html">Profesores</a>
-                        </li>
-            
-        
-                        <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="modal" data-target="#">Administrar</a>
-                        </li>
-        
-        
-                    </ul>
-            </nav>
+
+    <nav class="navbar navbar-expand-sm navbar-dark" id="navbar">
+
+    </nav>
     <div class="container">
         <div class="col-lg-12 well">
             <div class="row">
@@ -115,9 +87,9 @@
                             </div>
 
                             <div class="input-group col-sm-5 form-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-tags"></i></span>
-                                    <input type="number" placeholder="No. de créditos.." class="form-control input-lg">
-                                </div>
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-tags"></i></span>
+                                <input type="number" placeholder="No. de créditos.." class="form-control input-lg">
+                            </div>
                         </div>
                         <div class="row">
 
@@ -149,7 +121,9 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 
+    <script src="scripts/displayNavBar.js"></script>
     <script src="scripts/selectDpto.js"></script>
+
 </body>
 
 </html>
