@@ -39,7 +39,7 @@ function guardarMaestro() {
 
 function saveMaestro(datos) {
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', "https://http://localhost:3000/materias");
+    xhr.open('POST', "http://localhost:3000/profes");
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send([JSON.stringify(datos)]);
     xhr.onload = function () {
@@ -48,3 +48,5 @@ function saveMaestro(datos) {
          } else {
             alert("Maestro registado exitosamente"); 
         }
+    }
+};
