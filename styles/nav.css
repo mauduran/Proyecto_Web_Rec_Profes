@@ -1,0 +1,29 @@
+.navbar {
+    background: #007F9D;
+}
+
+#logo{
+    width: 40px;
+    margin-right: 1%;
+}
+
+.btn{
+    background-color: white !important;
+    color:  #007F9D !important;
+}
+
+.btn:hover{
+    color: white;
+    background: #005366;
+    border: 1px solid white;
+
+}
+
+.btn:active{
+    position: relative;
+    top: 1px;
+}
+
+.form-inline{
+    width: 40%;
+}
