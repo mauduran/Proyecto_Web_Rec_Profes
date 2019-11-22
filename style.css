@@ -1,0 +1,43 @@
+.Registro{
+    text-align: center;
+    margin-bottom: 2%;
+    color: #333333; 
+    font-size: 54px; 
+    font-weight: 300; 
+    line-height: 58px; 
+    margin: 0 0 2%;
+}
+
+
+html, body, form {
+    width: 100%;
+}
+
+
+
+#boton{
+    position: relative;
+    left: 65%;
+    margin: 2%;
+    width: 30%
+}
+
+html, body{
+    background-color: #00819e;
+}
+
+.container{
+    margin-top: 10%;
+}
+
+.input-group:not(:first-child){
+    margin-left: 1%;
+}
+
+.input-group:first-child{
+    margin-left: 1%;
+}
+
+.input-group{
+    margin: 1% auto;
+}
