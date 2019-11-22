@@ -1,91 +1,222 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Title</title>
+
+<head>
+    <title>Sign_up</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet"
+        id="bootstrap-css">
     <link href="https://fonts.googleapis.com/css?family=Kaushan+Script&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles/style.css">
 
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="container">
         <div class="col-lg-12 well">
-        <div class="row">
-                    <form>
-                        <h1 class="Registro">Llena tu registro</h1>
-                        <div class="col-sm-12">
-                            <div class="row">
-                                <div class="input-group col-sm-5 form-group">
-                                    <input type="text" placeholder="Ingresa tu nombre..." required class="form-control input-lg" id="nombre">
-                                </div>
-                                <div class="input-group col-sm-5 form-group">
-                                    <input type="text" placeholder="Ingresa tu apellido..." required class="form-control input-lg">
-                                </div>
-                            </div>	
-                            <div class="row">
-                                    <div class="input-group col-sm-5 form-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user""></i></span>
-                                        <input type="text" placeholder="Ingresa tu nombre de usuario..." required class="form-control input-lg">
-                                    </div>
-                                    <div class="input-group col-sm-5 form-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-flash"></i></span>
-                                        <input type="text" placeholder="Ingresa tu carrera..." required class="form-control input-lg">
-                                    </div>                                    	
-                            </div>				
-                            <div class="row">
-                                <div class="input-group col-sm-5 form-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                        <input type="password" placeholder="Ingresa tu contraseña..." required pattern=".{6,}" title="Six or more characters" class="form-control input-lg">
-                                </div>
-                                <div class="input-group col-sm-5 form-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-                                        <input type="password" placeholder="Confirma tu contraseña..." class="form-control input-lg">
-                                </div>		                            		
+            <div class="row">
+                <form id="formLogin" class="formLog">
+                    <h1 class="Registro">Llena tu registro</h1>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="input-group col-sm-5 form-group">
+                                <input type="text" placeholder="Ingresa tu nombre..." required
+                                    class="form-control input-lg" id="nombreId">
                             </div>
-                            <div class="row">
-                                <div class="input-group col-sm-5 form-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-expand"></i></span>
-                                        <input type="text" placeholder="Ingresa tu expediente en la forma az123456" required class="form-control input-lg">
-                                </div>	
-                                <div class="input-group col-sm-5 form-group">
-                                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                        <input type="email" placeholder="Ingresa tu correo..." required  title="Escribe codigo de la carrera y luego expediente" class="form-control input-lg">
-                                </div>		
+                            <div class="input-group col-sm-5 form-group">
+                                <input type="text" placeholder="Ingresa tu apellido..." required
+                                    class="form-control input-lg" id="apellidoId">
                             </div>
-                            <div class="row">
-
-                                <div class="input-group col-sm-11 form-group">
-                                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                                    <input type="text" placeholder="Ingresa tu carrera..." required  title="Escribe codigo de la carrera y luego expediente" class="form-control input-lg">
-                                </div>
-
-                                <div class="custom-file input-group col-sm-3 form-group">
-                                    <input type="file" class="custom-file-input" id="customFile">
-                                    <label class="custom-file-label" for="customFile">Choose file</label>
-                                </div>
-                            </div>						
-                        
-                        
                         </div>
-                        <input type="submit" class="btn btn-lg  btn-info" id="boton">			
-                    </form> 
+                        <div class="row">
+                            <div class="input-group col-sm-11 form-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-flash"></i></span>
+                                <select class="form-control" id="selectCarrera" value="">
+                                    <option disabled selected>Carrera</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-group col-sm-5 form-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                <input type="password" placeholder="Ingresa tu contraseña..." required pattern=".{6,}"
+                                    title="Six or more characters" class="form-control input-lg" id="passwordId">
+                            </div>
+                            <div class="input-group col-sm-5 form-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                <input type="password" placeholder="Confirma tu contraseña..." required
+                                    class="form-control input-lg" id="repasswordId">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-group col-sm-5 form-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-expand"></i></span>
+                                <input type="text" placeholder="Ingresa tu expediente en la forma az123456" required
+                                    class="form-control input-lg" id="expedienteId">
+                            </div>
+                            <div class="input-group col-sm-5 form-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                <input type="email" placeholder="Ingresa tu correo..." required
+                                    title="Escribe codigo de la carrera y luego expediente"
+                                    class="form-control input-lg" id="emailId">
+                            </div>
+                        </div>
+
                     </div>
+                    <input type="submit" class="btn btn-lg  btn-info" id="btnSubmit" value="Registrate!">
+                </form>
+            </div>
         </div>
-        </div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
+    <script src="scripts/selectCarreras.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+    <script>
+        let btnSubmit = document.getElementById("btnSubmit");
+        let formLogin = document.getElementById("formLogin");
+
+        btnSubmit.setAttribute('disabled', true);
+        let nombre = document.getElementById("nombreId");
+        let apellido = document.getElementById("apellidoId");
+        let carrera = document.getElementById("selectCarrera");
+        let password = document.getElementById("passwordId");
+        let repassword = document.getElementById("repasswordId");
+        let expediente = document.getElementById("expedienteId");
+        let email = document.getElementById("emailId");
+        let campos;
+
+        let existsUser = false;
+        formLogin.addEventListener("change", function (E) {
+
+            campos = document.querySelectorAll("#formLogin input:invalid");
+
+            if (campos.length == 0 && (password.value == repassword.value)) {
+                btnSubmit.removeAttribute('disabled');
+            }
+            console.log(campos);
+            console.log(campos.length);
+        })
+
+        btnSubmit.onclick = registrarUser;
+        /*
+            "nombre": "apa",
+            "apellido": "Picapiedra",
+            "rol": "Estudiante",
+            "numReviews": "0",
+            "password": "ppicapiedra",
+            "expediente": "716122",
+            "carrera": "Arquitectura",
+            "email": "is717122@iteso.mx",
+            "id": 2
+        */
+        function registrarUser(E) {
+            E.preventDefault();
+
+            let correoMin = email.value.toLowerCase();
+            //            console.log(correoMin);
+            let newObj = {
+                nombre: nombre.value,
+                apellido: apellido.value,
+                rol: "Estudiante",
+                numReviews: "0",
+                password: password.value,
+                expediente: expediente.value,
+                carrera: carrera.value,
+                email: email.value,
+            }
+            console.log(newObj);
+
+            //Revisar que no exista ya ese usuario.
+            let xhr4 = new XMLHttpRequest();
+
+            // 2. Configurar: PUT actualizar archivo
+            xhr4.open('GET', "http://localhost:3000/users");
+
+            xhr4.setRequestHeader('Content-Type', 'application/json');
+
+            // 4. Enviar solicitud
+            xhr4.send();
+
+            // 5. Una vez recibida la respuesta del servidor
+            xhr4.onload = function () {
+
+                if (xhr4.status != 200) { // analizar el estatus de la respuesta HTTP
+                    // alert("Usuario Error")
+                    // Ocurrió un error
+                    alert("Error. No se pueden mostrar las usuarios");
+
+
+                } else {
+                    let usersArr = JSON.parse(xhr4.response);
+                    usersArr.forEach(element => {
+                        console.log(element);
+                        if (element.email == newObj.email) {
+                            console.log(element.email);
+                            console.log(newObj.email);
+                            console.log(existsUser);
+                            existsUser = true;
+                            console.log(existsUser);
+                        }
+                    });
+
+                    if (existsUser == true) {
+                        alert('Ya existe un usuario con esos datos');
+                        existsUser = false;
+                    } else {
+                        
+
+                // 1. Crear XMLHttpRequest object
+                let xhr = new XMLHttpRequest();
+                // 2. Configurar:  PUT actualizar archivo
+                xhr.open('POST','http://localhost:3000/Requests');
+                // 3. indicar tipo de datos JSON
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                
+                // 4. Enviar solicitud al servidor
+                xhr.send([JSON.stringify(newObj)]);
+
+                // 5. Una vez recibida la respuesta del servidor
+                xhr.onload = function () {
+                    if (xhr.status != 201) { // analizar el estatus de la respuesta HTTP
+                        // Ocurrió un error
+                        //alert(xhr.status + ': ' + xhr.statusText); // e.g. 404: Not Found
+                        alert('Ya existe un usuario con esos datos');
+                    
+                    } else {
+                        //console.log(xhr.responseText); // Significa que fue exitoso
+                        alert('Procesaremos tu solicitud');
+                    // window.location.href = "./index.html";
+                    }
+                };
+            }
+
+            
+                    }
+
+                }
+
+            
+        }
+    </script>
+</body>
+
 </html>
