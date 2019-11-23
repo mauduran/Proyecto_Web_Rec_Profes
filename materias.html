@@ -322,13 +322,19 @@
 
         let input = document.getElementById("nombreMateria");
 
-        document.getElementById("BuscarMateria").onclick = filtrarDatos;
+        let btnBuscar = document.getElementById("BuscarMateria");
+        btnBuscar.addEventListener('click', stop);
 
+        
         filtrarDatos();
-
+        function stop(){
+            event.preventDefault();
+            filtrarDatos();
+        }
 
 
         function filtrarDatos() {
+           
             let xhreq = new XMLHttpRequest();
 
             // 2. Configurar: PUT actualizar archivo
@@ -347,6 +353,7 @@
                 } else {
                     url += "nombre_like=" + input.value + "&departamento=" + seleccion.value;
                 }
+                console.log(url)
                 xhreq.open('GET', url);
             }
             console.log(url);
