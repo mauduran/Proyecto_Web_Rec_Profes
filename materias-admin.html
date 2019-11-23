@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/nav.css">
     <style>
         html,
         body {
@@ -126,7 +126,8 @@
         .card-registry .reg-element:nth-child(odd)>.jumbotron {
             background: white;
         }
-        .reg-element{
+
+        .reg-element {
             position: relative;
         }
 
@@ -141,18 +142,18 @@
             display: inline-block;
         }
 
-        .profes p:first-of-type{
+        .profes p:first-of-type {
 
             margin: 0 2% 0 0;
         }
 
-        .profes span{
+        .profes span {
             margin-left: 2%;
         }
 
         .profes {
             padding-bottom: 5px;
-            margin-top: 0%;
+            margin-top: 1%;
         }
 
         .profes div {
@@ -160,69 +161,114 @@
             color: white;
             width: 90%;
             margin: 0 0 2px 2%;
-            position: relative;
 
         }
 
         .profes div:hover {
             background: #007F9D;
+
         }
 
-        .del{
-            font-size: 2em;
-            color: red;
-            /* margin-left: 2px; */
-            cursor: pointer;
-        }
 
-        /* .right{
-            float: right;
-            position: relative;
-            right: 0%;
-        } */
-
-        .editable{
+        .editable {
             position: absolute;
-            top:0%;
-            left: 97%;
+            top: 2%;
+            left: 98%;
             float: left;
             cursor: pointer;
         }
 
-        .go_right{
+        .go_right {
             display: inline-block;
             position: absolute;
             right: 1%;
             top: -5px;
-            
+
         }
-
-
     </style>
-    
+
+    <link rel="stylesheet" href="styles/nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 
 <body>
 
-        
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Administar</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td>Mensajes del coordinador</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td>Alta de materias</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td>Alta de maestros</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td>Alta maestro-materia</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td>Revisión credenciales</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td>Administración de materias</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">7</th>
+                                <td>Administracion de reviews</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">8</th>
+                                <td>Administración de usuarios</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-sm navbar-dark" id="navbar">
+
+    </nav>
+
+    <!-- Buscar -->
     <div class="form-contain">
         <form action="">
             <h1>Encuentra una materia.</h1>
-            <select id="inputState" class="form-control col-5 center">
-                <option selected>Carrera</option>
-                <option>Tronco Común</option>
-                <option>Administración de Empresas</option>
-                <option>Ingeniería Electrónica</option>
-                <option>Ingeniería en Sistemas</option>
+            <select id="selectDpto" class="form-control" id="exampleFormControlSelect1">
+                <option selected disabled value="">Departamento</option>
             </select>
             <div class="form-row">
-                <div class="center"></div>
-                <div class="col-5">
-                    <input type="text" name="competitor" class="form-control" placeholder="Materia">
+                <div class="col-7">
+                    <input type="text" name="competitor" id="nombreMateria" class="form-control" placeholder="Materia">
                 </div>
 
                 <div class="col-5">
-                    <input type="submit" name="competitor" class="form-control btn" value="Buscar Materia">
+                    <input type="submit" id="BuscarMateria" name="competitor" class="form-control btn"
+                        value="Buscar Materia">
                 </div>
 
             </div>
@@ -231,255 +277,205 @@
         </form>
     </div>
 
+    <!--CONTAINER-->
 
+    <div class="card-registry" id="materias-container">
+    </div>
 
-    <div class="card-registry">
-        <div class="reg-element">
-                
-            <div class="editable">
-                    <span class="ed"><i class="fa fa-pen"></i></span>
-                <span class="del" aria-hidden="true">&times;</span>
-            </div>
+    <!-- Modal -->
+    <div class="modal fade" id="registro" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Editar Materia</h5>
+                </div>
 
-            <div class="jumbotron" data-toggle="collapse" data-target="#collapse1">
-                <div class="card-body">
-                    <h5 class="card-title">Desarrollo de Aplicaciones y Servicios Web</h5>
-                    <p class="card-text "><b>Carrera: </b>Ingeniería en Sistemas Computacionales</p>
-                    <p class="card-text "><b>Créditos: </b>8</p>
+                <div class="modal-body">
+                    <form action="">
 
+                        <div class="row">
+
+                            <input type="text" name="nombren" id="nombre" class="form-control  mt-3" value="Nombre"
+                                aria-describedby="helpId" disabled="true" required>
+
+                            <input type="number" class="form-control input-lg mt-3" id="credi" value=""
+                                placeholder="No. de créditos..">
+
+                            <select id="selectDpto2" class="form-control mt-3" value="">
+                                <option selected disabled>Departamento</option>
+                            </select>
+                            <textarea type="text" name="descrip" id="descropcion" class="form-control mt-3"
+                                placeholder="Descripción..." aria-describedby="helpId" rows="4"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success mt-3">Editar</button>
+                        <button type="button" class="btn btn-secondary mt-3" data-dismiss="modal">Cancelar</button>
+                    </form>
                 </div>
             </div>
-            <div class="collapse" id="collapse1">
-
-                <div class="card">
-                    <p class="sub"><b>Descripción: </b>Descripción:
-                        Los usuarios de las aplicaciones web interactuan a través de una interface gráfica que permite
-                        capturar
-                        y validar la información a ser almacenada en el servidor o bien desplegar la informacion
-                        recibida de
-                        este. El servidor es responsable de procesar la de información, administrar las bases de datos,
-                        administrar los repositorios de archivos, autentificar a los usuarios, entre otros. El servidor
-                        debe
-                        procesar la petición del cliente y enviar la respuesta solicitada. En esta asignatura harás uso
-                        de
-                        tus
-                        conocimientos de programación orientada a objetos y del diseño de bases de datos para crear
-                        proyectos
-                        más robustos, ya que conocerás y emplearás las principales herramientas y frameworks de
-                        desarrollo
-                        de
-                        aplicaciones web. Podrás desarrollar tus propias aplicaciones y servicios web en donde se
-                        administren
-                        los recursos del servidor. Además, podrás desarrollar tus propias páginas web interactivas,
-                        permitiendo
-                        que el usuario almacene, visualice y modifique la información de una base de datos.</p>
-
-
-                    <div class="profes">
-                        <div>
-                            <span class="del go_right" aria-hidden="true">&times;</span>
-                            <span class="input-group-addon"><i class="fa fa-star""></i></span>
-                            <p>4.8</p>
-                            <p class="space">Edgar Medina Rifas</p>
-                            
-                            
-                            
-                            
-                        </div>
-
-                        <div>    
-                                <span class=" input-group-addon"><i class="fa fa-star""></i></span>
-                                <p>3.9</p>
-                                <p class="space">Mauricio Durán Padilla</p>
-                                <span class="del go_right" aria-hidden="true">&times;</span>
-                                
-                        </div>
-
-                        <div>    
-                                <span class=" input-group-addon"><i class="fa fa-star""></i></span>
-                                <p>2.2</p>
-                                <p class="space">Juan Perez Ramírez</p> 
-                                <span class="del go_right" aria-hidden="true">&times;</span>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="reg-element">
-                <div class="jumbotron" data-toggle="collapse" data-target="#collapse2">
-                        <div class="editable">
-                                <span class="ed"><i class="fa fa-pen"></i></span>
-                            <span class="del" aria-hidden="true">&times;</span>
-                        </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Desarrollo de Aplicaciones de Escritorio</h5>
-                        <p class="card-text "><b>Carrera: </b>Ingeniería en Sistemas Computacionales</p>
-                        <p class="card-text "><b>Créditos: </b>8</p>
-    
-                    </div>
-                </div>
-                <div class="collapse" id="collapse2">
-                    <div class="card">
-                        <p class="sub"><b>Descripción: </b>Descripción:
-                            Los usuarios de las aplicaciones web interactuan a través de una interface gráfica que permite
-                            capturar
-                            y validar la información a ser almacenada en el servidor o bien desplegar la informacion
-                            recibida de
-                            este. El servidor es responsable de procesar la de información, administrar las bases de datos,
-                            administrar los repositorios de archivos, autentificar a los usuarios, entre otros. El servidor
-                            debe
-                            procesar la petición del cliente y enviar la respuesta solicitada. En esta asignatura harás uso
-                            de
-                            tus
-                            conocimientos de programación orientada a objetos y del diseño de bases de datos para crear
-                            proyectos
-                            más robustos, ya que conocerás y emplearás las principales herramientas y frameworks de
-                            desarrollo
-                            de
-                            aplicaciones web. Podrás desarrollar tus propias aplicaciones y servicios web en donde se
-                            administren
-                            los recursos del servidor. Además, podrás desarrollar tus propias páginas web interactivas,
-                            permitiendo
-                            que el usuario almacene, visualice y modifique la información de una base de datos.</p>
-    
-    
-                        <div class="profes">
-                            <div>
-                                    <span class="input-group-addon"><i class="fa fa-star""></i></span>
-                                <p>4.1</p>
-                                <p class="space">Edgar Medina Rifas</p>
-                                <span class="del go_right" aria-hidden="true">&times;</span>
-                                
-                            </div>
-    
-                            <div>    
-                                    <span class=" input-group-addon"><i class="fa fa-star""></i></span>
-                                    <p>3.3</p>
-                                    <p class="space">Mauricio Durán Padilla</p>
-                                    <span class="del go_right" aria-hidden="true">&times;</span>
-                                    
-                                    
-                            </div>
-    
-                            <div>    
-                                    <span class=" input-group-addon"><i class="fa fa-star""></i></span>
-                                    <p>3.4</p>
-                                    <p class="space">Juan Perez Ramírez</p>
-                                    <span class="del go_right" aria-hidden="true">&times;</span>
-                                    
-                                    
-                            </div>
-    
-                        </div>
-                    </div>
-    
-                </div>
-    
-        </div>
-
-
-        <div class="reg-element">
-                <div class="jumbotron" data-toggle="collapse" data-target="#collapse3">
-                        <div class="editable">
-                                <span class="ed"><i class="fa fa-pen"></i></span>
-                            <span class="del" aria-hidden="true">&times;</span>
-                        </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Programación Orientada a Objetos</h5>
-                        <p class="card-text "><b>Carrera: </b>Ingeniería en Sistemas Computacionales</p>
-                        <p class="card-text "><b>Créditos: </b>8</p>
-    
-                    </div>
-                </div>
-                <div class="collapse" id="collapse3">
-                    <div class="card">
-                        <p class="sub"><b>Descripción: </b>Descripción:
-                            Los usuarios de las aplicaciones web interactuan a través de una interface gráfica que permite
-                            capturar
-                            y validar la información a ser almacenada en el servidor o bien desplegar la informacion
-                            recibida de
-                            este. El servidor es responsable de procesar la de información, administrar las bases de datos,
-                            administrar los repositorios de archivos, autentificar a los usuarios, entre otros. El servidor
-                            debe
-                            procesar la petición del cliente y enviar la respuesta solicitada. En esta asignatura harás uso
-                            de
-                            tus
-                            conocimientos de programación orientada a objetos y del diseño de bases de datos para crear
-                            proyectos
-                            más robustos, ya que conocerás y emplearás las principales herramientas y frameworks de
-                            desarrollo
-                            de
-                            aplicaciones web. Podrás desarrollar tus propias aplicaciones y servicios web en donde se
-                            administren
-                            los recursos del servidor. Además, podrás desarrollar tus propias páginas web interactivas,
-                            permitiendo
-                            que el usuario almacene, visualice y modifique la información de una base de datos.</p>
-    
-    
-                        <div class="profes">
-                            <div>
-                                <span class="input-group-addon"><i class="fa fa-star""></i></span>
-                                <p>3.4</p>
-                                <p class="space">Edgar Medina Rifas</p>
-                                <span class="del" aria-hidden="true">&times;</span>
-                                
-                                
-                            </div>
-    
-                            <div>    
-                                    <span class=" input-group-addon"><i class="fa fa-star""></i></span>
-                                    <p>4.6</p>
-                                    <p class="space">Mauricio Durán Padilla</p>
-                                    <span class="del" aria-hidden="true">&times;</span>
-                                    
-                                    
-                            </div>
-    
-                            <div>    
-                                    <span class=" input-group-addon"><i class="fa fa-star""></i></span>
-                                    <p>3.3</p>
-                                    <p class="space">Juan Perez Ramírez</p>
-                                    <span class="del" aria-hidden="true">&times;</span>
-                                    
-                                    
-                            </div>
-    
-                        </div>
-                    </div>
-    
-                </div>
-    
         </div>
     </div>
 
-    <nav aria-label=" Page navigation">
-        <ul class="pagination">
-            <li class="page-item disabled">
-                <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                    <span class="sr-only">Previous</span>
-                </a>
-            </li>
-            <li class="page-item cur" style="background-color:#007F9D"><a
-                class="page-link" href="#">1</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#">2</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
 
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"> </script>
-    <script src="https://kit.fontawesome.com/3651e59011.js" crossorigin="anonymous"></script>
+    <!--Script-->
+
+    <script>
+        let container = document.getElementById("materias-container");
+
+        let seleccion = document.getElementById("selectDpto");
+
+        let input = document.getElementById("nombreMateria");
+
+        let btnBuscar = document.getElementById("BuscarMateria");
+        btnBuscar.addEventListener('click', stop);
+
+
+        filtrarDatos();
+
+        function stop() {
+            event.preventDefault();
+            filtrarDatos();
+        }
+
+
+        function filtrarDatos() {
+
+            let xhreq = new XMLHttpRequest();
+
+            // 2. Configurar: PUT actualizar archivo
+            let url = 'http://localhost:3000/materias';
+
+            console.log(seleccion.value);
+
+            if (seleccion.value == "" && input.value == "") {
+                xhreq.open('GET', url);
+            } else {
+                url += "?";
+                if (seleccion.value == "") {
+                    url += "nombre_like=" + input.value;
+                } else if (input.value == "") {
+                    url += "departamento=" + seleccion.value;
+                } else {
+                    url += "nombre_like=" + input.value + "&departamento=" + seleccion.value;
+                }
+                console.log(url)
+                xhreq.open('GET', url);
+            }
+            console.log(url);
+            let contenedor = document.getElementById("materias-container");
+
+            contenedor.innerHTML = "";
+
+            xhreq.setRequestHeader('Content-Type', 'application/json');
+
+            // 4. Enviar solicitud
+            xhreq.send();
+
+            // 5. Una vez recibida la respuesta del servidor
+            xhreq.onload = function () {
+
+                if (xhreq.status != 200) { // analizar el estatus de la respuesta HTTP
+                    // alert("Usuario Error")
+                    // Ocurrió un error
+                    alert("Error. No se pueden mostrar los departamentos");
+
+                } else {
+                    let materias = JSON.parse(xhreq.response);
+
+                    let id = 1;
+
+                    let id2 = 1;
+
+                    materias.forEach(element => {
+                        let registro = document.createElement('div');
+                        registro.classList.add("reg-element");
+                        registro.innerHTML = `
+            <div class="jumbotron" data-toggle="collapse" data-target="#collapse${id}">
+                    <div class="editable" data-toggle="modal" data-target="#registro">
+                        <span class="ed"><i class="fa fa-pen"></i></span>
+                    </div>
+
+                <div class="card-body">
+                    <h5 class="card-title"> ${element.nombre}</h5>
+                    <p class="card-text "><b>Departamento: </b>${element.departamento}</p>
+                    <p class="card-text "><b>Créditos: </b>${element.creditos}</p>
+
+                </div>
+            </div>
+
+            <div class="collapse" id="collapse${id}">
+                <div class="card">
+                    <p class="sub"><b>Descripción: </b>${element.descripción}</p>
+                    <div class="profes" id="profes${id}"">
+                    </div>
+                </div>`;
+                        contenedor.appendChild(registro);
+                        let requestDetalle = new XMLHttpRequest();
+
+                        requestDetalle.open('GET', "http://localhost:3000/detalleMaterias?materia=" +
+                            element.nombre);
+                        requestDetalle.setRequestHeader('Content-Type', 'application/json');
+
+                        // 4. Enviar solicitud
+                        requestDetalle.send();
+
+                        requestDetalle.onload = function () {
+                            if (requestDetalle.status == 200) {
+                                let detalle = JSON.parse(requestDetalle.response);
+                                detalle.forEach(el => {
+                                    document.getElementById("profes" + id2).innerHTML +=
+                                        `<div onclick="mostrarReseñas('${el.profesor}', '${el.materia}')"><span class="input-group-addon"><i class="fa fa-star"></i></span>
+                                         <p>${el["experiencia general"]}</p><p>${el.profesor}</p><anchor style="margin-left:150px;"><b>${el.numReviews + " "}</b>Reseñas</anchor></div>`;
+                                });
+
+                                id2++;
+                            }
+                        }
+                        id++;
+                    });
+                }
+            }
+        }
+
+        function mostrarReseñas(profesor, materia) {
+            window.location.href = `review.html?${profesor}?${materia}`;
+        }
+
+        let select2 = document.getElementById("selectDpto2");
+        let xhr2 = new XMLHttpRequest();
+        // 2. Configurar: PUT actualizar archivo
+        xhr2.open('GET', "http://localhost:3000/departamentos");
+        xhr2.setRequestHeader('Content-Type', 'application/json');
+        // 4. Enviar solicitud
+        xhr2.send();
+        // 5. Una vez recibida la respuesta del servidor
+        xhr2.onload = function () {
+            if (xhr2.status != 200) { // analizar el estatus de la respuesta HTTP
+                alert("Error. No se pueden mostrar los departamentos");
+            } else {
+                let dptos = JSON.parse(xhr2.response);
+                dptos.forEach(element => {
+                    select2.innerHTML += '<option value="' + element.nombre + '">' + element.nombre +
+                        ' </option>';
+                });
+            }
+        }
+    </script>
+
+    <script src="scripts/displayNavBar.js"></script>
+    <script src="scripts/selectDpto.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="https://kit.fontawesome.com/3651e59011.js" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
