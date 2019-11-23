@@ -77,50 +77,35 @@
   "materias": [
     {
       "nombre": "Programación Orientada a Objetos",
-      "descripción": "Lorem, ipsum dolor sit amet 
-      consectetur adipisicing elit. Tenetur consectetur at laudantium eius pariatur
-      veritatis nostrum itaque vitae eaque deleniti voluptatem, quam maiores
-      exercitationem minima tempora commodi voluptatibus amet et.",
+      "descripción": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
       "creditos": "8",
       "departamento": "Electrónica, Sistemas e Informática",
       "id": 1
     },
     {
       "nombre": "Sexualidad y Sociedad",
-      "descripción": "Lorem, ipsum dolor sit amet 
-      consectetur adipisicing elit. Tenetur consectetur at laudantium eius pariatur
-      veritatis nostrum itaque vitae eaque deleniti voluptatem, quam maiores
-      exercitationem minima tempora commodi voluptatibus amet et.",
+      "descripción": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
       "creditos": "8",
       "departamento": "Eje de Debates",
       "id": 1
     },
     {
       "nombre": "Ética, Identidad y Profesión",
-      "descripción": "Lorem, ipsum dolor sit amet 
-      consectetur adipisicing elit. Tenetur consectetur at laudantium eius pariatur
-      veritatis nostrum itaque vitae eaque deleniti voluptatem, quam maiores
-      exercitationem minima tempora commodi voluptatibus amet et.",
+      "descripción": "",
       "creditos": "8",
       "departamento": "Eje de Debates",
       "id": 2
     },
     {
       "nombre": "Desarrollo de Aplicaciones y Servicios Web",
-      "descripción": "Lorem, ipsum dolor sit amet 
-      consectetur adipisicing elit. Tenetur consectetur at laudantium eius pariatur
-      veritatis nostrum itaque vitae eaque deleniti voluptatem, quam maiores
-      exercitationem minima tempora commodi voluptatibus amet et.",
+      "descripción": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
       "creditos": "8",
       "departamento": "Electrónica, Sistemas e Informática",
       "id": 3
     },
     {
       "nombre": "Estrategias Algorítmicas",
-      "descripción": "Lorem, ipsum dolor sit amet 
-      consectetur adipisicing elit. Tenetur consectetur at laudantium eius pariatur
-      veritatis nostrum itaque vitae eaque deleniti voluptatem, quam maiores
-      exercitationem minima tempora commodi voluptatibus amet et.",
+      "descripción": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
       "creditos": "8",
       "departamento": "Electrónica, Sistemas e Informática",
       "id": 4
