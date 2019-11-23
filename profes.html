@@ -226,7 +226,8 @@
                 </div>
 
                 <div class="col-5">
-                    <a name="enviar" id="buscaProfe"class="form-control btn" style="color: white;" value="Buscar Materia">Buscar Materia</a>
+                    <a name="enviar" id="buscaProfe" class="form-control btn" style="color: white;"
+                        value="Buscar Materia">Buscar Materia</a>
                 </div>
 
             </div>
@@ -299,7 +300,7 @@
 
         let input = document.getElementById("nombreProfe");
 
-        document.getElementById("buscaProfe").onclick=filtrarDatos;
+        document.getElementById("buscaProfe").onclick = filtrarDatos;
 
         filtrarDatos();
 
@@ -313,25 +314,24 @@
 
             console.log(seleccion.value);
 
-            if(seleccion.value=="" && input.value==""){
-                console.log("adios")
+            if (seleccion.value == "" && input.value == "") {
                 xhreq.open('GET', url);
-            } else{
+            } else {
                 url += "?";
-                if(seleccion.value==""){
-                    url+="nombre_like="+input.value;
-                } else if(input.value==""){
+                if (seleccion.value == "") {
+                    url += "nombre_like=" + input.value;
+                } else if (input.value == "") {
                     console.log("hola")
-                    url+="departamento="+seleccion.value;
-                } else{
-                    url+="nombre_like="+input.value+"&departamento="+seleccion.value; 
+                    url += "departamento=" + seleccion.value;
+                } else {
+                    url += "nombre_like=" + input.value + "&departamento=" + seleccion.value;
                 }
                 xhreq.open('GET', url);
             }
 
             let contenedor = document.getElementById("profes-container");
 
-            contenedor.innerHTML ="";
+            contenedor.innerHTML = "";
 
             xhreq.setRequestHeader('Content-Type', 'application/json');
 
@@ -380,8 +380,7 @@
                         let requestDetalle = new XMLHttpRequest();
 
                         requestDetalle.open('GET', "http://localhost:3000/detalleMaterias?profesor=" +
-                            element
-                            .nombre);
+                            element.nombre);
 
                         requestDetalle.setRequestHeader('Content-Type', 'application/json');
 
@@ -393,13 +392,10 @@
                                 let detalle = JSON.parse(requestDetalle.response);
 
                                 detalle.forEach(el => {
-                                    let materia = document.createElement('div');
-                                    materia.innerHTML = `<span class="input-group-addon"><i class="fa fa-star"></i></span>
-                            <p>${el["experiencia general"]}</p>
-                            <p>${el.materia}</p><anchor style="margin-left:150px;"><b>${el.numReviews + " "}</b>Reseñas</anchor>`;
 
-                                    document.getElementById("materias" + id2).appendChild(
-                                        materia);
+                                    document.getElementById("materias" + id2).innerHTML+= `<div onclick="mostrarReseñas('${el.profesor}', '${el.materia}')"><span class="input-group-addon"><i class="fa fa-star"></i></span>
+                            <p>${el["experiencia general"]}</p>v<p>${el.materia}</p><anchor style="margin-left:150px;"><b>${el.numReviews + " "}</b>Reseñas</anchor></div>`;
+
                                 });
 
                                 id2++;
@@ -413,6 +409,11 @@
                 }
 
             }
+
+        }
+
+        function mostrarReseñas(profesor, materia) {
+            window.location.href = `review.html?${profesor}?${materia}`;
         }
     </script>
 
