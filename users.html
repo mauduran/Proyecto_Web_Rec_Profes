@@ -114,13 +114,13 @@
             border: 1px solid #007F9D;
         }
 
-        img{
+        img {
             float: left;
             width: 13%;
             margin: 1% 1% 0 1%;
         }
 
-        .del{
+        .del {
             font-size: 2em;
             color: red;
             position: absolute;
@@ -129,12 +129,9 @@
 
 
 
-        .del{
+        .del {
             cursor: pointer;
         }
-
-            
-
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -163,52 +160,62 @@
 
 
 
-    <div class="card-registry">
-
-            <div class="reg-element">
-                    <div class="editable">
-                        <span class="del" aria-hidden="true">&times;</span>
-                    </div>
-
-                    <div class="jumbotron">
-                        <img src="img/716122.jpeg" width="15%" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">Mauricio Duran Padilla</h5>
-                            <p class="sub"><b>Expediente: </b>716122</p>
-                            <p class="sub"><b>Email: </b> is716122@iteso.mx</p>
-                            <p class="sub"><b>Carrera: </b> Ingeniería en Sistemas Computacionales</p>
-                            <p class="sub"><b>Número de Reseñas: </b> 20</p>
-                            
-                        </div>
-                    </div>
-        
+    <div class="card-registry" id="idCardRegistry">
+        <!-- 
+        <div class="reg-element">
+            <div class="editable">
+                <span class="del" aria-hidden="true">&times;</span>
             </div>
 
-            <div class="reg-element">
-                    <div class="editable">
-                        <span class="del" aria-hidden="true">&times;</span>
-                    </div>
-
-                    <div class="jumbotron">
-                        <img src="img/2.jpeg" width="15%" alt="">
-                        <div class="card-body">
-                            <h5 class="card-title">Anahí Santana</h5>
-                            <p class="sub"><b>Expediente: </b>716432</p>
-                            <p class="sub"><b>Email: </b> ri716432@iteso.mx</p>
-                            <p class="sub"><b>Carrera: </b> Relaciones Internacionales</p>
-                            <p class="sub"><b>Número de Reseñas: </b> 14</p>
-                        </div>
-                    </div>
-        
+            <div class="jumbotron">
+                <div class="card-body">
+                    <h5 class="card-title">Mauricio Duran Padilla</h5>
+                    <p class="sub"><b>Expediente: </b>716122</p>
+                    <p class="sub"><b>Email: </b> is716122@iteso.mx</p>
+                    <p class="sub"><b>Carrera: </b> Ingeniería en Sistemas Computacionales</p>
+                    <p class="sub"><b>Número de Reseñas: </b> 20</p>
+                </div>
             </div>
 
+        </div>
+
+        <div class="reg-element">
+            <div class="editable">
+                <span class="del" aria-hidden="true">&times;</span>
+            </div>
+            <div class="jumbotron">
+                <div class="card-body">
+                    <h5 class="card-title">Anahí Santana</h5>
+                    <p class="sub"><b>Expediente: </b>716432</p>
+                    <p class="sub"><b>Email: </b> ri716432@iteso.mx</p>
+                    <p class="sub"><b>Carrera: </b> Relaciones Internacionales</p>
+                    <p class="sub"><b>Número de Reseñas: </b> 14</p>
+                </div>
+            </div>
+
+        </div>
+                <div class="reg-element">
+            <div class="editable">
+                    <span class="del" aria-hidden="true" data-toggle="modal" data-target="#Modal0">&times;</span>
+                </div>
+
+            <div class="jumbotron">
+                <div class="card-body">
+                    <h5 class="card-title">Mauricio Duran Padilla</h5>
+                    <p class="sub"><b>Expediente: </b>716122</p>
+                    <p class="sub"><b>Email: </b> is716122@iteso.mx</p>
+                    <p class="sub"><b>Carrera: </b> Ingeniería en Sistemas Computacionales</p>
+                    <p class="sub"><b>Número de Reseñas: </b> 20</p>
+                </div>
+            </div>
+
+        </div>
+        -->
 
 
-        
-    </div>
+        </div>
 
-
-    <nav aria-label="Page navigation">
+        <nav aria-label="Page navigation">
             <ul class="pagination">
                 <li class="page-item disabled">
                     <a class="page-link" href="#" aria-label="Previous">
@@ -216,8 +223,7 @@
                         <span class="sr-only">Previous</span>
                     </a>
                 </li>
-                <li class="page-item cur" style="background-color:#007F9D"><a
-                    class="page-link" href="#">1</a></li>
+                <li class="page-item cur" style="background-color:#007F9D"><a class="page-link" href="#">1</a></li>
                 <li class="page-item">
                     <a class="page-link" href="#">2</a></li>
                 <li class="page-item">
@@ -229,10 +235,125 @@
             </ul>
         </nav>
 
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"> </script>
+
+        <!-- Modal -->
+        <div class="modal fade" id="Modal0" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">¿Estás seguro de eliminar este usuario?</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Rechazar</button>
+                        <button type="button" class="btn btn-primary" onclick="eliminarUsuario()">Confirmar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
         <script src="https://kit.fontawesome.com/3651e59011.js" crossorigin="anonymous"></script>
+
+        <script>
+            if (localStorage.role != 'Admin') {
+                window.location.href = "/index.html";
+            }
+            let idPresionado = 0;
+            let idCardRegistry = document.getElementById("idCardRegistry");
+
+            console.log(idCardRegistry);
+
+            let xhr3 = new XMLHttpRequest();
+
+            // 2. Configurar: PUT actualizar archivo
+            xhr3.open('GET', "http://localhost:3000/users");
+
+            xhr3.setRequestHeader('Content-Type', 'application/json');
+
+            // 4. Enviar solicitud
+            xhr3.send();
+
+            // 5. Una vez recibida la respuesta del servidor
+            xhr3.onload = function () {
+
+                if (xhr3.status != 200) { // analizar el estatus de la respuesta HTTP
+                    // alert("Usuario Error")
+                    // Ocurrió un error
+                    alert("Error. No se pueden mostrar los users");
+
+
+                } else {
+                    let users = JSON.parse(xhr3.response);
+
+                    users.forEach(element => {
+                        idCardRegistry.innerHTML += `
+                    <div class="editable">
+                        <span class="del" aria-hidden="true" data-toggle="modal" data-target="#Modal0" onclick="idPress('${element.id}')">&times;</span>
+                    </div>
+
+                    <div class="jumbotron">
+                        <div class="card-body">
+                            <h5 class="card-title">${element.nombre + " " +  element.apellido}</h5>
+                            <p class="sub"><b>Expediente: </b> ${element.expediente}</p>
+                            <p class="sub"><b>Email: </b> ${element.email}</p>
+                            <p class="sub"><b>Carrera: </b> ${element.carrera}</p>
+                            <p class="sub"><b>Número de Reseñas: </b> ${element.numReviews}</p>
+                        </div>
+                    </div>
+                    `;
+                    });
+
+                }
+
+            }
+
+            function idPress(contador){
+                idPresionado = contador;
+                console.log(idPresionado);
+            }
+
+            function eliminarUsuario() {
+                // 1. Crear XMLHttpRequest object
+                let xhr = new XMLHttpRequest();
+                // 2. Configurar:  PUT actualizar archivo
+                xhr.open('DELETE', 'http://localhost:3000/users/' + idPresionado);
+                // 3. indicar tipo de datos JSON
+                xhr.setRequestHeader('Content-Type', 'application/json');
+
+                // 4. Enviar solicitud al servidor
+                xhr.send();
+                // 5. Una vez recibida la respuesta del servidor
+                xhr.onload = function () {
+                    if (xhr.status != 200) { // analizar el estatus de la respuesta HTTP
+                        // Ocurrió un error
+                        //alert(xhr.status + ': ' + xhr.statusText); // e.g. 404: Not Found
+                        console.log(xhr.response);
+                        alert('No existe el usuario a eliminar');
+
+                    } else {
+                        //console.log(xhr.responseText); // Significa que fue exitoso
+                        alert('Usuario eliminado');
+                        //solicitarUsuarios();
+                        // document.getElementById('usuarios').innerHTML = "";
+                        //solicitarUsuarios();
+                        idPresionado = 0;
+                        location.reload();
+                    }
+                };
+            }
+        </script>
 </body>
 
 </html>
