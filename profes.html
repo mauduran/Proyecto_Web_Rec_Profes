@@ -146,6 +146,18 @@
             background: #007F9D;
 
         }
+
+        .del{
+            font-size: 2em;
+            color: red;
+            cursor: pointer;
+        }
+
+        .editable{
+            position: absolute;
+            right: 1%;
+            cursor: pointer;
+        }
     </style>
     <link rel="stylesheet" href="styles/nav.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -240,35 +252,9 @@
     <div class="card-registry" id="profes-container">
 
 
-        <!-- <div class="reg-element">
-            <div class="jumbotron" data-toggle="collapse" data-target="#collapse2">
-                <div class="card-body">
-                    <h5 class="card-title">Oscar González</h5>
-                    <p class="sub"><b>Departamento: </b> Sistemas, Electrónica e Informática</p>
-
-                </div>
-            </div>
-
-            <div class="collapse" id="collapse2">
-                <div class="card">
-                    <p class="sub"><b>Antigüedad: </b> 1 años.</p>
-
-                    <div class="materias">
-                        <div>
-                            <span class="input-group-addon"><i class="fa fa-star"></i></span>
-                            <p>4.9</p>
-                            <p>Desarrollo de Aplicaciones y Servicios Web</p>
-                        </div>
-
-
-                    </div>
-                </div>
-            </div>
-
-        </div> -->
     </div>
 
-    Î
+
 
     <nav aria-label=" Page navigation">
         <ul class="pagination">
@@ -303,7 +289,6 @@
         document.getElementById("buscaProfe").onclick = filtrarDatos;
 
         filtrarDatos();
-
 
 
         function filtrarDatos() {
@@ -360,6 +345,9 @@
                         registro.classList.add("reg-element");
                         registro.innerHTML = `        
                         <div class="jumbotron" data-toggle="collapse" data-target="#collapse${id}">
+                            <div class="editable" hidden>
+                                <span class="del" aria-hidden="true">&times;</span>
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title">${element.nombre}</h5>
                                 <p class="sub"><b>Departamento: </b> ${element.departamento}</p>
@@ -406,10 +394,16 @@
                         id++;
                     });
 
+                    if(localStorage.role=="Admin" || localStorage.role=="Coordinador"){
+                            Array.from(document.getElementsByClassName("editable")).forEach(element =>{
+                            console.log("element");
+                            element.removeAttribute("hidden");
+                        });
+                    }
                 }
-
+                
             }
-
+            
         }
 
         function mostrarReseñas(profesor, materia) {
