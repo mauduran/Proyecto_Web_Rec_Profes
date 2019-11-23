@@ -166,14 +166,14 @@
         }
     </style>
 
-
+    <link rel="stylesheet" href="styles/nav.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 
 <body>
 
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -232,22 +232,22 @@
     <nav class="navbar navbar-expand-sm navbar-dark" id="navbar">
 
     </nav>
-    
 
+    <!-- Container -->
     <div class="form-contain">
         <form action="">
             <h1>Encuentra una materia.</h1>
             <select id="selectDpto" class="form-control" id="exampleFormControlSelect1">
-                <option selected disabled>Departamento</option>
+                <option selected disabled value="">Departamento</option>
             </select>
             <div class="form-row">
-
                 <div class="col-7">
-                    <input type="text" name="competitor" class="form-control" placeholder="Materia">
+                    <input type="text" name="competitor" id="nombreMateria" class="form-control" placeholder="Materia">
                 </div>
 
                 <div class="col-5">
-                    <input type="submit" name="competitor" class="form-control btn" value="Buscar Materia">
+                    <input type="submit" id="BuscarMateria" name="competitor" class="form-control btn"
+                        value="Buscar Materia">
                 </div>
 
             </div>
@@ -258,8 +258,8 @@
 
 
 
-    <div class="card-registry">
-        <div class="reg-element">
+    <div class="card-registry" id="materias-container">
+        <!-- <div class="reg-element">
             <div class="jumbotron" data-toggle="collapse" data-target="#collapse1">
                 <div class="card-body">
                     <h5 class="card-title">Desarrollo de Aplicaciones y Servicios Web</h5>
@@ -311,93 +311,126 @@
                 </div>
             </div>
 
-        </div>
-
-        <div class="reg-element">
-            <div class="jumbotron" data-toggle="collapse" data-target="#collapse2">
-                <div class="card-body">
-                    <h5 class="card-title">Desarrollo de Aplicaciones y Servicios Web</h5>
-                    <p class="card-text "><b>Departamento: </b>Electrónica, Sistemas e Informática</p>
-                    <p class="card-text "><b>Créditos: </b>8</p>
-
-                </div>
-            </div>
-
-            <div class="collapse" id="collapse2">
-                <div class="card">
-                    <p class="sub"><b>Descripción: </b>Descripción:
-                        Los usuarios de las aplicaciones web interactuan a través de una interface gráfica que permite
-                        capturar
-                        y validar la información a ser almacenada en el servidor o bien desplegar la informacion
-                        recibida de
-                        este. El servidor es responsable de procesar la de información, administrar las bases de datos,
-                        administrar los repositorios de archivos, autentificar a los usuarios, entre otros. El servidor
-                        debe
-                        procesar la petición del cliente y enviar la respuesta solicitada. En esta asignatura harás uso
-                        de
-                        tus
-                        conocimientos de programación orientada a objetos y del diseño de bases de datos para crear
-                        proyectos
-                        más robustos, ya que conocerás y emplearás las principales herramientas y frameworks de
-                        desarrollo
-                        de
-                        aplicaciones web. Podrás desarrollar tus propias aplicaciones y servicios web en donde se
-                        administren
-                        los recursos del servidor. Además, podrás desarrollar tus propias páginas web interactivas,
-                        permitiendo
-                        que el usuario almacene, visualice y modifique la información de una base de datos.</p>
-
-                    <div class="profes">
-
-                        <div>
-                            <span class="input-group-addon"><i class="fa fa-star"></i></span>
-                            <p>4.3</p>
-                            <p>Anahí Santana</p>
-                        </div>
-
-                        <div>
-                            <span class="input-group-addon"><i class="fa fa-star"></i></span>
-                            <p>5.0</p>
-                            <p>Ivan Piza</p>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
+        </div>-->
 
     </div>
 
+    <script>
+        let container = document.getElementById("materias-container");
+
+        let seleccion = document.getElementById("selectDpto");
+
+        let input = document.getElementById("nombreMateria");
+
+        document.getElementById("BuscarMateria").onclick = filtrarDatos;
+
+        filtrarDatos();
 
 
 
+        function filtrarDatos() {
+            let xhreq = new XMLHttpRequest();
 
-    <nav aria-label=" Page navigation">
+            // 2. Configurar: PUT actualizar archivo
+            let url = 'http://localhost:3000/materias';
 
-        <ul class="pagination">
-            <li class="page-item disabled">
-                <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                    <span class="sr-only">Previous</span>
-                </a>
-            </li>
-            <li class="page-item cur" style="background-color:#007F9D">
-                <a class="page-link" href="#">1</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="#">2</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
+            console.log(seleccion.value);
+
+            if (seleccion.value == "" && input.value == "") {
+                xhreq.open('GET', url);
+            } else {
+                url += "?";
+                if (seleccion.value == "") {
+                    url += "nombre_like=" + input.value;
+                } else if (input.value == "") {
+                    url += "departamento=" + seleccion.value;
+                } else {
+                    url += "nombre_like=" + input.value + "&departamento=" + seleccion.value;
+                }
+                xhreq.open('GET', url);
+            }
+            console.log(url);
+            let contenedor = document.getElementById("materias-container");
+
+            contenedor.innerHTML = "";
+
+            xhreq.setRequestHeader('Content-Type', 'application/json');
+
+            // 4. Enviar solicitud
+            xhreq.send();
+
+            // 5. Una vez recibida la respuesta del servidor
+            xhreq.onload = function () {
+
+                if (xhreq.status != 200) { // analizar el estatus de la respuesta HTTP
+                    // alert("Usuario Error")
+                    // Ocurrió un error
+                    alert("Error. No se pueden mostrar los departamentos");
+
+
+                } else {
+                    let materias = JSON.parse(xhreq.response);
+
+                    let id = 1;
+
+                    let id2 = 1;
+
+                    materias.forEach(element => {
+                        let registro = document.createElement('div');
+                        registro.classList.add("reg-element");
+                        registro.innerHTML = `
+            <div class="jumbotron" data-toggle="collapse" data-target="#collapse${id}">
+                <div class="card-body">
+                    <h5 class="card-title"> ${element.nombre}</h5>
+                    <p class="card-text "><b>Departamento: </b>${element.departamento}</p>
+                    <p class="card-text "><b>Créditos: </b>${element.creditos}</p>
+
+                </div>
+            </div>
+
+            <div class="collapse" id="collapse${id}">
+                <div class="card">
+                    <p class="sub"><b>Descripción: </b> Lorem, ipsum dolor sit amet 
+                      consectetur adipisicing elit. Tenetur consectetur at laudantium eius pariatur
+                      veritatis nostrum itaque vitae eaque deleniti voluptatem, quam maiores
+                      exercitationem minima tempora commodi voluptatibus amet et.</p>
+                    <div class="profes" id="profes${id}"">
+                    </div>
+                </div>`;
+                        contenedor.appendChild(registro);
+                        let requestDetalle = new XMLHttpRequest();
+
+                        requestDetalle.open('GET', "http://localhost:3000/detalleMaterias?materia=" +
+                            element.nombre);
+                        requestDetalle.setRequestHeader('Content-Type', 'application/json');
+
+                        // 4. Enviar solicitud
+                        requestDetalle.send();
+
+                        requestDetalle.onload = function () {
+                            if (requestDetalle.status == 200) {
+                                let detalle = JSON.parse(requestDetalle.response);
+                                detalle.forEach(el => {
+                                    document.getElementById("profes" + id2).innerHTML += `<div onclick="mostrarReseñas('${el.profesor}', '${el.materia}')"><span class="input-group-addon"><i class="fa fa-star"></i></span>
+      <p>${el["experiencia general"]}</p><p>${el.profesor}</p><anchor style="margin-left:150px;"><b>${el.numReviews + " "}</b>Reseñas</anchor></div>`;
+                                });
+
+                                id2++;
+                            }
+                        }
+                        id++;
+                    });
+                }
+            }
+        }
+
+        function mostrarReseñas(profesor, materia) {
+            window.location.href = `review.html?${profesor}?${materia}`;
+        }
+    </script>
 
     <script src="scripts/displayNavBar.js"></script>
+    <script src="scripts/selectDpto.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
@@ -410,11 +443,6 @@
     </script>
     <script src="https://kit.fontawesome.com/3651e59011.js" crossorigin="anonymous">
     </script>
-
-
-    <script src="scripts/selectDpto.js">
-    </script>
-
 </body>
 
 </html>
