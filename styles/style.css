@@ -26,6 +26,13 @@ html, body{
     background-color: #00819e;
 }
 
+
+h1,
+h2,
+h3 {
+    font-family: 'Kaushan Script', cursive;
+}
+
 .container{
     margin-top: 10%;
 }
