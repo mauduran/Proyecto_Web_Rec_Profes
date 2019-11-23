@@ -288,10 +288,36 @@
       "id": 2
     }
   ],
-  
   "Sugerencias": [
     {
-      
+      "expedienteEstudiante": "715172",
+      "profesor": "Elsa Perez",
+      "materia": "Ética, Identidad y Profesión",
+      "Reseña": "Todo bien con la clase. Pocas Tareas",
+      "idReseña": 2,
+      "descripcion": "Porque es mi amiga.",
+      "rol": "Coordinador",
+      "id": 1
+    },
+    {
+      "expedienteEstudiante": "716122",
+      "profesor": "Elsa Perez",
+      "materia": "Ética, Identidad y Profesión",
+      "Reseña": "Excelente clase, recomendada 100%",
+      "idReseña": 1,
+      "descripcion": "La calificación es muy baja.",
+      "rol": "Coordinador",
+      "id": 2
+    },
+    {
+      "expedienteEstudiante": "715772",
+      "profesor": "Elsa Perez",
+      "materia": "Ética, Identidad y Profesión",
+      "Reseña": "Recomiendo tomarla con alguien más",
+      "idReseña": 3,
+      "descripcion": "Es muy ofensivo su comentario.",
+      "rol": "Coordinador",
+      "id": 3
     }
   ]
 }
