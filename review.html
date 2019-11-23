@@ -21,20 +21,20 @@
 
     <div class="form-contain">
 
-        <p id="revQty">Numero de Reseñas: <span id="numReviews">15</span></p>
-        <h1>Programación Orientada a Objetos</h1>
-        <h2>Ana Gabriela Cabral</h2>
+        <p id="revQty">Numero de Reseñas: <span id="numReviews"></span></p>
+        <h1 id="curso"></h1>
+        <h2 id="docente"></h2>
 
         <div class="grp d-inline-block">
             <h4 class="d-inline-block">Experiencia General:</h4>
             <span class="fa fa-star bg g"></span>
-            <h5 class="d-inline-block">4.54</h5>
+            <h5 class="d-inline-block" id="overall"></h5>
         </div>
 
         <div class="grp d-inline-block">
             <h4 class="d-inline-block">Nivel de Dificultad:</h4>
             <span class="fa fa-exclamation-triangle bg"></span>
-            <h5 class="d-inline-block">4.92</h5>
+            <h5 class="d-inline-block" id="dificultad"></h5>
         </div>
 
 
@@ -42,26 +42,26 @@
         <div class="grp d-inline-block">
             <h4 class="d-inline-block">Preparación:</h4>
             <span class="fas fa-graduation-cap bg"></span>
-            <h5 class="d-inline-block">4.38</h5>
+            <h5 class="d-inline-block" id="preparacion"></h5>
         </div>
 
         <div class="grp d-inline-block">
             <h4 class="d-inline-block">Carga Trabajo:</h4>
             <span class="fas fa-book bg"></span>
-            <h5 class="d-inline-block">3.5</h5>
+            <h5 class="d-inline-block" id="carga"></h5>
         </div>
 
         <div class="grp d-inline-block">
             <h4 class="d-inline-block">Flexibilidad:</h4>
             <span class="fas fa-balance-scale bg"></span>
-            <h5 class="d-inline-block">3.0</h5>
+            <h5 class="d-inline-block" id="flexibilidad"></h5>
         </div>
 
 
         <div class="grp d-inline-block">
             <h4 class="d-inline-block">Ritmo de la clase:</h4>
             <span class="fas fa-running bg"></span>
-            <h5 class="d-inline-block">4.8</h5>
+            <h5 class="d-inline-block" id="ritmo"></h5>
         </div>
 
 
@@ -71,214 +71,12 @@
     <button class="btn my-2 my-sm-0" type="submit">Añadir Reseña</button>
 
 
-    <div class="card-registry">
+    <div class="card-registry" id="reviewContainer">
 
-
-        <div class="reg-element">
-            <!-- <div class="editable">
-                    <span class="del" aria-hidden="true">&times;</span>
-                </div> -->
-
-            <div class="jumbotron">
-                <div class="card-body">
-                    <sup class="card-title">ie715XXX</sup>
-
-                    <table width="30%">
-
-                        <tr>
-                            <td>
-                                <p class="sub d-inline-block"><b>Experiencia General: </b> </p>
-                            </td>
-                            <td>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star"></span>
-                                <span class="fa fa-star in"></span></td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p class="sub d-inline-block"><b>Dificultad: </b> </p>
-                            </td>
-                            <td>
-                                <span class="fas fa-exclamation-triangle"></span>
-                                <span class="fas fa-exclamation-triangle"></span>
-                                <span class="fas fa-exclamation-triangle"></span>
-                                <span class="fas fa-exclamation-triangle in" ></span>
-                                <span class="fas fa-exclamation-triangle in"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p class="sub d-inline-block"><b>Preparación: </b> </p>
-                            </td>
-                            <td>
-                                <span class="fa fa-graduation-cap""></span>
-                                        <span class=" fa fa-graduation-cap""></span>
-                                <span class="fa fa-graduation-cap""></span>
-                                    <span class=" fa fa-graduation-cap""></span>
-                                <span class="fa fa-graduation-cap""></span>
-                                    
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p class=" sub d-inline-block"><b>Carga de Trabajo: </b> </p>
-                            </td>
-                            <td>
-                                <span class="fas fa-book"></span>
-                                <span class="fas fa-book"></span>
-                                <span class="fas fa-book"></span>
-                                <span class="fas fa-book"></span>
-                                <span class="fas fa-book in"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p class="sub d-inline-block"><b>Flexibilidad: </b> </p>
-                            </td>
-                            <td>
-                                <span class="fa fa-balance-scale"></span>
-                                <span class="fa fa-balance-scale"></span>
-                                <span class="fa fa-balance-scale"></span>
-                                <span class="fa fa-balance-scale"></span>
-                                <span class="fa fa-balance-scale in"></span>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p class="sub d-inline-block"><b>Ritmo de la Clase: </b> </p>
-                            </td>
-                            <td>
-                                <span class="fa  fa-running"></span>
-                                <span class="fa  fa-running"></span>
-                                <span class="fa  fa-running"></span>
-                                <span class="fa  fa-running"></span>
-                                <span class="fa  fa-runningin"></span>
-                            </td>
-                        </tr>
-                    </table>
-
-                    <h5><b>Volvería a tomarla:</b> Sí</h5>
-                    <h5><b>Optativa</b> </h5>
-                    <br>
-
-                    <h5><b>Reseña:</b></h5>
-                    <h5> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi accusamus alias debitis culpa
-                        in, voluptates hic aut commodi obcaecati magni, fugiat pariatur officia! Rem sit distinctio
-                        quas, nostrum inventore corporis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                        neque asperiores dolorem hic nisi blanditiis maxime nesciunt, sit eos officiis! Corporis totam
-                        mollitia tempore quisquam fuga eum, facere omnis enim? Lorem ipsum dolor sit amet consectetur
-                        adipisicing elit. Quisquam distinctio sit in, sapiente repellat sunt neque omnis magni deleniti
-                        repellendus adipisci consectetur nesciunt sed nisi porro ab. Fugiat, vitae sed.</h5>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="reg-element">
-                <!-- <div class="editable">
-                        <span class="del" aria-hidden="true">&times;</span>
-                    </div> -->
-    
-                <div class="jumbotron">
-                    <div class="card-body">
-                        <sup class="card-title">ie715XXX</sup>
-    
-                        <table width="30%">
-    
-                            <tr>
-                                <td>
-                                    <p class="sub d-inline-block"><b>Experiencia General: </b> </p>
-                                </td>
-                                <td>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star"></span>
-                                    <span class="fa fa-star in"></span></td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p class="sub d-inline-block"><b>Dificultad: </b> </p>
-                                </td>
-                                <td>
-                                    <span class="fas fa-exclamation-triangle"></span>
-                                    <span class="fas fa-exclamation-triangle"></span>
-                                    <span class="fas fa-exclamation-triangle"></span>
-                                    <span class="fas fa-exclamation-triangle in" ></span>
-                                    <span class="fas fa-exclamation-triangle in"></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p class="sub d-inline-block"><b>Preparación: </b> </p>
-                                </td>
-                                <td>
-                                    <span class="fa fa-graduation-cap""></span>
-                                            <span class=" fa fa-graduation-cap""></span>
-                                    <span class="fa fa-graduation-cap""></span>
-                                        <span class=" fa fa-graduation-cap""></span>
-                                    <span class="fa fa-graduation-cap""></span>
-                                        
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <p class=" sub d-inline-block"><b>Carga de Trabajo: </b> </p>
-                                </td>
-                                <td>
-                                    <span class="fas fa-book"></span>
-                                    <span class="fas fa-book"></span>
-                                    <span class="fas fa-book"></span>
-                                    <span class="fas fa-book"></span>
-                                    <span class="fas fa-book in"></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p class="sub d-inline-block"><b>Flexibilidad: </b> </p>
-                                </td>
-                                <td>
-                                    <span class="fa fa-balance-scale"></span>
-                                    <span class="fa fa-balance-scale"></span>
-                                    <span class="fa fa-balance-scale"></span>
-                                    <span class="fa fa-balance-scale"></span>
-                                    <span class="fa fa-balance-scale in"></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <p class="sub d-inline-block"><b>Ritmo de la Clase: </b> </p>
-                                </td>
-                                <td>
-                                    <span class="fa  fa-running"></span>
-                                    <span class="fa  fa-running"></span>
-                                    <span class="fa  fa-running"></span>
-                                    <span class="fa  fa-running"></span>
-                                    <span class="fa  fa-runningin"></span>
-                                </td>
-                            </tr>
-                        </table>
-    
-                        <h5><b>Volvería a tomarla:</b> Sí</h5>
-                        <h5><b>Optativa</b> </h5>
-                        <br>
-    
-                        <h5><b>Reseña:</b></h5>
-                        <h5> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi accusamus alias debitis culpa
-                            in, voluptates hic aut commodi obcaecati magni, fugiat pariatur officia! Rem sit distinctio
-                            quas, nostrum inventore corporis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni
-                            neque asperiores dolorem hic nisi blanditiis maxime nesciunt, sit eos officiis! Corporis totam
-                            mollitia tempore quisquam fuga eum, facere omnis enim? Lorem ipsum dolor sit amet consectetur
-                            adipisicing elit. Quisquam distinctio sit in, sapiente repellat sunt neque omnis magni deleniti
-                            repellendus adipisci consectetur nesciunt sed nisi porro ab. Fugiat, vitae sed.</h5>
-                    </div>
-                </div>
-    
-            </div>
+        
 
     </div>
+
 
 
     <nav aria-label=" Page navigation">
@@ -300,6 +98,229 @@
             </li>
         </ul>
     </nav>
+
+    <script>
+        let args = window.location.href.split('?');
+        if (args[1] == undefined || args[2] == undefined) {
+            window.location.href = "profes.html";
+        }
+
+        let profe = args[1];
+
+        profe = profe.split("%20").join(" ").split("%C3%B3").join("ó").split("%C3%A1").join("á").split("%C3%A9").join(
+            "é").split("%C3%AD").join("í").split("%C3%BA").join("ú");
+
+        let materia = args[2];
+
+        materia = materia.split("%20").join(" ").split("%C3%B3").join("ó").split("%C3%A1").join("á").split("%C3%A9")
+            .join("é").split("%C3%AD").join("í").split("%C3%BA").join("ú");
+
+
+        let sel = document.getElementById("selectMateria");
+
+        let xhr = new XMLHttpRequest();
+
+        // 2. Configurar: PUT actualizar archivo
+        xhr.open('GET', `http://localhost:3000/detalleMaterias?profesor=${profe}&materia=${materia}`);
+
+        xhr.setRequestHeader('Content-Type', 'application/json');
+
+        // 4. Enviar solicitud
+        xhr.send();
+
+        // 5. Una vez recibida la respuesta del servidor
+        xhr.onload = function () {
+
+            if (xhr.status != 200) { // analizar el estatus de la respuesta HTTP
+                // alert("Usuario Error")
+                // Ocurrió un error
+                alert("Error. No se pueden mostrar los datos de este docente para esta clase");
+
+
+            } else {
+                let detalle = JSON.parse(xhr.response)[0];
+
+                document.getElementById('numReviews').innerText = detalle.numReviews;
+                document.getElementById('curso').innerText = detalle.materia;
+                document.getElementById('docente').innerText = detalle.profesor;
+                document.getElementById("overall").innerText = detalle["experiencia general"];
+                document.getElementById("dificultad").innerText = detalle.dificultad;
+                document.getElementById("preparacion").innerText = detalle.preparación;
+                document.getElementById("carga").innerText = detalle["carga trabajo"];
+                document.getElementById("flexibilidad").innerText = detalle.flexibilidad;
+                document.getElementById("ritmo").innerText = detalle.ritmo;
+
+            }
+
+        }
+
+
+        let reviewReq = new XMLHttpRequest();
+
+        // 2. Configurar: PUT actualizar archivo
+        reviewReq.open('GET', `http://localhost:3000/reviews?profesor=${profe}&materia=${materia}`);
+
+        reviewReq.setRequestHeader('Content-Type', 'application/json');
+
+        // 4. Enviar solicitud
+        reviewReq.send();
+
+        // 5. Una vez recibida la respuesta del servidor
+        reviewReq.onload = function () {
+
+            if (reviewReq.status != 200) { // analizar el estatus de la respuesta HTTP
+                // alert("Usuario Error")
+                // Ocurrió un error
+                alert("Error. No se pueden mostrar las reseñas");
+
+
+            } else {
+                let reviews = JSON.parse(reviewReq.response);
+
+                let contain = document.getElementById("reviewContainer");
+
+                contain.innerHTML = "";
+                let id = 1;
+                reviews.forEach(element => {
+                    contain.innerHTML += `        <div class="reg-element">
+                    <div class="editable" hidden>
+                            <span class="del" aria-hidden="true">&times;</span>
+                        </div>
+
+                    <div class="jumbotron">
+                        <div class="card-body">
+                            <sup class="card-title">${element.expedienteEstudiante}</sup>
+
+                            <table width="30%">
+
+                                <tr>
+                                    <td width="70%">
+                                        <p class="sub d-inline-block"><b>Experiencia General: </b> </p>
+                                    </td>
+                                    <td id="overall${id}">
+                                        <span class="fa fa-star in"></span>
+                                        <span class="fa fa-star in"></span>
+                                        <span class="fa fa-star in"></span>
+                                        <span class="fa fa-star in"></span>
+                                        <span class="fa fa-star in"></span></td>
+                                </tr>
+                                <tr>
+                                    <td width="70%"> 
+                                        <p class="sub d-inline-block"><b>Dificultad: </b> </p>
+                                    </td>
+                                    <td id="dificultad${id}">
+                                        <span class="fas fa-exclamation-triangle in"></span>
+                                        <span class="fas fa-exclamation-triangle in"></span>
+                                        <span class="fas fa-exclamation-triangle in"></span>
+                                        <span class="fas fa-exclamation-triangle in"></span>
+                                        <span class="fas fa-exclamation-triangle in"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="70%">
+                                        <p class="sub d-inline-block"><b>Preparación: </b> </p>
+                                    </td>
+                                    <td id="preparacion${id}">
+                                        <span class="fa fa-graduation-cap in"></span>
+                                                <span class=" fa fa-graduation-cap in"></span>
+                                        <span class="fa fa-graduation-cap in"></span>
+                                            <span class=" fa fa-graduation-cap in"></span>
+                                        <span class="fa fa-graduation-cap in"></span>
+                                            
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="70%">
+                                            <p class=" sub d-inline-block"><b>Carga de Trabajo: </b> </p>
+                                    </td>
+                                    <td id="carga${id}">
+                                        <span class="fas fa-book in"></span>
+                                        <span class="fas fa-book in"></span>
+                                        <span class="fas fa-book in"></span>
+                                        <span class="fas fa-book in"></span>
+                                        <span class="fas fa-book in"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="70%">
+                                        <p class="sub d-inline-block"><b>Flexibilidad: </b> </p>
+                                    </td>
+                                    <td id="flexibilidad${id}">
+                                        <span class="fa fa-balance-scale in"></span>
+                                        <span class="fa fa-balance-scale in"></span>
+                                        <span class="fa fa-balance-scale in"></span>
+                                        <span class="fa fa-balance-scale in"></span>
+                                        <span class="fa fa-balance-scale in"></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="70%">
+                                        <p class="sub d-inline-block"><b>Ritmo de la Clase: </b> </p>
+                                    </td>
+                                    <td id="ritmo${id}">
+                                        <span class="fa  fa-running in"></span>
+                                        <span class="fa  fa-running in"></span>
+                                        <span class="fa  fa-running in"></span>
+                                        <span class="fa  fa-running in"></span>
+                                        <span class="fa  fa-running in"></span>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <h5><b>Volvería a tomarla:</b> ${element.takeAgain}</h5>
+                            <h5><b>Optativa:</b> ${element.Optativa} </h5>
+                            <br>
+
+                            <h5><b>Reseña:</b></h5>
+                            <h5> ${element.Reseña}</h5>
+                        </div>
+                    </div>
+
+                </div>`;
+
+                let i;
+
+                let temp = document.getElementById("overall"+id).children;
+                for(i=0; i<element["experiencia general"]; i++){
+                    temp[i].classList.remove("in");
+                }
+
+
+                temp = document.getElementById("dificultad"+id).children;
+                for(i=0; i<element["dificultad"]; i++){
+                    temp[i].classList.remove("in");
+                }
+
+                temp = document.getElementById("preparacion"+id).children;
+                for(i=0; i<element.preparación; i++){
+                    temp[i].classList.remove("in");
+                }
+
+
+                temp = document.getElementById("carga"+id).children;
+                for(i=0; i<element["carga trabajo"]; i++){
+                    temp[i].classList.remove("in");
+                }
+                
+                temp = document.getElementById("flexibilidad"+id).children;
+                for(i=0; i<element.flexibilidad; i++){
+                    temp[i].classList.remove("in");
+                }
+
+
+                temp = document.getElementById("ritmo"+id).children;
+                for(i=0; i<element.ritmo; i++){
+                    temp[i].classList.remove("in");
+                }
+
+                id++;
+                });
+
+                
+            }
+
+        }
+    </script>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
