@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="styles/nav.css">
     <link rel="stylesheet" href="styles/reviews.css">
     <link rel="stylesheet" href="styles/pages.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -19,6 +20,9 @@
 
 <body>
 
+    <nav class="navbar navbar-expand-sm navbar-dark" id="navbar">
+
+    </nav>
     <div class="form-contain">
 
         <p id="revQty">Numero de Reseñas: <span id="numReviews"></span></p>
@@ -68,12 +72,12 @@
     </div>
 
 
-    <button class="btn my-2 my-sm-0" type="submit">Añadir Reseña</button>
+    <button class="btn my-2 my-sm-0" id="addReview">Añadir Reseña</button>
 
 
     <div class="card-registry" id="reviewContainer">
 
-        
+
 
     </div>
 
@@ -99,11 +103,25 @@
         </ul>
     </nav>
 
+
+    <script src="scripts/displayNavBar.js"></script>
+
     <script>
+        if (localStorage.role != "Estudiante") {
+            document.getElementById("addReview").setAttribute("hidden", true);
+        }
+
+        document.getElementById("addReview").addEventListener("click", doReview);
+
+        // Falta mostrar borrado para admin 
+        //Falta crear modal y mostrar edicion para coordi y que recomiende al admin borrar una reseña
+
+
         let args = window.location.href.split('?');
         if (args[1] == undefined || args[2] == undefined) {
             window.location.href = "profes.html";
         }
+
 
         let profe = args[1];
 
@@ -114,6 +132,12 @@
 
         materia = materia.split("%20").join(" ").split("%C3%B3").join("ó").split("%C3%A1").join("á").split("%C3%A9")
             .join("é").split("%C3%AD").join("í").split("%C3%BA").join("ú");
+
+
+        function doReview(){
+            window.location.href = `review_form.html?${profe}?${materia}`;
+        }
+
 
 
         let sel = document.getElementById("selectMateria");
@@ -278,45 +302,45 @@
 
                 </div>`;
 
-                let i;
+                    let i;
 
-                let temp = document.getElementById("overall"+id).children;
-                for(i=0; i<element["experiencia general"]; i++){
-                    temp[i].classList.remove("in");
-                }
-
-
-                temp = document.getElementById("dificultad"+id).children;
-                for(i=0; i<element["dificultad"]; i++){
-                    temp[i].classList.remove("in");
-                }
-
-                temp = document.getElementById("preparacion"+id).children;
-                for(i=0; i<element.preparación; i++){
-                    temp[i].classList.remove("in");
-                }
+                    let temp = document.getElementById("overall" + id).children;
+                    for (i = 0; i < element["experiencia general"]; i++) {
+                        temp[i].classList.remove("in");
+                    }
 
 
-                temp = document.getElementById("carga"+id).children;
-                for(i=0; i<element["carga trabajo"]; i++){
-                    temp[i].classList.remove("in");
-                }
-                
-                temp = document.getElementById("flexibilidad"+id).children;
-                for(i=0; i<element.flexibilidad; i++){
-                    temp[i].classList.remove("in");
-                }
+                    temp = document.getElementById("dificultad" + id).children;
+                    for (i = 0; i < element["dificultad"]; i++) {
+                        temp[i].classList.remove("in");
+                    }
+
+                    temp = document.getElementById("preparacion" + id).children;
+                    for (i = 0; i < element.preparación; i++) {
+                        temp[i].classList.remove("in");
+                    }
 
 
-                temp = document.getElementById("ritmo"+id).children;
-                for(i=0; i<element.ritmo; i++){
-                    temp[i].classList.remove("in");
-                }
+                    temp = document.getElementById("carga" + id).children;
+                    for (i = 0; i < element["carga trabajo"]; i++) {
+                        temp[i].classList.remove("in");
+                    }
 
-                id++;
+                    temp = document.getElementById("flexibilidad" + id).children;
+                    for (i = 0; i < element.flexibilidad; i++) {
+                        temp[i].classList.remove("in");
+                    }
+
+
+                    temp = document.getElementById("ritmo" + id).children;
+                    for (i = 0; i < element.ritmo; i++) {
+                        temp[i].classList.remove("in");
+                    }
+
+                    id++;
                 });
 
-                
+
             }
 
         }

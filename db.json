@@ -10,7 +10,6 @@
       "carrera": "Ingeniería en Sistemas Computacionales",
       "email": "is716122@iteso.mx",
       "id": 1
-
     },
     {
       "nombre": "Edgar",
@@ -84,12 +83,12 @@
       "id": 1
     },
     {
-        "nombre": "Sexualidad y Sociedad",
-        "descripción": "",
-        "creditos": "8",
-        "departamento": "Eje de Debates",
-        "id": 1
-      },
+      "nombre": "Sexualidad y Sociedad",
+      "descripción": "",
+      "creditos": "8",
+      "departamento": "Eje de Debates",
+      "id": 1
+    },
     {
       "nombre": "Ética, Identidad y Profesión",
       "descripción": "",
@@ -163,7 +162,6 @@
       "ritmo": "4",
       "id": 3
     },
-
     {
       "profesor": "Ivan Piza",
       "materia": "Programación Orientada a Objetos",
@@ -189,8 +187,6 @@
       "id": 4
     }
   ],
-
-            
   "Reviews": [
     {
       "expedienteEstudiante": "716122",
@@ -208,68 +204,65 @@
       "id": 1
     },
     {
-        "expedienteEstudiante": "715172",
-        "profesor": "Elsa Perez",
-        "materia": "Ética, Identidad y Profesión",
-        "experiencia general": "5",
-        "dificultad": "2",
-        "preparación": "4",
-        "carga trabajo": "3",
-        "flexibilidad": "4",
-        "ritmo": "4",
-        "takeAgain": "Si",
-        "Optativa": "No",
-        "Reseña": "Todo bien con la clase. Pocas Tareas",
-        "id": 2
-      },
-
-      {
-        "expedienteEstudiante": "715772",
-        "profesor": "Elsa Perez",
-        "materia": "Ética, Identidad y Profesión",
-        "experiencia general": "3",
-        "dificultad": "4",
-        "preparación": "3",
-        "carga trabajo": "4",
-        "flexibilidad": "3",
-        "ritmo": "4",
-        "takeAgain": "No",
-        "Optativa": "No",
-        "Reseña": "Recomiendo tomarla con alguien más",
-        "id": 3
-      },
-
-      {
-        "expedienteEstudiante": "715772",
-        "profesor": "Elsa Perez",
-        "materia": "Sexualidad y Sociedad",
-        "experiencia general": "4",
-        "dificultad": "4",
-        "preparación": "4",
-        "carga trabajo": "4",
-        "flexibilidad": "4",
-        "ritmo": "4",
-        "takeAgain": "Si",
-        "Optativa": "No",
-        "Reseña": "Mucha lectura pero muy interesante.",
-        "id": 3
-      },
-
-      {
-        "expedienteEstudiante": "716122",
-        "profesor": "Ivan Piza",
-        "materia": "Programación Orientada a Objetos",
-        "experiencia general": "5",
-        "dificultad": "4",
-        "preparación": "4",
-        "carga trabajo": "4",
-        "flexibilidad": "3",
-        "ritmo": "4",
-        "takeAgain": "Si",
-        "Optativa": "No",
-        "Reseña": "Es de las clases más interesantes que he tenido. Pero es complicada y rápida",
-        "id": 3
-      }
+      "expedienteEstudiante": "715172",
+      "profesor": "Elsa Perez",
+      "materia": "Ética, Identidad y Profesión",
+      "experiencia general": "5",
+      "dificultad": "2",
+      "preparación": "4",
+      "carga trabajo": "3",
+      "flexibilidad": "4",
+      "ritmo": "4",
+      "takeAgain": "Si",
+      "Optativa": "No",
+      "Reseña": "Todo bien con la clase. Pocas Tareas",
+      "id": 2
+    },
+    {
+      "expedienteEstudiante": "715772",
+      "profesor": "Elsa Perez",
+      "materia": "Ética, Identidad y Profesión",
+      "experiencia general": "3",
+      "dificultad": "4",
+      "preparación": "3",
+      "carga trabajo": "4",
+      "flexibilidad": "3",
+      "ritmo": "4",
+      "takeAgain": "No",
+      "Optativa": "No",
+      "Reseña": "Recomiendo tomarla con alguien más",
+      "id": 3
+    },
+    {
+      "expedienteEstudiante": "715772",
+      "profesor": "Elsa Perez",
+      "materia": "Sexualidad y Sociedad",
+      "experiencia general": "4",
+      "dificultad": "4",
+      "preparación": "4",
+      "carga trabajo": "4",
+      "flexibilidad": "4",
+      "ritmo": "4",
+      "takeAgain": "Si",
+      "Optativa": "No",
+      "Reseña": "Mucha lectura pero muy interesante.",
+      "id": 3
+    },
+    {
+      "expedienteEstudiante": "716122",
+      "profesor": "Ivan Piza",
+      "materia": "Programación Orientada a Objetos",
+      "experiencia general": "5",
+      "dificultad": "4",
+      "preparación": "4",
+      "carga trabajo": "4",
+      "flexibilidad": "3",
+      "ritmo": "4",
+      "takeAgain": "Si",
+      "Optativa": "No",
+      "Reseña": "Es de las clases más interesantes que he tenido. Pero es complicada y rápida",
+      "id": 3
+    }
   ],
   "Requests": [
     {

@@ -69,7 +69,15 @@ function login(event) {
 
                     localStorage.expediente = obj[0].expediente;
                     localStorage.role = obj[0].rol;
-                    window.location.href = "/index.html"
+                    let newLoc = window.location.href
+
+                    newLoc = newLoc.split('/');
+
+                    newLoc[newLoc.length-1] = "index.html";
+
+                    newLoc = newLoc.join("/");
+
+                    window.location.href = newLoc;
                 } else {
                     document.getElementById("registro_incorrect").style.display = "block";
                 }
