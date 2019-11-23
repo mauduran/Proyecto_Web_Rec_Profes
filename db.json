@@ -167,10 +167,19 @@
       "flexibilidad": "4",
       "ritmo": "4.5",
       "id": 3
+    },
+    {
+      "profesor": "Oscar González",
+      "materia": "Programación Orientada a Objetos",
+      "numReviews": "0",
+      "experiencia general": "0",
+      "dificultad": "0",
+      "preparación": "0",
+      "carga trabajo": "0",
+      "flexibilidad": "0",
+      "ritmo": "0",
+      "id": 4
     }
-
-
-    
   ],
   "Reviews": [
     {
