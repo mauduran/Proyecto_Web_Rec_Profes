@@ -388,20 +388,18 @@
                         registro.classList.add("reg-element");
                         registro.innerHTML = `
             <div class="jumbotron" data-toggle="collapse" data-target="#collapse${id}">
-                <div class="card-body">
+                
+                    <div class="card-body">
                     <h5 class="card-title"> ${element.nombre}</h5>
                     <p class="card-text "><b>Departamento: </b>${element.departamento}</p>
                     <p class="card-text "><b>Créditos: </b>${element.creditos}</p>
-
+                    <p class="card-text "><b>Descripción: </b>${element.descripción}</p>
+                    
                 </div>
             </div>
 
             <div class="collapse" id="collapse${id}">
                 <div class="card">
-                    <p class="sub"><b>Descripción: </b> Lorem, ipsum dolor sit amet 
-                      consectetur adipisicing elit. Tenetur consectetur at laudantium eius pariatur
-                      veritatis nostrum itaque vitae eaque deleniti voluptatem, quam maiores
-                      exercitationem minima tempora commodi voluptatibus amet et.</p>
                     <div class="profes" id="profes${id}"">
                     </div>
                 </div>`;
