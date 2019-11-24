@@ -92,7 +92,7 @@ function saveMateriasProfe(datos) {
         if (xhr.status != 200) {
             alert(xhr.status + ': ' + xhr.statusText);
         } else {
-            console.log("Relación registada exitosamente");
+            alert("Relación registada exitosamente");
         }
     }
 };
