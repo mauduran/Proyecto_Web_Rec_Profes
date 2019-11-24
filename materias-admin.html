@@ -301,11 +301,11 @@
                             <input type="number" class="form-control input-lg mt-3" id="credi" value=""
                                 placeholder="No. de créditos..">
 
-                            <select id="selectDpto2" class="form-control mt-3" value="">
+                            <select id="selectDpto2" class="form-control mt-3" value="" placeholder="Departamento">
                                 <option selected disabled>Departamento</option>
                             </select>
                             <textarea type="text" name="descrip" id="descropcion" class="form-control mt-3"
-                                placeholder="Descripción..." aria-describedby="helpId" rows="4"></textarea>
+                                placeholder="Descripción..." value="" aria-describedby="helpId" rows="4"></textarea>
                         </div>
                         <button type="submit" class="btn btn-success mt-3" id="btnEditar">Editar</button>
                         <button type="button" class="btn btn-secondary mt-3" data-dismiss="modal">Cancelar</button>
@@ -320,14 +320,17 @@
 
     <script>
         let container = document.getElementById("materias-container");
-
         let seleccion = document.getElementById("selectDpto");
-
         let input = document.getElementById("nombreMateria");
-
         let btnBuscar = document.getElementById("BuscarMateria");
-        btnBuscar.addEventListener('click', stop);
 
+        let edMateria = document.getElementById("nombre");
+        let edCretitos = document.getElementById("credi");
+        let edDepartamento = document.getElementById("selectDpto2");
+        let edDescripcion = document.getElementById("descropcion");
+        let btnEditar = document.getElementById("btnEditar");
+
+        btnBuscar.addEventListener('click', stop);
 
         filtrarDatos();
 
@@ -390,7 +393,7 @@
                         registro.classList.add("reg-element");
                         registro.innerHTML = `
             <div class="jumbotron" data-toggle="collapse" data-target="#collapse${id}">
-                    <div class="editable" data-toggle="modal" data-target="#registro" onclick="guardarID('${element.id}')">
+                    <div class="editable" data-toggle="modal" data-target="#registro" onclick="edModal('${element.id}', '${element.nombre}')">
                         <span class="ed"><i class="fa fa-pen"></i></span>
                     </div>
 
@@ -439,17 +442,22 @@
             window.location.href = `review.html?${profesor}?${materia}`;
         }
 
-        function guardarID(mid) {
-            localStorage.MID = mid;
+        function edModal(eId, eNombre) {
+            localStorage.MID = eId;
+            edMateria.value = eNombre;
+            edDescripcion.value = "";
+            edCretitos.value = "";
+            edDepartamento.value = "";
         }
 
-        let btnEditar = document.getElementById("btnEditar")
         btnEditar.addEventListener('click', editarM);
 
-        function editarM(){
-           buscar(localStorage.MID);
-           
+        function editarM() {
+            event.preventDefault();
+            buscar(localStorage.MID);
+
         }
+
         function buscar(mid) {
             let xhr = new XMLHttpRequest();
             xhr.open('GET', `http://localhost:3000/materias?id=${mid}`);
@@ -459,12 +467,30 @@
                 if (xhr.status != 200) {
                     alert(xhr.status + ': ' + xhr.statusText);
                 } else {
-                    temp = JSON.parse(xhr.response);
-                    console.log(temp[0]);
+                    let temp = JSON.parse(xhr.response)[0];
+
+                    if (edDescripcion.value != "") temp.descripción = edDescripcion.value;
+                    if (edCretitos.value != "") temp.creditos = edCretitos.value;
+                    if (edDepartamento.value != "") temp.departamento = edDepartamento.value;
+                    editarMateria(temp);
+
                 }
             }
         };
 
+        function editarMateria(datos) {
+            let xhr = new XMLHttpRequest();
+            xhr.open('PUT', `http://localhost:3000/materias/${datos.id}`);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.send([JSON.stringify(datos)]);
+            xhr.onload = function () {
+                if (xhr.status != 200) {
+                    alert(xhr.status + ': ' + xhr.statusText);
+                } else {
+                    alert("Materia editada con exito");
+                }
+            }
+        };
         let select2 = document.getElementById("selectDpto2");
         let xhr2 = new XMLHttpRequest();
         // 2. Configurar: PUT actualizar archivo
