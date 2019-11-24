@@ -21,7 +21,6 @@
             margin-top: 2%;
         }
 
-
         .row,
         h1 {
             text-align: center;
@@ -29,12 +28,10 @@
             font-family: Helvetica, sans-serif;
         }
 
-
         .center {
             margin: auto;
             margin-top: 1%;
         }
-
 
         .card,
         .collapse {
@@ -44,7 +41,6 @@
         .card {
             background: aliceblue;
         }
-
 
         .card:nth-child(even) {
             margin: 0 auto;
@@ -89,7 +85,6 @@
 
         .profes,
         .materias p:first-of-type {
-
             margin: 0 2% 0 0;
         }
 
@@ -110,13 +105,11 @@
             color: white;
             width: 90%;
             margin: 0 0 2% 2%;
-
         }
 
         .profes div:hover,
         .materias div:hover {
             background: #007F9D;
-
         }
     </style>
     <!-- Bootstrap CSS -->
@@ -130,6 +123,9 @@
 
 <body>
 
+    <nav class="navbar navbar-expand-sm navbar-dark" id="navbar">
+    </nav>
+    
     <div class="row justify-content-center">
         <div class="col">
             <h4>Profesores</h4>
@@ -147,11 +143,12 @@
     </div>
 
     <!-- Optional JavaScript -->
+    <script src="scripts/displayNavBar.js"></script>
     <script>
         let contenedorP = document.getElementById("profes-container");
         let contenedorM = document.getElementById("materias-container");
-
-        let input = "os";
+        let input = localStorage.busquedaNB;
+        
         let id2 = 1;
         let id = 1;
 
@@ -161,7 +158,6 @@
             filtarProfes();
             filtarMaterias();
         }
-
 
         function filtarProfes() {
             let xhreq = new XMLHttpRequest();
@@ -175,11 +171,9 @@
                     // alert("Usuario Error")
                     // Ocurrió un error
                     alert("Error.");
-
                 } else {
                     contenedorP.innerHTML = "";
                     let profes = JSON.parse(xhreq.response);
-
                     profes.forEach(element => {
                         let registro = document.createElement('div');
                         registro.classList.add("reg-element");
@@ -193,34 +187,25 @@
                                 <p class="sub"><b>Departamento: </b> ${element.departamento}</p>
                             </div>
                         </div>
-
                         <div class="collapse" id="collapse${id}">
                             <div class="card">
                                 <p class="sub"><b>Antigüedad: </b>${id}</p>
                                 <div class="materias" id="materias${id}">
-
                                 </div>
                             </div>
                         </div>`;
-
                         contenedorP.appendChild(registro);
                         id++;
                         let requestDetalle = new XMLHttpRequest();
-
                         requestDetalle.open('GET', "http://localhost:3000/detalleMaterias?profesor=" +
                             element.nombre);
-
                         requestDetalle.setRequestHeader('Content-Type', 'application/json');
-
                         // 4. Enviar solicitud
                         requestDetalle.send();
-
                         requestDetalle.onload = function () {
                             if (requestDetalle.status == 200) {
                                 let detalle = JSON.parse(requestDetalle.response);
-
                                 detalle.forEach(el => {
-
                                     document.getElementById("materias" + id2).innerHTML +=
                                         `<div onclick="mostrarReseñas('${el.profesor}', '${el.materia}')"><span class="input-group-addon"><i class="fa fa-star"></i></span>
                                          <p>${el["experiencia general"]}</p><p>${el.materia}</p><anchor style="margin-left:150px;"><b>${el.numReviews + " "}</b>Reseñas</anchor></div>`;
@@ -249,7 +234,6 @@
                 } else {
                     contenedorM.innerHTML = "";
                     let materias = JSON.parse(xhreq.response);
-
                     materias.forEach(element => {
                         let registro = document.createElement('div');
                         registro.classList.add("reg-element");
@@ -263,7 +247,6 @@
                     
                 </div>
             </div>
-
             <div class="collapse" id="collapse${id}">
                 <div class="card">
                     <div class="profes" id="profes${id}"">
@@ -271,14 +254,11 @@
                 </div>`;
                         contenedorM.appendChild(registro);
                         let requestDetalle = new XMLHttpRequest();
-
                         requestDetalle.open('GET', "http://localhost:3000/detalleMaterias?materia=" +
                             element.nombre);
                         requestDetalle.setRequestHeader('Content-Type', 'application/json');
-
                         // 4. Enviar solicitud
                         requestDetalle.send();
-
                         requestDetalle.onload = function () {
                             if (requestDetalle.status == 200) {
                                 let detalle = JSON.parse(requestDetalle.response);
@@ -299,8 +279,8 @@
         function mostrarReseñas(profesor, materia) {
             window.location.href = `review.html?${profesor}?${materia}`;
         }
-    </script>
 
+    </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">

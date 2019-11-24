@@ -62,7 +62,7 @@ function addMateria(datos) {
         }
         saveDetalleMateria(detalle);
         datos.materias.push(materia.value);
-        console.log(datos);
+        //console.log(datos);
         saveMateriasProfe(datos);
 
     }

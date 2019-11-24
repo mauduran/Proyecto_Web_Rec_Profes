@@ -297,7 +297,7 @@
             // 2. Configurar: PUT actualizar archivo
             let url = 'http://localhost:3000/profes';
 
-            console.log(seleccion.value);
+            //console.log(seleccion.value);
 
             if (seleccion.value == "" && input.value == "") {
                 xhreq.open('GET', url);
@@ -306,7 +306,7 @@
                 if (seleccion.value == "") {
                     url += "nombre_like=" + input.value;
                 } else if (input.value == "") {
-                    console.log("hola")
+                    //console.log("hola")
                     url += "departamento=" + seleccion.value;
                 } else {
                     url += "nombre_like=" + input.value + "&departamento=" + seleccion.value;
@@ -396,7 +396,7 @@
 
                     if(localStorage.role=="Admin" || localStorage.role=="Coordinador"){
                             Array.from(document.getElementsByClassName("editable")).forEach(element =>{
-                            console.log("element");
+                            //console.log("element");
                             element.removeAttribute("hidden");
                         });
                     }
