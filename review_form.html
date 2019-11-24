@@ -450,7 +450,7 @@
             function paso3(resp) {
                 if (resp.length > 0) {
                     alert("Ya reseñaste esta materia");
-                    // window.location.href = `review.html?${profe}?${materia}`
+                    window.location.href = `review.html?${profe}?${materia}`
                 } else {
                     let overall, difficulty, preparation, workload, flexible, pace;
                     let ovrl = document.querySelector("[name=exp]:checked").value;
@@ -545,7 +545,7 @@
                     if (x.status != 200 && x.status != 201) { // analizar el estatus de la respuesta HTTP
 
                         alert("ha habido un error");
-                        // window.location.href = `review.html?${profesor}?${materia}`
+                        window.location.href = `review.html?${profesor}?${materia}`
 
 
                     } else {
@@ -604,10 +604,11 @@
                         // alert("Usuario Error")
                         // Ocurrió un error
                         alert("ha habido un error");
-                        // window.location.href = `review.html?${profesor}?${materia}`
+                        window.location.href = `review.html?${profesor}?${materia}`;
 
-
-                    } 
+                    } else{
+                        window.location.href = `review.html?${profesor}?${materia}`;
+                    }
                 };
 
 
