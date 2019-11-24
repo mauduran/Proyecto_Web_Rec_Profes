@@ -13,75 +13,92 @@
             width: 100%;
             background-color: #c2e5ed;
         }
+
         h4 {
             text-align: Center;
             font-family: 'Kaushan Script', cursive;
             font-size: 30px;
             margin-top: 2%;
         }
+
         .row,
         h1 {
             text-align: center;
             font-weight: 400;
             font-family: Helvetica, sans-serif;
         }
+
         .center {
             margin: auto;
             margin-top: 1%;
         }
+
         .card,
         .collapse {
             width: 100%;
         }
+
         .card {
             background: aliceblue;
         }
+
         .card:nth-child(even) {
             margin: 0 auto;
         }
+
         .card:nth-child(even):hover {
             top: 1px;
             cursor: pointer;
         }
+
         .card-registry {
             position: relative;
             width: 90%;
             margin: 0% auto 1% auto;
         }
+
         .sub {
             margin: 0 2%;
             text-align: justify;
         }
+
         .card-registry .reg-element:nth-child(even)>.jumbotron {
             background: #007F9D;
             color: white;
         }
+
         .card-registry .reg-element:nth-child(odd)>.jumbotron {
             background: white;
         }
+
         .jumbotron {
             margin: 0 auto;
             padding: 0;
             border: 1px solid #007F9D;
             cursor: pointer;
         }
+
         .profes p,
         .materias p {
             display: inline-block;
         }
+
         .profes,
         .materias p:first-of-type {
             margin: 0 2% 0 0;
         }
+
         .profes span,
         .materias span {
             margin-left: 2%;
         }
+
         .profes,
         .materias {
             padding-bottom: 5px;
             margin-top: 1%;
         }
+
         .profes div,
         .materias div {
             background: #00a7cc;
@@ -89,6 +106,7 @@
             width: 90%;
             margin: 0 0 2% 2%;
         }
+
         .profes div:hover,
         .materias div:hover {
             background: #007F9D;
@@ -105,6 +123,9 @@
 
 <body>
 
+    <nav class="navbar navbar-expand-sm navbar-dark" id="navbar">
+    </nav>
+    
     <div class="row justify-content-center">
         <div class="col">
             <h4>Profesores</h4>
@@ -122,17 +143,22 @@
     </div>
 
     <!-- Optional JavaScript -->
+    <script src="scripts/displayNavBar.js"></script>
     <script>
         let contenedorP = document.getElementById("profes-container");
         let contenedorM = document.getElementById("materias-container");
         let input = localStorage.busquedaNB;
+        
         let id2 = 1;
         let id = 1;
+
         filtrarDatos();
+
         function filtrarDatos() {
             filtarProfes();
             filtarMaterias();
         }
+
         function filtarProfes() {
             let xhreq = new XMLHttpRequest();
             xhreq.open('GET', `http://localhost:3000/profes?nombre_like=${input}`);
@@ -191,6 +217,7 @@
                 }
             }
         }
+
         function filtarMaterias() {
             let xhreq = new XMLHttpRequest();
             // 2. Configurar: PUT actualizar archivo
@@ -248,9 +275,11 @@
                 }
             }
         }
+
         function mostrarReseñas(profesor, materia) {
             window.location.href = `review.html?${profesor}?${materia}`;
         }
+
     </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -263,4 +292,5 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 </body>
-</html> 
+
+</html>
