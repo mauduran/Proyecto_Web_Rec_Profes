@@ -123,67 +123,65 @@
 
 <body>
 
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Administar</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td><a href="Revisar_Sugerencias.html">Mensajes del coordinador</a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td><a href="AltaMateria.html">Alta de materias</a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td><a href="AltaMaestro.html">Alta de maestros</a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td><a href="Alta-MaestroMateria.html">Alta maestro-materia</a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td><a href="RevisionCredenciales.html">Revisión credenciales</a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td><a href="materias-admin.html">Administración de materias</a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">7</th>
+                                <td><a href="users.html">Administración de usuarios</a></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--NavBar-->
     <nav class="navbar navbar-expand-sm navbar-dark" id="navbar">
+
     </nav>
 
-     <!--MODAL-->
-     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-     <div class="modal-dialog" role="document">
-         <div class="modal-content">
-             <div class="modal-header">
-                 <h5 class="modal-title" id="exampleModalLabel">Administar</h5>
-                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                     <span aria-hidden="true">&times;</span>
-                 </button>
-             </div>
-             <div class="modal-body">
-                 <table class="table table-hover">
-                     <tbody>
-                         <tr>
-                             <th scope="row">1</th>
-                             <td><a href="Revisar_Sugerencias.html">Mensajes del coordinador</a></td>
-                         </tr>
-                         <tr>
-                             <th scope="row">2</th>
-                             <td><a href="AltaMateria.html">Alta de materias</a></td>
-                         </tr>
-                         <tr>
-                             <th scope="row">3</th>
-                             <td><a href="AltaMaestro.html">Alta de maestros</a></td>
-                         </tr>
-                         <tr>
-                             <th scope="row">4</th>
-                             <td><a href="Alta-MaestroMateria.html">Alta maestro-materia</a></td>
-                         </tr>
-                         <tr>
-                             <th scope="row">5</th>
-                             <td><a href="RevisionCredenciales.html">Revisión credenciales</a></td>
-                         </tr>
-                         <tr>
-                             <th scope="row">6</th>
-                             <td><a href="materias-admin.html">Administración de materias</a></td>
-                         </tr>
-                         <tr>
-                             <th scope="row">7</th>
-                             <td><a href="review_admin.html">Administracion de reviews</a></td>
-                         </tr>
-                         <tr>
-                             <th scope="row">8</th>
-                             <td><a href="users.html">Administración de usuarios</a></td>
-                         </tr>
-
-                     </tbody>
-                 </table>
-
-             </div>
-             <div class="modal-footer">
-                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-             </div>
-         </div>
-     </div>
- </div>
-    
     <div class="row justify-content-center">
         <div class="col">
             <h4>Profesores</h4>
@@ -206,7 +204,7 @@
         let contenedorP = document.getElementById("profes-container");
         let contenedorM = document.getElementById("materias-container");
         let input = localStorage.busquedaNB;
-        
+
         let id2 = 1;
         let id = 1;
 
@@ -337,7 +335,6 @@
         function mostrarReseñas(profesor, materia) {
             window.location.href = `review.html?${profesor}?${materia}`;
         }
-
     </script>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
