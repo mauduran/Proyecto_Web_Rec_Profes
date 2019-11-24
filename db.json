@@ -84,31 +84,31 @@
     },
     {
       "nombre": "Sexualidad y Sociedad",
-      "descripción": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
-      "creditos": "8",
+      "descripción": "En el programa de este curso se realiza una aproximación analítica a la sexualidad, en sus dimensiones corporal, psicológica, afectiva, interpersonal, social, histórica, ética y trascendente.",
+      "creditos": "4",
       "departamento": "Eje de Debates",
-      "id": 1
+      "id": 2
     },
     {
       "nombre": "Ética, Identidad y Profesión",
-      "descripción": "",
-      "creditos": "8",
+      "descripción": "Espacio para alentar procesos de autoconocimiento, autoafirmación y discernimiento sobre los interrogantes éticos fundamentales que aparecen en el proceso de construcción de la persona y la profesión.",
+      "creditos": "4",
       "departamento": "Eje de Debates",
-      "id": 2
+      "id": 3
     },
     {
       "nombre": "Desarrollo de Aplicaciones y Servicios Web",
       "descripción": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
       "creditos": "8",
       "departamento": "Electrónica, Sistemas e Informática",
-      "id": 3
+      "id": 4
     },
     {
       "nombre": "Estrategias Algorítmicas",
       "descripción": "Lorem, ipsum dolor sit amet consectetur adipisicing elit.",
       "creditos": "8",
       "departamento": "Electrónica, Sistemas e Informática",
-      "id": 4
+      "id": 5
     }
   ],
   "carreras": [
@@ -172,7 +172,7 @@
       "carga trabajo": "4",
       "flexibilidad": "3",
       "ritmo": "4",
-      "id": 3
+      "id": 4
     },
     {
       "profesor": "Oscar González",
@@ -184,7 +184,7 @@
       "carga trabajo": "0",
       "flexibilidad": "0",
       "ritmo": "0",
-      "id": 4
+      "id": 5
     }
   ],
   "Reviews": [
@@ -246,7 +246,7 @@
       "takeAgain": "Si",
       "Optativa": "No",
       "Reseña": "Mucha lectura pero muy interesante.",
-      "id": 3
+      "id": 4
     },
     {
       "expedienteEstudiante": "716122",
@@ -261,7 +261,7 @@
       "takeAgain": "Si",
       "Optativa": "No",
       "Reseña": "Es de las clases más interesantes que he tenido. Pero es complicada y rápida",
-      "id": 3
+      "id": 5
     }
   ],
   "Requests": [
