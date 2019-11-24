@@ -29,10 +29,7 @@ if (localStorage.role == "Coordinador" || localStorage.role == "Estudiante") {
         </li>
 
         </ul>`;
-} else if (localStorage.role == "") {
-
-
-
+} else if (localStorage.role == "Admin") {
 
     nav.innerHTML = `<img id="logo" src="/img/iteso.png" alt="">
     <a class="navbar-brand" href="#">Rate my Profe ITESO</a>
