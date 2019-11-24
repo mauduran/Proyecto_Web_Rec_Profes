@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>Reseñar</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -34,6 +34,7 @@
 
     <link rel="stylesheet" href="styles/reviews.css">
 
+    <link rel="stylesheet" href="styles/nav.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <script src="https://kit.fontawesome.com/6f7b00284b.js" crossorigin="anonymous"></script>
 
@@ -41,54 +42,58 @@
 
 <body>
 
+    <nav class="navbar navbar-expand-sm navbar-dark" id="navbar">
+
+    </nav>
+
+
     <div class="form-contain">
 
-        <h1>Programación Orientada a Objetos</h1>
-        <h2>Ana Gabriela Cabral</h2>
+        <p id="revQty">Numero de Reseñas: <span id="numReviews"></span></p>
+        <h1 id="curso"></h1>
+        <h2 id="docente"></h2>
 
         <div class="grp d-inline-block">
             <h4 class="d-inline-block">Experiencia General:</h4>
             <span class="fa fa-star bg g"></span>
-            <h5 class="d-inline-block">4.54</h5>
+            <h5 class="d-inline-block" id="overall"></h5>
         </div>
 
         <div class="grp d-inline-block">
             <h4 class="d-inline-block">Nivel de Dificultad:</h4>
             <span class="fa fa-exclamation-triangle bg"></span>
-            <h5 class="d-inline-block">4.92</h5>
+            <h5 class="d-inline-block" id="dificultad"></h5>
         </div>
 
 
 
         <div class="grp d-inline-block">
             <h4 class="d-inline-block">Preparación:</h4>
-            <span class="fas fa-graduation-cap bg "></span>
-            <h5 class="d-inline-block">4.38</h5>
+            <span class="fas fa-graduation-cap bg"></span>
+            <h5 class="d-inline-block" id="preparacion"></h5>
         </div>
 
         <div class="grp d-inline-block">
             <h4 class="d-inline-block">Carga Trabajo:</h4>
             <span class="fas fa-book bg"></span>
-            <h5 class="d-inline-block">3.5</h5>
+            <h5 class="d-inline-block" id="carga"></h5>
         </div>
 
         <div class="grp d-inline-block">
             <h4 class="d-inline-block">Flexibilidad:</h4>
             <span class="fas fa-balance-scale bg"></span>
-            <h5 class="d-inline-block">3.0</h5>
+            <h5 class="d-inline-block" id="flexibilidad"></h5>
         </div>
 
 
         <div class="grp d-inline-block">
             <h4 class="d-inline-block">Ritmo de la clase:</h4>
             <span class="fas fa-running bg"></span>
-            <h5 class="d-inline-block">4.8</h5>
+            <h5 class="d-inline-block" id="ritmo"></h5>
         </div>
 
 
-
     </div>
-
     <div class="card-registry">
 
 
@@ -97,239 +102,513 @@
                                 <span class="del" aria-hidden="true">&times;</span>
                             </div> -->
 
-            <div class="jumbotron">
-                <div class="card-body">
-                    <sup class="card-title">is716XXX</sup>
+            <form id="reviewForm">
+                <div class="jumbotron">
+                    <div class="card-body">
 
-                    <table width="30%">
+                        <table width="30%">
 
-                        <tr>
-                            <td>
-                                <p class="sub d-inline-block"><b>Experiencia General: </b> </p>
-                            </td>
-                            <td>
-                                <input hidden type="radio" name="exp" value="1" id="exp1">
-                                <input hidden type="radio" name="exp" value="2" id="exp2">
-                                <input hidden type="radio" name="exp" value="3" id="exp3">
-                                <input hidden type="radio" name="exp" value="4" id="exp4">
-                                <input hidden type="radio" name="exp" value="5" id="exp5">
-
-
-                                <div class="stars">
-                                    <label for="exp1"><span id="st1" onclick="rate('st',1)"
-                                            onmouseover="hoverRate('st',1)" onmouseout="clearRate('st')"
-                                            class="fa fa-star"></span></label>
-                                    <label for="exp2"><span id="st2" onclick="rate('st',2)"
-                                            onmouseover="hoverRate('st',2)" onmouseout="clearRate('st')"
-                                            class="fa fa-star"></span></label>
-                                    <label for="exp3"><span id="st3" onclick="rate('st',3)"
-                                            onmouseover="hoverRate('st',3)" onmouseout="clearRate('st')"
-                                            class="fa fa-star"></span></label>
-                                    <label for="exp4"><span id="st4" onclick="rate('st',4)"" onmouseover="
-                                            hoverRate('st',4)" onmouseout="clearRate('st')"
-                                            class="fa fa-star"></span></label>
-                                    <label for="exp5"><span id="st5" onclick="rate('st',5)"
-                                            onmouseover="hoverRate('st',5)" onmouseout="clearRate('st')"
-                                            class="fa fa-star"></span></label>
-
-                                </div>
-
-                        </tr>
-                        <tr>
-                            <td>
-                                <p class="sub d-inline-block"><b>Dificultad: </b> </p>
-                            </td>
-                            <td>
-                                <input hidden type="radio" name="dif" value="1" id="dif1">
-                                <input hidden type="radio" name="dif" value="2" id="dif2">
-                                <input hidden type="radio" name="dif" value="3" id="dif3">
-                                <input hidden type="radio" name="dif" value="4" id="dif4">
-                                <input hidden type="radio" name="dif" value="5" id="dif5">
-
-                                <div class="stars">
-                                    <label for="dif1"><span id="dn1" onclick="rate('dn',1)"
-                                            onmouseover="hoverRate('dn',1)" onmouseout="clearRate('dn')"
-                                            class="fas fa-exclamation-triangle"></span></label>
-                                    <label for="dif2"><span id="dn2" onclick="rate('dn',2)"
-                                            onmouseover="hoverRate('dn',2)" onmouseout="clearRate('dn')"
-                                            class="fas fa-exclamation-triangle"></span></label>
-                                    <label for="dif3"><span id="dn3" onclick="rate('dn',3)"
-                                            onmouseover="hoverRate('dn',3)" onmouseout="clearRate('dn')"
-                                            class="fas fa-exclamation-triangle"></span></label>
-                                    <label for="dif4"><span id="dn4" onclick="rate('dn',4)"" onmouseover="
-                                            hoverRate('dn',4)" onmouseout="clearRate('dn')"
-                                            class="fas fa-exclamation-triangle"></span></label>
-                                    <label for="dif5"><span id="dn5" onclick="rate('dn',5)"
-                                            onmouseover="hoverRate('dn',5)" onmouseout="clearRate('dn')"
-                                            class="fas fa-exclamation-triangle"></span></label>
-
-                                </div>
-
-                                <!-- <div class="progress">
-                                                            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 50%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div> -->
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p class="sub d-inline-block"><b>Preparación: </b> </p>
-                            </td>
-                            <td>
-                                <input hidden type="radio" name="prep" value="1" id="prep1">
-                                <input hidden type="radio" name="prep" value="2" id="prep2">
-                                <input hidden type="radio" name="prep" value="3" id="prep3">
-                                <input hidden type="radio" name="prep" value="4" id="prep4">
-                                <input hidden type="radio" name="prep" value="5" id="prep5">
-                                <div class="stars">
-                                    <label for="prep1"><span id="gd1" onclick="rate('gd',1)"
-                                            onmouseover="hoverRate('gd',1)" onmouseout="clearRate('gd')"
-                                            class="fa fa-graduation-cap"></span></label>
-                                    <label for="prep2"><span id="gd2" onclick="rate('gd',2)"
-                                            onmouseover="hoverRate('gd',2)" onmouseout="clearRate('gd')"
-                                            class="fa fa-graduation-cap"></span></label>
-                                    <label for="prep3"><span id="gd3" onclick="rate('gd',3)"
-                                            onmouseover="hoverRate('gd',3)" onmouseout="clearRate('gd')"
-                                            class="fa fa-graduation-cap"></span></label>
-                                    <label for="prep4"><span id="gd4" onclick="rate('gd',4)"" onmouseover="
-                                            hoverRate('gd',4)" onmouseout="clearRate('gd')"
-                                            class="fa fa-graduation-cap"></span></label>
-                                    <label for="prep5"><span id="gd5" onclick="rate('gd',5)"
-                                            onmouseover="hoverRate('gd',5)" onmouseout="clearRate('gd')"
-                                            class="fa fa-graduation-cap"></span></label>
-                                </div>
-                                <!-- <div class="progress">
-                                                            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 99%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div> -->
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p class="sub d-inline-block"><b>Carga de Trabajo: </b> </p>
-                            </td>
-                            <td>
-                                <input hidden type="radio" name="trab" value="1" id="trab1">
-                                <input hidden type="radio" name="trab" value="2" id="trab2">
-                                <input hidden type="radio" name="trab" value="3" id="trab3">
-                                <input hidden type="radio" name="trab" value="4" id="trab4">
-                                <input hidden type="radio" name="trab" value="5" id="trab5">
-
-                                <div class="stars">
-                                    <label for="trab1"><span id="bk1" onclick="rate('bk',1)"
-                                            onmouseover="hoverRate('bk',1)" onmouseout="clearRate('bk')"
-                                            class="fas fa-book"></span></label>
-                                    <label for="trab2"><span id="bk2" onclick="rate('bk',2)"
-                                            onmouseover="hoverRate('bk',2)" onmouseout="clearRate('bk')"
-                                            class="fas fa-book"></span></label>
-                                    <label for="trab3"><span id="bk3" onclick="rate('bk',3)"
-                                            onmouseover="hoverRate('bk',3)" onmouseout="clearRate('bk')"
-                                            class="fas fa-book"></span></label>
-                                    <label for="trab4"><span id="bk4" onclick="rate('bk',4)"" onmouseover="
-                                            hoverRate('bk',4)" onmouseout="clearRate('bk')"
-                                            class="fas fa-book"></span></label>
-                                    <label for="trab4"><span id="bk5" onclick="rate('bk',5)"
-                                            onmouseover="hoverRate('bk',5)" onmouseout="clearRate('bk')"
-                                            class="fas fa-book"></span></label>
+                            <tr>
+                                <td>
+                                    <p class="sub d-inline-block"><b>Experiencia General: </b> </p>
+                                </td>
+                                <td>
+                                    <input hidden type="radio" name="exp" value="1" id="exp1">
+                                    <input hidden type="radio" name="exp" value="2" id="exp2">
+                                    <input hidden type="radio" name="exp" value="3" id="exp3">
+                                    <input hidden type="radio" name="exp" value="4" id="exp4">
+                                    <input hidden type="radio" name="exp" value="5" id="exp5">
 
 
-                                </div>
 
-                                <!-- <div class="progress">
-                                                            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div> -->
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p class="sub d-inline-block"><b>Flexibilidad: </b> </p>
-                            </td>
-                            <td>
-                                <input hidden type="radio" name="flx" value="1" id="flx1">
-                                <input hidden type="radio" name="flx" value="2" id="flx2">
-                                <input hidden type="radio" name="flx" value="3" id="flx3">
-                                <input hidden type="radio" name="flx" value="4" id="flx4">
-                                <input hidden type="radio" name="flx" value="5" id="flx5">
-                                <div class="stars">
-                                    <label for="flx1"><span id="bl1" onclick="rate('bl',1)"
-                                            onmouseover="hoverRate('bl',1)" onmouseout="clearRate('bl')"
-                                            class="fa fa-balance-scale"></span></label>
-                                    <label for="flx2"><span id="bl2" onclick="rate('bl',2)"
-                                            onmouseover="hoverRate('bl',2)" onmouseout="clearRate('bl')"
-                                            class="fa fa-balance-scale"></span></label>
-                                    <label for="flx3"><span id="bl3" onclick="rate('bl',3)"
-                                            onmouseover="hoverRate('bl',3)" onmouseout="clearRate('bl')"
-                                            class="fa fa-balance-scale"></span></label>
-                                    <label for="flx4"><span id="bl4" onclick="rate('bl',4)"" onmouseover="
-                                            hoverRate('bl',4)" onmouseout="clearRate('bl')"
-                                            class="fa fa-balance-scale"></span></label>
-                                    <label for="flx5"><span id="bl5" onclick="rate('bl',5)"
-                                            onmouseover="hoverRate('bl',5)" onmouseout="clearRate('bl')"
-                                            class="fa fa-balance-scale"></span></label>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <p class="sub d-inline-block"><b>Ritmo de la Clase: </b> </p>
-                            </td>
-                            <td>
-                                <input hidden type="radio" name="rit" value="1" id="rit1">
-                                <input hidden type="radio" name="rit" value="2" id="rit2">
-                                <input hidden type="radio" name="rit" value="3" id="rit3">
-                                <input hidden type="radio" name="rit" value="4" id="rit4">
-                                <input hidden type="radio" name="rit" value="5" id="rit5">
-                                <div class="stars">
-                                    <label for="rit1"><span id="rn1" onclick="rate('rn',1)"
-                                            onmouseover="hoverRate('rn',1)" onmouseout="clearRate('rn')"
-                                            class="fa  fa-running"></span></label>
-                                    <label for="rit2"><span id="rn2" onclick="rate('rn',2)"
-                                            onmouseover="hoverRate('rn',2)" onmouseout="clearRate('rn')"
-                                            class="fa  fa-running"></span></label>
-                                    <label for="rit3"><span id="rn3" onclick="rate('rn',3)"
-                                            onmouseover="hoverRate('rn',3)" onmouseout="clearRate('rn')"
-                                            class="fa  fa-running"></span></label>
-                                    <label for="rit4"><span id="rn4" onclick="rate('rn',4)"" onmouseover="
-                                            hoverRate('rn',4)" onmouseout="clearRate('rn')"
-                                            class="fa  fa-running"></span></label>
-                                    <label for="rit5"><span id="rn5" onclick="rate('rn',5)"
-                                            onmouseover="hoverRate('rn',5)" onmouseout="clearRate('rn')"
-                                            class="fa  fa-running"></span></label>
-                                </div>
+                                    <div class="stars">
+                                        <label for="exp1"><span id="st1" onclick="rate('st',1)"
+                                                onmouseover="hoverRate('st',1)" onmouseout="clearRate('st')"
+                                                class="fa fa-star"></span></label>
+                                        <label for="exp2"><span id="st2" onclick="rate('st',2)"
+                                                onmouseover="hoverRate('st',2)" onmouseout="clearRate('st')"
+                                                class="fa fa-star"></span></label>
+                                        <label for="exp3"><span id="st3" onclick="rate('st',3)"
+                                                onmouseover="hoverRate('st',3)" onmouseout="clearRate('st')"
+                                                class="fa fa-star"></span></label>
+                                        <label for="exp4"><span id="st4" onclick="rate('st',4)"" onmouseover="
+                                                hoverRate('st',4)" onmouseout="clearRate('st')"
+                                                class="fa fa-star"></span></label>
+                                        <label for="exp5"><span id="st5" onclick="rate('st',5)"
+                                                onmouseover="hoverRate('st',5)" onmouseout="clearRate('st')"
+                                                class="fa fa-star"></span></label>
 
-                            </td>
-                        </tr>
-                    </table>
+                                    </div>
 
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="optativa">
-                        <label class="custom-control-label" for="optativa">Optativa</label>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="sub d-inline-block"><b>Dificultad: </b> </p>
+                                </td>
+                                <td>
+                                    <input hidden type="radio" name="dif" value="1" id="dif1">
+                                    <input hidden type="radio" name="dif" value="2" id="dif2">
+                                    <input hidden type="radio" name="dif" value="3" id="dif3">
+                                    <input hidden type="radio" name="dif" value="4" id="dif4">
+                                    <input hidden type="radio" name="dif" value="5" id="dif5">
+
+                                    <div class="stars">
+                                        <label for="dif1"><span id="dn1" onclick="rate('dn',1)"
+                                                onmouseover="hoverRate('dn',1)" onmouseout="clearRate('dn')"
+                                                class="fas fa-exclamation-triangle"></span></label>
+                                        <label for="dif2"><span id="dn2" onclick="rate('dn',2)"
+                                                onmouseover="hoverRate('dn',2)" onmouseout="clearRate('dn')"
+                                                class="fas fa-exclamation-triangle"></span></label>
+                                        <label for="dif3"><span id="dn3" onclick="rate('dn',3)"
+                                                onmouseover="hoverRate('dn',3)" onmouseout="clearRate('dn')"
+                                                class="fas fa-exclamation-triangle"></span></label>
+                                        <label for="dif4"><span id="dn4" onclick="rate('dn',4)"" onmouseover="
+                                                hoverRate('dn',4)" onmouseout="clearRate('dn')"
+                                                class="fas fa-exclamation-triangle"></span></label>
+                                        <label for="dif5"><span id="dn5" onclick="rate('dn',5)"
+                                                onmouseover="hoverRate('dn',5)" onmouseout="clearRate('dn')"
+                                                class="fas fa-exclamation-triangle"></span></label>
+
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="sub d-inline-block"><b>Preparación: </b> </p>
+                                </td>
+                                <td>
+                                    <input hidden type="radio" name="prep" value="1" id="prep1">
+                                    <input hidden type="radio" name="prep" value="2" id="prep2">
+                                    <input hidden type="radio" name="prep" value="3" id="prep3">
+                                    <input hidden type="radio" name="prep" value="4" id="prep4">
+                                    <input hidden type="radio" name="prep" value="5" id="prep5">
+                                    <div class="stars">
+                                        <label for="prep1"><span id="gd1" onclick="rate('gd',1)"
+                                                onmouseover="hoverRate('gd',1)" onmouseout="clearRate('gd')"
+                                                class="fa fa-graduation-cap"></span></label>
+                                        <label for="prep2"><span id="gd2" onclick="rate('gd',2)"
+                                                onmouseover="hoverRate('gd',2)" onmouseout="clearRate('gd')"
+                                                class="fa fa-graduation-cap"></span></label>
+                                        <label for="prep3"><span id="gd3" onclick="rate('gd',3)"
+                                                onmouseover="hoverRate('gd',3)" onmouseout="clearRate('gd')"
+                                                class="fa fa-graduation-cap"></span></label>
+                                        <label for="prep4"><span id="gd4" onclick="rate('gd',4)"" onmouseover="
+                                                hoverRate('gd',4)" onmouseout="clearRate('gd')"
+                                                class="fa fa-graduation-cap"></span></label>
+                                        <label for="prep5"><span id="gd5" onclick="rate('gd',5)"
+                                                onmouseover="hoverRate('gd',5)" onmouseout="clearRate('gd')"
+                                                class="fa fa-graduation-cap"></span></label>
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="sub d-inline-block"><b>Carga de Trabajo: </b> </p>
+                                </td>
+                                <td>
+                                    <input hidden type="radio" name="trab" value="1" id="trab1">
+                                    <input hidden type="radio" name="trab" value="2" id="trab2">
+                                    <input hidden type="radio" name="trab" value="3" id="trab3">
+                                    <input hidden type="radio" name="trab" value="4" id="trab4">
+                                    <input hidden type="radio" name="trab" value="5" id="trab5">
+
+                                    <div class="stars">
+                                        <label for="trab1"><span id="bk1" onclick="rate('bk',1)"
+                                                onmouseover="hoverRate('bk',1)" onmouseout="clearRate('bk')"
+                                                class="fas fa-book"></span></label>
+                                        <label for="trab2"><span id="bk2" onclick="rate('bk',2)"
+                                                onmouseover="hoverRate('bk',2)" onmouseout="clearRate('bk')"
+                                                class="fas fa-book"></span></label>
+                                        <label for="trab3"><span id="bk3" onclick="rate('bk',3)"
+                                                onmouseover="hoverRate('bk',3)" onmouseout="clearRate('bk')"
+                                                class="fas fa-book"></span></label>
+                                        <label for="trab4"><span id="bk4" onclick="rate('bk',4)"" onmouseover="
+                                                hoverRate('bk',4)" onmouseout="clearRate('bk')"
+                                                class="fas fa-book"></span></label>
+                                        <label for="trab4"><span id="bk5" onclick="rate('bk',5)"
+                                                onmouseover="hoverRate('bk',5)" onmouseout="clearRate('bk')"
+                                                class="fas fa-book"></span></label>
+
+
+                                    </div>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="sub d-inline-block"><b>Flexibilidad: </b> </p>
+                                </td>
+                                <td>
+                                    <input hidden type="radio" name="flx" value="1" id="flx1">
+                                    <input hidden type="radio" name="flx" value="2" id="flx2">
+                                    <input hidden type="radio" name="flx" value="3" id="flx3">
+                                    <input hidden type="radio" name="flx" value="4" id="flx4">
+                                    <input hidden type="radio" name="flx" value="5" id="flx5">
+                                    <div class="stars">
+                                        <label for="flx1"><span id="bl1" onclick="rate('bl',1)"
+                                                onmouseover="hoverRate('bl',1)" onmouseout="clearRate('bl')"
+                                                class="fa fa-balance-scale"></span></label>
+                                        <label for="flx2"><span id="bl2" onclick="rate('bl',2)"
+                                                onmouseover="hoverRate('bl',2)" onmouseout="clearRate('bl')"
+                                                class="fa fa-balance-scale"></span></label>
+                                        <label for="flx3"><span id="bl3" onclick="rate('bl',3)"
+                                                onmouseover="hoverRate('bl',3)" onmouseout="clearRate('bl')"
+                                                class="fa fa-balance-scale"></span></label>
+                                        <label for="flx4"><span id="bl4" onclick="rate('bl',4)"" onmouseover="
+                                                hoverRate('bl',4)" onmouseout="clearRate('bl')"
+                                                class="fa fa-balance-scale"></span></label>
+                                        <label for="flx5"><span id="bl5" onclick="rate('bl',5)"
+                                                onmouseover="hoverRate('bl',5)" onmouseout="clearRate('bl')"
+                                                class="fa fa-balance-scale"></span></label>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="sub d-inline-block"><b>Ritmo de la Clase: </b> </p>
+                                </td>
+                                <td>
+                                    <input hidden type="radio" name="rit" value="1" id="rit1">
+                                    <input hidden type="radio" name="rit" value="2" id="rit2">
+                                    <input hidden type="radio" name="rit" value="3" id="rit3">
+                                    <input hidden type="radio" name="rit" value="4" id="rit4">
+                                    <input hidden type="radio" name="rit" value="5" id="rit5">
+                                    <div class="stars">
+                                        <label for="rit1"><span id="rn1" onclick="rate('rn',1)"
+                                                onmouseover="hoverRate('rn',1)" onmouseout="clearRate('rn')"
+                                                class="fa  fa-running"></span></label>
+                                        <label for="rit2"><span id="rn2" onclick="rate('rn',2)"
+                                                onmouseover="hoverRate('rn',2)" onmouseout="clearRate('rn')"
+                                                class="fa  fa-running"></span></label>
+                                        <label for="rit3"><span id="rn3" onclick="rate('rn',3)"
+                                                onmouseover="hoverRate('rn',3)" onmouseout="clearRate('rn')"
+                                                class="fa  fa-running"></span></label>
+                                        <label for="rit4"><span id="rn4" onclick="rate('rn',4)"" onmouseover="
+                                                hoverRate('rn',4)" onmouseout="clearRate('rn')"
+                                                class="fa  fa-running"></span></label>
+                                        <label for="rit5"><span id="rn5" onclick="rate('rn',5)"
+                                                onmouseover="hoverRate('rn',5)" onmouseout="clearRate('rn')"
+                                                class="fa  fa-running"></span></label>
+                                    </div>
+
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="optativa">
+                            <label class="custom-control-label" for="optativa">Optativa</label>
+                        </div>
+
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" id="takeAgain" checked>
+                            <label class="custom-control-label" for="takeAgain">Volvería a tomarla</label>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="reseña"><b>Reseña:</b></label>
+                            <textarea class="form-control" id="reseña" rows="4"
+                                placeholder="Ingresa tu reseña según tu experiencia :)"></textarea>
+                        </div>
+
+                        <button class="btn my-2 col-sm-6 my-sm-0" id="sendReview">Postear Reseña</button>
                     </div>
 
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="takeAgain" checked>
-                        <label class="custom-control-label" for="takeAgain">Volvería a tomarla</label>
-                    </div>
-
-
-                    <div class="form-group">
-
-                        <label for="because"><b>¿Por qué?</b></label>
-                        <textarea class="form-control" id="because" rows="2"
-                            placeholder="Nos interesa saber porque la volverías a meter :D"></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="reseña"><b>Reseña:</b></label>
-                        <textarea class="form-control" id="reseña" rows="4"
-                            placeholder="Ingresa tu reseña según tu experiencia :)"></textarea>
-                    </div>
-
-                    <button class="btn my-2 col-sm-6 my-sm-0" type="submit">Postear Reseña</button>
                 </div>
 
-            </div>
+            </form>
+
 
         </div>
 
+        <script src="scripts/displayNavBar.js"></script>
+        <script src="/scripts/rate.js"></script>
+
+        <script>
+            let form = document.getElementById("reviewForm");
+
+            form.onchange = validateForm;
+
+            let args = window.location.href.split('?');
+            if (args[1] == undefined || args[2] == undefined) {
+                window.location.href = "profes.html";
+            }
+
+
+            let profe = args[1];
+
+            profe = profe.split("%20").join(" ").split("%C3%B3").join("ó").split("%C3%A1").join("á").split("%C3%A9")
+                .join("é").split("%C3%AD").join("í").split("%C3%BA").join("ú").split("%C3%81").join("Á").split("%C3%89")
+                .join("É").split("%C3%8D").join("Í")
+                .split("%C3%93").join("Ó").split("%C3%9A").join("Ú");;
+
+            let materia = args[2];
+
+            materia = materia.split("%20").join(" ").split("%C3%B3").join("ó").split("%C3%A1").join("á").split("%C3%A9")
+                .join("é").split("%C3%AD").join("í").split("%C3%BA").join("ú").split("%C3%81").join("Á").split("%C3%89")
+                .join("É").split("%C3%8D").join("Í")
+                .split("%C3%93").join("Ó").split("%C3%9A").join("Ú");
+
+            validateForm();
+
+            function validateForm() {
+                if (document.querySelectorAll('input[name="exp"][type="radio"]:checked').length < 1 || document
+                    .querySelectorAll('input[name="rit"][type="radio"]:checked').length < 1 || document
+                    .querySelectorAll('input[name="flx"][type="radio"]:checked').length < 1 || document
+                    .querySelectorAll('input[name="trab"][type="radio"]:checked').length < 1 || document
+                    .querySelectorAll('input[name="prep"][type="radio"]:checked').length < 1 || document
+                    .querySelectorAll('input[name="dif"][type="radio"]:checked').length < 1) {
+                    document.getElementById("sendReview").setAttribute("disabled", true);
+                } else {
+                    document.getElementById("sendReview").removeAttribute("disabled");
+                }
+            }
+
+            document.getElementById("sendReview").onclick = postReview;
+
+            function postReview(event) {
+                event.preventDefault();
+
+
+
+                // http://localhost:3000/Reviews?expedienteEstudiante=716122&profesor=Elsa%20Perez&materia=%C3%89tica,%20Identidad%20y%20Profesi%C3%B3n
+
+                let query = [];
+                // 1. Crear XMLHttpRequest object
+                let xhr = new XMLHttpRequest();
+
+                // console.log(`http://localhost:3000/Reviews?expedienteEstudiante=${localStorage.expediente}&profesor=${profe}&Materia=${materia}`);
+                // 2. Configurar: PUT actualizar archivo
+                xhr.open('GET',
+                    `http://localhost:3000/Reviews?expedienteEstudiante=${localStorage.expediente}&profesor=${profe}&Materia=${materia}`
+                );
+
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                // 4. Enviar solicitud
+
+
+                xhr.send();
+
+                // 5. Una vez recibida la respuesta del servidor
+                xhr.onload = function () {
+
+                    if (xhr.status != 200) { // analizar el estatus de la respuesta HTTP
+                        // alert("Usuario Error")
+                        // Ocurrió un error
+                        alert("fallo fatal");
+
+
+                    } else {
+                        query = xhr.response;
+
+                        paso2();
+                        // console.log(xhr.response);
+
+                    }
+                };
+
+
+            }
+
+            function paso2() {
+                console.log("Paso 2");
+                let xhr3 = new XMLHttpRequest();
+
+                // console.log(`http://localhost:3000/Reviews?expedienteEstudiante=${localStorage.expediente}&profesor=${profe}&Materia=${materia}`);
+                // 2. Configurar: PUT actualizar archivo
+                xhr3.open('GET',
+                    `http://localhost:3000/Reviews?expedienteEstudiante=${localStorage.expediente}&profesor=${profe}&Materia=${materia}`
+                );
+
+                xhr3.setRequestHeader('Content-Type', 'application/json');
+                // 4. Enviar solicitud
+
+
+                xhr3.send();
+
+                // 5. Una vez recibida la respuesta del servidor
+                xhr3.onload = function () {
+
+                    if (xhr3.status != 200) { // analizar el estatus de la respuesta HTTP
+                        // alert("Usuario Error")
+                        // Ocurrió un error
+                        alert("fallo fatal paso 2");
+
+
+                    } else {
+                        xhr3.response;
+
+
+                        paso3(JSON.parse(xhr3.response));
+                        // console.log(xhr3.response);
+
+
+
+                    }
+                };
+            }
+
+            function paso3(resp) {
+                if (resp.length > 0) {
+                    alert("Ya reseñaste esta materia");
+                    window.location.href = `review.html?${profe}?${materia}`
+                }
+
+
+
+                let overall, difficulty, preparation, workload, flexible, pace;
+                let ovrl = document.querySelector("[name=exp]:checked").value;
+                let dif = document.querySelector("[name=dif]:checked").value;
+                let prep = document.querySelector("[name=prep]:checked").value;
+                let crg = document.querySelector("[name=trab]:checked").value;
+                let flx = document.querySelector("[name=flx]:checked").value;
+                let rit = document.querySelector("[name=rit]:checked").value;
+
+
+                let newObj = {
+                    expedienteEstudiante: localStorage.expediente,
+                    profesor: profe,
+                    materia: materia,
+                    ["experiencia general"]: ovrl,
+                    dificultad: dif,
+                    preparación: prep,
+                    ["carga trabajo"]: crg,
+                    flexibilidad: flx,
+                    ritmo: rit,
+                    takeAgain: "",
+                    Optativa: "",
+                    Reseña: document.getElementById("reseña").value,
+                }
+
+                if (document.getElementById("optativa").checked) {
+                    newObj.Optativa = "Si";
+                } else {
+                    newObj.Optativa = "No";
+                }
+
+                if (document.getElementById("takeAgain").checked) {
+                    newObj.takeAgain = "Si";
+                } else {
+                    newObj.takeAgain = "No";
+                }
+
+
+                let xhr2 = new XMLHttpRequest();
+
+                // console.log(`http://localhost:3000/Reviews?expedienteEstudiante=${localStorage.expediente}&profesor=${profe}&Materia=${materia}`);
+                // 2. Configurar: PUT actualizar archivo
+                xhr2.open('POST',
+                    `http://localhost:3000/Reviews`
+                );
+
+                xhr2.setRequestHeader('Content-Type', 'application/json');
+                // 4. Enviar solicitud
+
+
+                xhr2.send([JSON.stringify(newObj)]);
+
+                // 5. Una vez recibida la respuesta del servidor
+                xhr2.onload = function () {
+
+                    if (xhr2.status != 200 && xhr2.status != 201) { // analizar el estatus de la respuesta HTTP
+                        // alert("Usuario Error")
+                        // Ocurrió un error
+                        alert("ha habido un error");
+
+
+                    } else {
+                        paso4(newObj);
+
+                    }
+                };
+            }
+
+
+            function paso4(newObj) {
+
+                let x = new XMLHttpRequest();
+
+                // console.log(`http://localhost:3000/Reviews?expedienteEstudiante=${localStorage.expediente}&profesor=${profe}&Materia=${materia}`);
+                // 2. Configurar: PUT actualizar archivo
+                x.open('GET',
+                    `http://localhost:3000/detalleMaterias?profesor=${profe}&materia=${materia}`
+                );
+
+                x.setRequestHeader('Content-Type', 'application/json');
+                // 4. Enviar solicitud
+
+
+                x.send();
+
+                // 5. Una vez recibida la respuesta del servidor
+                x.onload = function () {
+
+                    if (x.status != 200 && x.status != 201) { // analizar el estatus de la respuesta HTTP
+                        // alert("Usuario Error")
+                        // Ocurrió un error
+                        alert("ha habido un error");
+                        window.location.href = `review.html?${profesor}?${materia}`
+
+
+                    } else {
+                        actualizarEstadisticas(JSON.parse(x.response));
+
+                    }
+                };
+            }
+
+
+            function actualizarEstadisticas(newObj) {
+
+                console.log(JSON.stringify(newObj));
+                alert(newObj);
+
+
+            }
+
+
+
+
+            let xh = new XMLHttpRequest();
+
+            // 2. Configurar: PUT actualizar archivo
+            xh.open('GET', `http://localhost:3000/detalleMaterias?profesor=${profe}&materia=${materia}`);
+
+            xh.setRequestHeader('Content-Type', 'application/json');
+
+            // 4. Enviar solicitud
+            xh.send();
+
+            // 5. Una vez recibida la respuesta del servidor
+            xh.onload = function () {
+
+                if (xh.status != 200) { // analizar el estatus de la respuesta HTTP
+                    // alert("Usuario Error")
+                    // Ocurrió un error
+                    alert("Error. No se pueden mostrar los datos de este docente para esta clase");
+
+
+                } else {
+                    let detalle = JSON.parse(xh.response)[0];
+
+                    // console.log(detalle)
+                    document.getElementById('numReviews').innerText = detalle.numReviews;
+                    document.getElementById('curso').innerText = detalle.materia;
+                    document.getElementById('docente').innerText = detalle.profesor;
+                    document.getElementById("overall").innerText = detalle["experiencia general"];
+                    document.getElementById("dificultad").innerText = detalle.dificultad;
+                    document.getElementById("preparacion").innerText = detalle.preparación;
+                    document.getElementById("carga").innerText = detalle["carga trabajo"];
+                    document.getElementById("flexibilidad").innerText = detalle.flexibilidad;
+                    document.getElementById("ritmo").innerText = detalle.ritmo;
+
+                }
+
+            }
+        </script>
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -341,7 +620,7 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
         </script>
-        <script src="/scripts/rate.js"></script>
+
 </body>
 
 </html>

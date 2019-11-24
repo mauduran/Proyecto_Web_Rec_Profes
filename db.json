@@ -262,6 +262,51 @@
       "Optativa": "No",
       "Reseña": "Es de las clases más interesantes que he tenido. Pero es complicada y rápida",
       "id": 5
+    },
+    {
+      "expedienteEstudiante": "716122",
+      "profesor": "Elsa Perez",
+      "materia": "Ética, Identidad y Profesión",
+      "experiencia general": "5",
+      "dificultad": "5",
+      "preparación": "5",
+      "carga trabajo": "4",
+      "flexibilidad": "5",
+      "ritmo": "5",
+      "takeAgain": "Si",
+      "Optativa": "No",
+      "Reseña": "Fue una clase que si me enseñó de ética. Muy interesante y dinámica.",
+      "id": 6
+    },
+    {
+      "expedienteEstudiante": "716122",
+      "profesor": "Oscar González",
+      "materia": "Desarrollo de Aplicaciones y Servicios Web",
+      "experiencia general": "4",
+      "dificultad": "5",
+      "preparación": "4",
+      "carga trabajo": "4",
+      "flexibilidad": "4",
+      "ritmo": "4",
+      "takeAgain": "Si",
+      "Optativa": "No",
+      "Reseña": "",
+      "id": 7
+    },
+    {
+      "expedienteEstudiante": "716122",
+      "profesor": "Oscar González",
+      "materia": "Desarrollo de Aplicaciones y Servicios Web",
+      "experiencia general": "3",
+      "dificultad": "5",
+      "preparación": "4",
+      "carga trabajo": "4",
+      "flexibilidad": "4",
+      "ritmo": "5",
+      "takeAgain": "Si",
+      "Optativa": "No",
+      "Reseña": "",
+      "id": 8
     }
   ],
   "Requests": [

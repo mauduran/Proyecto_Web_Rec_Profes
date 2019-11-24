@@ -48,7 +48,7 @@
                             <div class="input-group col-sm-5 form-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
                                 <input type="password" placeholder="Ingresa tu contraseña..." required pattern=".{6,}"
-                                    title="Six or more characters" class="form-control input-lg" id="passwordId">
+                                 class="form-control input-lg" id="passwordId">
                             </div>
                             <div class="input-group col-sm-5 form-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
@@ -59,7 +59,7 @@
                         <div class="row">
                             <div class="input-group col-sm-5 form-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-expand"></i></span>
-                                <input type="text" placeholder="Ingresa tu expediente en la forma az123456" required
+                                <input type="text" placeholder="Ingresa tu expediente" required
                                     class="form-control input-lg" id="expedienteId">
                             </div>
                             <div class="input-group col-sm-5 form-group">
@@ -112,8 +112,7 @@
             if (campos.length == 0 && (password.value == repassword.value)) {
                 btnSubmit.removeAttribute('disabled');
             }
-            console.log(campos);
-            console.log(campos.length);
+
         })
 
         btnSubmit.onclick = registrarUser;
@@ -143,7 +142,7 @@
                 carrera: carrera.value,
                 email: email.value,
             }
-            console.log(newObj);
+            // console.log(newObj);
 
             //Revisar que no exista ya ese usuario.
             let xhr4 = new XMLHttpRequest();
@@ -168,13 +167,13 @@
                 } else {
                     let usersArr = JSON.parse(xhr4.response);
                     usersArr.forEach(element => {
-                        console.log(element);
+                        // console.log(element);
                         if (element.email == newObj.email) {
-                            console.log(element.email);
-                            console.log(newObj.email);
-                            console.log(existsUser);
+                            // console.log(element.email);
+                            // console.log(newObj.email);
+                            // console.log(existsUser);
                             existsUser = true;
-                            console.log(existsUser);
+                            // console.log(existsUser);
                         }
                     });
 
