@@ -32,6 +32,17 @@
       "carrera": "Ingeniería en Sistemas Computacionales",
       "email": "is715772@iteso.mx",
       "id": 3
+    },
+    {
+      "nombre": "Pedro",
+      "apellido": "Infanta",
+      "rol": "Estudiante",
+      "numReviews": "0",
+      "password": "aSantana",
+      "expediente": "123334",
+      "carrera": "Ingeniería en Sistemas Computacionales",
+      "email": "a@iteso.mx",
+      "id": 3
     }
   ],
   "profes": [
@@ -129,13 +140,13 @@
     {
       "profesor": "Oscar González",
       "materia": "Desarrollo de Aplicaciones y Servicios Web",
-      "numReviews": "0",
-      "experiencia general": "0",
-      "dificultad": "0",
-      "preparación": "0",
-      "carga trabajo": "0",
-      "flexibilidad": "0",
-      "ritmo": "0",
+      "experiencia general": "4.5",
+      "dificultad": "4.5",
+      "preparación": "4.5",
+      "carga trabajo": "4.5",
+      "flexibilidad": "4.5",
+      "ritmo": "4.5",
+      "numReviews": 2,
       "id": 1
     },
     {
@@ -173,18 +184,6 @@
       "flexibilidad": "3",
       "ritmo": "4",
       "id": 4
-    },
-    {
-      "profesor": "Oscar González",
-      "materia": "Programación Orientada a Objetos",
-      "numReviews": "0",
-      "experiencia general": "0",
-      "dificultad": "0",
-      "preparación": "0",
-      "carga trabajo": "0",
-      "flexibilidad": "0",
-      "ritmo": "0",
-      "id": 5
     }
   ],
   "Reviews": [
@@ -283,26 +282,26 @@
       "profesor": "Oscar González",
       "materia": "Desarrollo de Aplicaciones y Servicios Web",
       "experiencia general": "4",
-      "dificultad": "5",
+      "dificultad": "4",
       "preparación": "4",
       "carga trabajo": "4",
       "flexibilidad": "4",
-      "ritmo": "4",
+      "ritmo": "5",
       "takeAgain": "Si",
       "Optativa": "No",
       "Reseña": "",
       "id": 7
     },
     {
-      "expedienteEstudiante": "716122",
+      "expedienteEstudiante": "123334",
       "profesor": "Oscar González",
       "materia": "Desarrollo de Aplicaciones y Servicios Web",
-      "experiencia general": "3",
+      "experiencia general": "5",
       "dificultad": "5",
-      "preparación": "4",
-      "carga trabajo": "4",
-      "flexibilidad": "4",
-      "ritmo": "5",
+      "preparación": "5",
+      "carga trabajo": "5",
+      "flexibilidad": "5",
+      "ritmo": "4",
       "takeAgain": "Si",
       "Optativa": "No",
       "Reseña": "",
