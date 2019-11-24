@@ -30,7 +30,7 @@ function login(event) {
     let invalids = document.querySelectorAll("#loginForm input:invalid");
     event.preventDefault();
     if (invalids.length == 0) {
-        console.log("hey");
+        //console.log("hey");
         let usr = document.getElementById("email");
         let pass = document.getElementById("password");
 

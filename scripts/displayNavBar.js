@@ -29,7 +29,7 @@ if (localStorage.role == "Coordinador" || localStorage.role == "Estudiante") {
         </li>
 
         </ul>`;
-} else if (localStorage.role == "Admin") {
+} else if (localStorage.role == "") {
 
 
 
