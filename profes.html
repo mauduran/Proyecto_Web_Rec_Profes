@@ -164,66 +164,70 @@
 </head>
 
 <body>
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Administar</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <table class="table table-hover">
-                        <tbody>
-                            <tr>
-                                <th scope="row">1</th>
-                                <td>Mensajes del coordinador</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Alta de materias</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td>Alta de maestros</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">4</th>
-                                <td>Alta maestro-materia</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">5</th>
-                                <td>Revisión credenciales</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">6</th>
-                                <td>Administración de materias</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">7</th>
-                                <td>Administracion de reviews</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">8</th>
-                                <td>Administración de usuarios</td>
-                            </tr>
 
-                        </tbody>
-                    </table>
+     <!-- Modal -->
+     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+     <div class="modal-dialog" role="document">
+         <div class="modal-content">
+             <div class="modal-header">
+                 <h5 class="modal-title" id="exampleModalLabel">Administar</h5>
+                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                     <span aria-hidden="true">&times;</span>
+                 </button>
+             </div>
+             <div class="modal-body">
+                 <table class="table table-hover">
+                     <tbody>
+                         <tr>
+                             <th scope="row">1</th>
+                             <td><a href="Revisar_Sugerencias.html">Mensajes del coordinador</a></td>
+                         </tr>
+                         <tr>
+                             <th scope="row">2</th>
+                             <td><a href="AltaMateria.html">Alta de materias</a></td>
+                         </tr>
+                         <tr>
+                             <th scope="row">3</th>
+                             <td><a href="AltaMaestro.html">Alta de maestros</a></td>
+                         </tr>
+                         <tr>
+                             <th scope="row">4</th>
+                             <td><a href="Alta-MaestroMateria.html">Alta maestro-materia</a></td>
+                         </tr>
+                         <tr>
+                             <th scope="row">5</th>
+                             <td><a href="RevisionCredenciales.html">Revisión credenciales</a></td>
+                         </tr>
+                         <tr>
+                             <th scope="row">6</th>
+                             <td><a href="materias-admin.html">Administración de materias</a></td>
+                         </tr>
+                         <tr>
+                             <th scope="row">7</th>
+                             <td><a href="review_admin.html">Administracion de reviews</a></td>
+                         </tr>
+                         <tr>
+                             <th scope="row">8</th>
+                             <td><a href="users.html">Administración de usuarios</a></td>
+                         </tr>
 
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
+                     </tbody>
+                 </table>
+
+             </div>
+             <div class="modal-footer">
+                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+             </div>
+         </div>
+     </div>
+ </div>
+
+<!--NavBar-->
     <nav class="navbar navbar-expand-sm navbar-dark" id="navbar">
 
     </nav>
-
+<!--FORM-->
     <div class="form-contain">
         <form action="">
             <h1>Encuentra un Docente.</h1>
@@ -256,28 +260,7 @@
 
 
 
-    <!-- <nav aria-label=" Page navigation">
-        <ul class="pagination">
-            <li class="page-item disabled">
-                <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                    <span class="sr-only">Previous</span>
-                </a>
-            </li>
-            <li class="page-item cur" style="background-color:#007F9D">
-                <a class="page-link" href="#">1</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="#">2</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </li>
-        </ul>
-    </nav> -->
+
 
     <script>
         let container = document.getElementById("profes-container");
