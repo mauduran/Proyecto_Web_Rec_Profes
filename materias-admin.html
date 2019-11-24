@@ -347,7 +347,7 @@
             // 2. Configurar: PUT actualizar archivo
             let url = 'http://localhost:3000/materias';
 
-            console.log(seleccion.value);
+            //console.log(seleccion.value);
 
             if (seleccion.value == "" && input.value == "") {
                 xhreq.open('GET', url);
@@ -360,10 +360,10 @@
                 } else {
                     url += "nombre_like=" + input.value + "&departamento=" + seleccion.value;
                 }
-                console.log(url)
+                //console.log(url)
                 xhreq.open('GET', url);
             }
-            console.log(url);
+           // console.log(url);
             let contenedor = document.getElementById("materias-container");
 
             contenedor.innerHTML = "";

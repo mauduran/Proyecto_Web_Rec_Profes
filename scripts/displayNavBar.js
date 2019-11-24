@@ -8,8 +8,8 @@ if (localStorage.role == "Coordinador" || localStorage.role == "Estudiante") {
         aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
 
     <form class="form-inline  order-0 mx-auto ">
-        <input class="form-control w-75 input-lg mr-lg-3" type="text" placeholder="Buscar Profe o Materia">
-        <button class="btn my-2 my-sm-0" type="submit">Search</button>
+        <input class="form-control w-75 input-lg mr-lg-3" type="text" placeholder="Buscar Profe o Materia"  id="strBusqueda" value="">
+        <button class="btn my-2 my-sm-0" type="submit" onclick=guardarB()>Search</button>
     </form>
 
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
@@ -41,8 +41,8 @@ if (localStorage.role == "Coordinador" || localStorage.role == "Estudiante") {
         aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
 
     <form class="form-inline  order-0 mx-auto ">
-        <input class="form-control w-75 input-lg mr-lg-3" type="text" placeholder="Buscar Profe o Materia">
-        <button class="btn my-2 my-sm-0" type="submit">Search</button>
+        <input class="form-control w-75 input-lg mr-lg-3" type="text" placeholder="Buscar Profe o Materia" id="strBusqueda" value="">
+        <button class="btn my-2 my-sm-0" type="submit"  onclick=guardarB()>Search</button>
     </form>
 
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
@@ -80,8 +80,8 @@ if (localStorage.role == "Coordinador" || localStorage.role == "Estudiante") {
         aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
 
     <form class="form-inline  order-0 mx-auto ">
-        <input class="form-control w-75 input-lg mr-lg-3" type="text" placeholder="Buscar Profe o Materia">
-        <button class="btn my-2 my-sm-0" type="submit">Search</button>
+        <input class="form-control w-75 input-lg mr-lg-3" type="text" placeholder="Buscar Profe o Materia" id="strBusqueda" value="">
+        <button class="btn my-2 my-sm-0" type="submit"   onclick=guardarB()>Search</button>
     </form>
 
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
@@ -109,7 +109,12 @@ if (localStorage.role == "Coordinador" || localStorage.role == "Estudiante") {
 
         </ul>`;
 }
-
+function guardarB(){
+    event.preventDefault();
+    let str = document.getElementById("strBusqueda");
+    localStorage.busquedaNB = str.value;
+    window.location.href = "./resultadosBusqueda.html";
+}
 
 function logout() {
     localStorage.expediente = undefined;

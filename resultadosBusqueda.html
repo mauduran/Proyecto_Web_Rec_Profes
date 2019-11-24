@@ -13,110 +13,85 @@
             width: 100%;
             background-color: #c2e5ed;
         }
-
         h4 {
             text-align: Center;
             font-family: 'Kaushan Script', cursive;
             font-size: 30px;
             margin-top: 2%;
         }
-
-
         .row,
         h1 {
             text-align: center;
             font-weight: 400;
             font-family: Helvetica, sans-serif;
         }
-
-
         .center {
             margin: auto;
             margin-top: 1%;
         }
-
-
         .card,
         .collapse {
             width: 100%;
         }
-
         .card {
             background: aliceblue;
         }
-
-
         .card:nth-child(even) {
             margin: 0 auto;
         }
-
         .card:nth-child(even):hover {
             top: 1px;
             cursor: pointer;
         }
-
         .card-registry {
             position: relative;
             width: 90%;
             margin: 0% auto 1% auto;
         }
-
         .sub {
             margin: 0 2%;
             text-align: justify;
         }
-
         .card-registry .reg-element:nth-child(even)>.jumbotron {
             background: #007F9D;
             color: white;
         }
-
         .card-registry .reg-element:nth-child(odd)>.jumbotron {
             background: white;
         }
-
         .jumbotron {
             margin: 0 auto;
             padding: 0;
             border: 1px solid #007F9D;
             cursor: pointer;
         }
-
         .profes p,
         .materias p {
             display: inline-block;
         }
-
         .profes,
         .materias p:first-of-type {
-
             margin: 0 2% 0 0;
         }
-
         .profes span,
         .materias span {
             margin-left: 2%;
         }
-
         .profes,
         .materias {
             padding-bottom: 5px;
             margin-top: 1%;
         }
-
         .profes div,
         .materias div {
             background: #00a7cc;
             color: white;
             width: 90%;
             margin: 0 0 2% 2%;
-
         }
-
         .profes div:hover,
         .materias div:hover {
             background: #007F9D;
-
         }
     </style>
     <!-- Bootstrap CSS -->
@@ -129,10 +104,6 @@
 </head>
 
 <body>
-
-        <nav class="navbar navbar-expand-sm navbar-dark" id="navbar">
-
-        </nav>
 
     <div class="row justify-content-center">
         <div class="col">
@@ -151,23 +122,17 @@
     </div>
 
     <!-- Optional JavaScript -->
-    <script src="/scripts/displayNavBar.js"></script>
     <script>
         let contenedorP = document.getElementById("profes-container");
         let contenedorM = document.getElementById("materias-container");
-
-        let input = "os";
+        let input = localStorage.busquedaNB;
         let id2 = 1;
         let id = 1;
-
         filtrarDatos();
-
         function filtrarDatos() {
             filtarProfes();
             filtarMaterias();
         }
-
-
         function filtarProfes() {
             let xhreq = new XMLHttpRequest();
             xhreq.open('GET', `http://localhost:3000/profes?nombre_like=${input}`);
@@ -180,11 +145,9 @@
                     // alert("Usuario Error")
                     // Ocurrió un error
                     alert("Error.");
-
                 } else {
                     contenedorP.innerHTML = "";
                     let profes = JSON.parse(xhreq.response);
-
                     profes.forEach(element => {
                         let registro = document.createElement('div');
                         registro.classList.add("reg-element");
@@ -198,34 +161,25 @@
                                 <p class="sub"><b>Departamento: </b> ${element.departamento}</p>
                             </div>
                         </div>
-
                         <div class="collapse" id="collapse${id}">
                             <div class="card">
                                 <p class="sub"><b>Antigüedad: </b>${id}</p>
                                 <div class="materias" id="materias${id}">
-
                                 </div>
                             </div>
                         </div>`;
-
                         contenedorP.appendChild(registro);
                         id++;
                         let requestDetalle = new XMLHttpRequest();
-
                         requestDetalle.open('GET', "http://localhost:3000/detalleMaterias?profesor=" +
                             element.nombre);
-
                         requestDetalle.setRequestHeader('Content-Type', 'application/json');
-
                         // 4. Enviar solicitud
                         requestDetalle.send();
-
                         requestDetalle.onload = function () {
                             if (requestDetalle.status == 200) {
                                 let detalle = JSON.parse(requestDetalle.response);
-
                                 detalle.forEach(el => {
-
                                     document.getElementById("materias" + id2).innerHTML +=
                                         `<div onclick="mostrarReseñas('${el.profesor}', '${el.materia}')"><span class="input-group-addon"><i class="fa fa-star"></i></span>
                                          <p>${el["experiencia general"]}</p><p>${el.materia}</p><anchor style="margin-left:150px;"><b>${el.numReviews + " "}</b>Reseñas</anchor></div>`;
@@ -237,7 +191,6 @@
                 }
             }
         }
-
         function filtarMaterias() {
             let xhreq = new XMLHttpRequest();
             // 2. Configurar: PUT actualizar archivo
@@ -254,7 +207,6 @@
                 } else {
                     contenedorM.innerHTML = "";
                     let materias = JSON.parse(xhreq.response);
-
                     materias.forEach(element => {
                         let registro = document.createElement('div');
                         registro.classList.add("reg-element");
@@ -268,7 +220,6 @@
                     
                 </div>
             </div>
-
             <div class="collapse" id="collapse${id}">
                 <div class="card">
                     <div class="profes" id="profes${id}"">
@@ -276,14 +227,11 @@
                 </div>`;
                         contenedorM.appendChild(registro);
                         let requestDetalle = new XMLHttpRequest();
-
                         requestDetalle.open('GET', "http://localhost:3000/detalleMaterias?materia=" +
                             element.nombre);
                         requestDetalle.setRequestHeader('Content-Type', 'application/json');
-
                         // 4. Enviar solicitud
                         requestDetalle.send();
-
                         requestDetalle.onload = function () {
                             if (requestDetalle.status == 200) {
                                 let detalle = JSON.parse(requestDetalle.response);
@@ -300,12 +248,10 @@
                 }
             }
         }
-
         function mostrarReseñas(profesor, materia) {
             window.location.href = `review.html?${profesor}?${materia}`;
         }
     </script>
-
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
@@ -317,5 +263,4 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
 </body>
-
-</html>
+</html> 
