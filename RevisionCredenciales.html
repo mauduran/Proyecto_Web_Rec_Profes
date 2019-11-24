@@ -123,45 +123,74 @@
             width: 20%;
         }
     </style>
+    <link rel="stylesheet" href="styles/nav.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-sm navbar-dark" id="navbar">
 
-    <nav class="navbar navbar-expand-sm navbar-dark">
-        <img id="logo" src="img/iteso.png" alt="">
-        <a class="navbar-brand" href="#">Rate my Profe ITESO</a>
-
-        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
-            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
-
-        <form class="form-inline  order-0 mx-auto ">
-            <input class="form-control w-75 input-lg mr-lg-3" type="text" placeholder="Buscar Profe o Materia">
-            <button class="btn my-2 my-sm-0" type="submit">Search</button>
-        </form>
-
-        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Materias</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="#">Profesores</a>
-            </li>
-
-
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Administrar<span class="sr-only">(current)</span></a>
-            </li>
-
-
-        </ul>
     </nav>
 
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Administar</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr>
+                                <th scope="row">1</th>
+                                <td><a href="Revisar_Sugerencias.html">Mensajes del coordinador</a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">2</th>
+                                <td><a href="AltaMateria.html">Alta de materias</a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">3</th>
+                                <td><a href="AltaMaestro.html">Alta de maestros</a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">4</th>
+                                <td><a href="Alta-MaestroMateria.html">Alta maestro-materia</a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">5</th>
+                                <td><a href="RevisionCredenciales.html">Revisión credenciales</a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">6</th>
+                                <td><a href="materias-admin.html">Administración de materias</a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">7</th>
+                                <td><a href="review_admin.html">Administracion de reviews</a></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">8</th>
+                                <td><a href="users.html">Administración de usuarios</a></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <h1>Solicitudes de ingreso</h1>
+
 
     <div class="card-registry" id="idCardRegistry">
 
@@ -195,6 +224,7 @@
         </ul>
     </nav> -->
 
+    <script src="scripts/displayNavBar.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
     </script>
@@ -206,8 +236,7 @@
     </script>
     <script src="https://kit.fontawesome.com/3651e59011.js" crossorigin="anonymous"></script>
     <script>
-
-        if(localStorage.role != 'Admin'){
+        if (localStorage.role != 'Admin') {
             window.location.href = "/index.html";
         }
         let counter = 1;
@@ -262,7 +291,7 @@
 
         }
 
-        function eliminarRequest(clave){
+        function eliminarRequest(clave) {
             //console.log(correo);
             // 1. Crear XMLHttpRequest object
             let xhr = new XMLHttpRequest();
@@ -291,7 +320,7 @@
             };
         }
 
-        function aceptarRequest(clave){
+        function aceptarRequest(clave) {
             let newObj;
             // 1. Crear XMLHttpRequest object
             let xhr = new XMLHttpRequest();
