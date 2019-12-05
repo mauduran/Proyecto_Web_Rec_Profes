@@ -8,7 +8,7 @@ btnSubmit.classList.add("disabled");
 contraseñaId.addEventListener('keyup', activarBoton);
 contraseña2Id.addEventListener('keyup', activarBoton);
 
-btnSubmit.addEventListener('click', sumit);
+btnSubmit.addEventListener('click', submit);
 
 function activarBoton() {
     if (contraseñaId.value == contraseña2Id.value) {
@@ -18,7 +18,7 @@ function activarBoton() {
     }
 };
 
-function sumit(){
+function submit(){
     event.preventDefault();
     buscar();
 }

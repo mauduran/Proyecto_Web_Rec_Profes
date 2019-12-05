@@ -11,7 +11,6 @@ regBtn.onclick = login;
 
 function validarRegistro(event) {
 
-
     let invalids = document.querySelectorAll("#loginForm input:invalid");
 
     let pass = document.getElementById("password");
