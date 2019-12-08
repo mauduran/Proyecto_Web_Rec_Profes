@@ -14,7 +14,7 @@ function filtrarDatos() {
 
 function filtarProfes() {
     let xhreq = new XMLHttpRequest();
-    xhreq.open('GET', `http://localhost:3000/profes?nombre_like=${input}`);
+    xhreq.open('GET', `https://ratemyprofe.herokuapp.com/api/profes?nombre_like=${input}`);
     xhreq.setRequestHeader('Content-Type', 'application/json');
     // 4. Enviar solicitud
     xhreq.send();
@@ -50,7 +50,7 @@ function filtarProfes() {
                 contenedorP.appendChild(registro);
                 id++;
                 let requestDetalle = new XMLHttpRequest();
-                requestDetalle.open('GET', "http://localhost:3000/detalleMaterias?profesor=" +
+                requestDetalle.open('GET', "https://ratemyprofe.herokuapp.com/api/detalleMaterias?profesor=" +
                     element.nombre);
                 requestDetalle.setRequestHeader('Content-Type', 'application/json');
                 // 4. Enviar solicitud
@@ -61,7 +61,7 @@ function filtarProfes() {
                         detalle.forEach(el => {
                             document.getElementById("materias" + id2).innerHTML +=
                                 `<div onclick="mostrarReseñas('${el.profesor}', '${el.materia}')"><span class="input-group-addon"><i class="fa fa-star"></i></span>
-                                 <p>${el["experiencia general"]}</p><p>${el.materia}</p><anchor style="margin-left:150px;"><b>${el.numReviews + " "}</b>Reseñas</anchor></div>`;
+                                 <p>${el["experienciaGeneral"]}</p><p>${el.materia}</p><anchor style="margin-left:150px;"><b>${el.numReviews + " "}</b>Reseñas</anchor></div>`;
                         });
                         id2++;
                     }
@@ -74,7 +74,7 @@ function filtarProfes() {
 function filtarMaterias() {
     let xhreq = new XMLHttpRequest();
     // 2. Configurar: PUT actualizar archivo
-    xhreq.open('GET', `http://localhost:3000/materias?nombre_like=${input}`);
+    xhreq.open('GET', `https://ratemyprofe.herokuapp.com/api/materias?nombre_like=${input}`);
     xhreq.setRequestHeader('Content-Type', 'application/json');
     // 4. Enviar solicitud
     xhreq.send();
@@ -107,7 +107,7 @@ function filtarMaterias() {
         </div>`;
                 contenedorM.appendChild(registro);
                 let requestDetalle = new XMLHttpRequest();
-                requestDetalle.open('GET', "http://localhost:3000/detalleMaterias?materia=" +
+                requestDetalle.open('GET', "https://ratemyprofe.herokuapp.com/api/detalleMaterias?materia=" +
                     element.nombre);
                 requestDetalle.setRequestHeader('Content-Type', 'application/json');
                 // 4. Enviar solicitud
@@ -118,7 +118,7 @@ function filtarMaterias() {
                         detalle.forEach(el => {
                             document.getElementById("profes" + id2).innerHTML +=
                                 `<div onclick="mostrarReseñas('${el.profesor}', '${el.materia}')"><span class="input-group-addon"><i class="fa fa-star"></i></span>
-<p>${el["experiencia general"]}</p><p>${el.profesor}</p><anchor style="margin-left:150px;"><b>${el.numReviews + " "}</b>Reseñas</anchor></div>`;
+<p>${el["experienciaGeneral"]}</p><p>${el.profesor}</p><anchor style="margin-left:150px;"><b>${el.numReviews + " "}</b>Reseñas</anchor></div>`;
                         });
                         id2++;
                     }

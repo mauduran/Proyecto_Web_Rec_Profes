@@ -3,7 +3,7 @@ let sel = document.getElementById("selectMateria");
 let xhr2 = new XMLHttpRequest();
 
 // 2. Configurar: PUT actualizar archivo
-xhr2.open('GET', "http://localhost:3000/materias");
+xhr2.open('GET', "https://ratemyprofe.herokuapp.com/api/materias");
 
 xhr2.setRequestHeader('Content-Type', 'application/json');
 

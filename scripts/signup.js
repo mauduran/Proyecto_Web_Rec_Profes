@@ -55,7 +55,7 @@ function registrarUser(E) {
     let xhr4 = new XMLHttpRequest();
 
     // 2. Configurar: PUT actualizar archivo
-    xhr4.open('GET', "http://localhost:3000/users");
+    xhr4.open('GET', "https://ratemyprofe.herokuapp.com/api/users");
 
     xhr4.setRequestHeader('Content-Type', 'application/json');
 
@@ -93,12 +93,15 @@ function registrarUser(E) {
         // 1. Crear XMLHttpRequest object
         let xhr = new XMLHttpRequest();
         // 2. Configurar:  PUT actualizar archivo
-        xhr.open('POST','http://localhost:3000/Requests');
+        xhr.open('POST','https://ratemyprofe.herokuapp.com/api/requests');
         // 3. indicar tipo de datos JSON
         xhr.setRequestHeader('Content-Type', 'application/json');
         
         // 4. Enviar solicitud al servidor
-        xhr.send([JSON.stringify(newObj)]);
+        console.log(newObj);
+        xhr.send(JSON.stringify(newObj));
+
+        newObj.id = undefined;
 
         // 5. Una vez recibida la respuesta del servidor
         xhr.onload = function () {

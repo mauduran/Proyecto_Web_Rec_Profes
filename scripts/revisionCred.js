@@ -1,5 +1,5 @@
-if (localStorage.role != 'Admin') {
-    window.location.href = "/index.html";
+if (localStorage.rol != 'Admin') {
+    window.location.href = "./index.html";
 }
 let counter = 1;
 let idCardRegistry = document.getElementById("idCardRegistry");
@@ -8,9 +8,10 @@ let idCardRegistry = document.getElementById("idCardRegistry");
 let xhr3 = new XMLHttpRequest();
 
 // 2. Configurar: PUT actualizar archivo
-xhr3.open('GET', "http://localhost:3000/requests");
+xhr3.open('GET', "https://ratemyprofe.herokuapp.com/api/requests");
 
 xhr3.setRequestHeader('Content-Type', 'application/json');
+xhr3.setRequestHeader('x-auth-user', localStorage.token);
 
 // 4. Enviar solicitud
 xhr3.send();
@@ -27,6 +28,7 @@ xhr3.onload = function () {
     } else {
         let requests = JSON.parse(xhr3.response);
 
+        console.log(requests);
         requests.forEach(element => {
             idCardRegistry.innerHTML += `
             <div class="reg-element">
@@ -58,7 +60,7 @@ function eliminarRequest(clave) {
     // 1. Crear XMLHttpRequest object
     let xhr = new XMLHttpRequest();
     // 2. Configurar:  PUT actualizar archivo
-    xhr.open('DELETE', 'http://localhost:3000/requests/' + clave);
+    xhr.open('DELETE', 'https://ratemyprofe.herokuapp.com/api/requests/' + clave);
     // 3. indicar tipo de datos JSON
     xhr.setRequestHeader('Content-Type', 'application/json');
 
@@ -77,6 +79,7 @@ function eliminarRequest(clave) {
             //solicitarUsuarios();
             // document.getElementById('usuarios').innerHTML = "";
             //solicitarUsuarios();
+            console.log("Request eliminado")
             location.reload();
         }
     };
@@ -88,7 +91,7 @@ function aceptarRequest(clave) {
     let xhr = new XMLHttpRequest();
 
     // 2. Configurar: PUT actualizar archivo
-    xhr.open('GET', 'http://localhost:3000/requests/' + clave);
+    xhr.open('GET', 'https://ratemyprofe.herokuapp.com/api/requests/' + clave);
 
     // 3. indicar tipo de datos JSON
     xhr.setRequestHeader('Content-Type', 'application/json');
@@ -110,7 +113,7 @@ function aceptarRequest(clave) {
             //console.log(datos); // Significa que fue exitoso
             //cbOk(datos);
 
-            console.log(datos);
+            console.log(xhr.response);
             newObj = {
                 nombre: datos.nombre,
                 apellido: datos.apellido,
@@ -122,20 +125,20 @@ function aceptarRequest(clave) {
                 email: datos.email
             }
 
-            //Eliminar el request
-            eliminarRequest(clave);
+
 
             // 1. Crear XMLHttpRequest object
             let xhr2 = new XMLHttpRequest();
 
             // 2. Configurar:  PUT actualizar archivo
-            xhr2.open('POST', 'http://localhost:3000/users');
+            xhr2.open('POST', 'https://ratemyprofe.herokuapp.com/api/users');
 
             // 3. indicar tipo de datos JSON
             xhr2.setRequestHeader('Content-Type', 'application/json');
+            xhr2.setRequestHeader('x-auth-user', localStorage.token);
 
             // 4. Enviar solicitud al servidor
-            xhr2.send([JSON.stringify(newObj)]);
+            xhr2.send(JSON.stringify(newObj));
 
             // 5. Una vez recibida la respuesta del servidor
             xhr2.onload = function () {
@@ -147,6 +150,8 @@ function aceptarRequest(clave) {
                 } else {
                     //console.log(xhr.responseText); // Significa que fue exitoso
                     alert('Usuario Creado');
+                                //Eliminar el request
+                    eliminarRequest(clave);
                 }
             };
 

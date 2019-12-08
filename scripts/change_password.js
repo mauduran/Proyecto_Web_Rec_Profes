@@ -25,7 +25,7 @@ function submit(){
 
 function buscar() {
     let xhr = new XMLHttpRequest();
-    xhr.open('GET', `http://localhost:3000/users?email=${correoFeo.value}`);
+    xhr.open('GET', `https://ratemyprofe.herokuapp.com/api/users?email=${correoFeo.value}`);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send();
     xhr.onload = function () {
@@ -39,6 +39,7 @@ function buscar() {
                 usuario[0].password = contraseña2Id.value;
                 //savePassword(usuario[0]);
                 alert("Se te enviará un correo en breve para completar el cambio de contraseña.");
+                window.location.href("./index.html")
             }
         }
     }

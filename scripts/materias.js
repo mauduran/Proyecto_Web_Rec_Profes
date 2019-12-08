@@ -21,7 +21,7 @@ function filtrarDatos() {
     let xhreq = new XMLHttpRequest();
 
     // 2. Configurar: PUT actualizar archivo
-    let url = 'http://localhost:3000/materias';
+    let url = 'https://ratemyprofe.herokuapp.com/api/materias';
 
     //console.log(seleccion.value);
 
@@ -61,15 +61,12 @@ function filtrarDatos() {
         } else {
             let materias = JSON.parse(xhreq.response);
 
-            let id = 1;
-
-            let id2 = 1;
 
             materias.forEach(element => {
                 let registro = document.createElement('div');
                 registro.classList.add("reg-element");
                 registro.innerHTML = `
-    <div class="jumbotron" data-toggle="collapse" data-target="#collapse${id}">
+    <div class="jumbotron" data-toggle="collapse" data-target="#collapse${element.nombre.split(" ").join("_")}">
         
             <div class="card-body">
             <h5 class="card-title"> ${element.nombre}</h5>
@@ -80,15 +77,15 @@ function filtrarDatos() {
         </div>
     </div>
 
-    <div class="collapse" id="collapse${id}">
+    <div class="collapse" id="collapse${element.nombre.split(" ").join("_")}">
         <div class="card">
-            <div class="profes" id="profes${id}"">
+            <div class="profes" id="profes${element.nombre.split(" ").join("_")}"">
             </div>
         </div>`;
                 contenedor.appendChild(registro);
                 let requestDetalle = new XMLHttpRequest();
 
-                requestDetalle.open('GET', "http://localhost:3000/detalleMaterias?materia=" +
+                requestDetalle.open('GET', "https://ratemyprofe.herokuapp.com/api/detalleMaterias?materia=" +
                     element.nombre);
                 requestDetalle.setRequestHeader('Content-Type', 'application/json');
 
@@ -99,15 +96,13 @@ function filtrarDatos() {
                     if (requestDetalle.status == 200) {
                         let detalle = JSON.parse(requestDetalle.response);
                         detalle.forEach(el => {
-                            document.getElementById("profes" + id2).innerHTML +=
+                            document.getElementById("profes" + el.materia.split(" ").join("_")).innerHTML +=
                                 `<div onclick="mostrarReseñas('${el.profesor}', '${el.materia}')"><span class="input-group-addon"><i class="fa fa-star"></i></span>
-<p>${el["experiencia general"]}</p><p>${el.profesor}</p><anchor style="margin-left:150px;"><b>${el.numReviews + " "}</b>Reseñas</anchor></div>`;
+<p>${el["experienciaGeneral"]}</p><p>${el.profesor}</p><anchor style="margin-left:150px;"><b>${el.numReviews + " "}</b>Reseñas</anchor></div>`;
                         });
 
-                        id2++;
                     }
                 }
-                id++;
             });
         }
     }

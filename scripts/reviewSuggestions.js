@@ -1,5 +1,5 @@
-if (localStorage.role != 'Admin') {
-    window.location.href = "/index.html";
+if (localStorage.rol != 'Admin') {
+    window.location.href = "./index.html";
 }
 let idPresionado = 0;
 let idCardRegistry = document.getElementById("idCardRegistry");
@@ -9,9 +9,10 @@ console.log(idCardRegistry);
 let xhr3 = new XMLHttpRequest();
 
 // 2. Configurar: PUT actualizar archivo
-xhr3.open('GET', "http://localhost:3000/Sugerencias");
+xhr3.open('GET', "https://ratemyprofe.herokuapp.com/api/sugerencias");
 
 xhr3.setRequestHeader('Content-Type', 'application/json');
+xhr3.setRequestHeader('x-auth-user', localStorage.token);
 
 // 4. Enviar solicitud
 xhr3.send();
@@ -51,8 +52,8 @@ xhr3.onload = function () {
                     <h4 class="sub"><b>Reseña: </b> ${element.Reseña}</h4>
                     <h4 class="sub"><b>Razón de petición: </b> ${element.descripcion}</h4>
                     <div class="goRight"> 
-                            <button type="button" class="btn btn-primary btn-lg col-sm-5" id="btnRechazar" onclick="eliminarRequest('${element.id}')">Rechazar</button>                                                        
-                            <button type="button" class="btn btn-primary btn-lg col-sm-5" id="btnAceptar" onclick="aceptarRequest('${element.id}')">Aceptar</button>
+                            <button type="button" class="btn btn-primary btn-lg col-sm-5" id="btnRechazar" onclick="eliminarRequest(${element.id})">Rechazar</button>                                                        
+                            <button type="button" class="btn btn-primary btn-lg col-sm-5" id="btnAceptar" onclick="aceptarRequest(${element.idReseña}, ${element.id})">Aceptar</button>
                     </div>
                 </div>
             </div>
@@ -74,7 +75,8 @@ function eliminarRequest(clave) {
     // 1. Crear XMLHttpRequest object
     let xhr = new XMLHttpRequest();
     // 2. Configurar:  PUT actualizar archivo
-    xhr.open('DELETE', 'http://localhost:3000/Sugerencias/' + clave);
+    xhr.open('DELETE', 'https://ratemyprofe.herokuapp.com/api/sugerencias/' + clave);
+    xhr.setRequestHeader('x-auth-user', localStorage.token);
     // 3. indicar tipo de datos JSON
     xhr.setRequestHeader('Content-Type', 'application/json');
 
@@ -94,44 +96,23 @@ function eliminarRequest(clave) {
             //solicitarUsuarios();
             // document.getElementById('usuarios').innerHTML = "";
             //solicitarUsuarios();
+            console.log(xhr.response);
             location.reload();
         }
     };
 }
 
-function aceptarRequest(clave) {
+function aceptarRequest(claveReview, claveSugerencia) {
+
     // 1. Crear XMLHttpRequest object
-    let xhr = new XMLHttpRequest();
 
-    // 2. Configurar: PUT actualizar archivo
-    xhr.open('GET', 'http://localhost:3000/Reviews/' + clave);
-
-    // 3. indicar tipo de datos JSON
-    xhr.setRequestHeader('Content-Type', 'application/json');
-
-    // 4. Enviar solicitud
-    xhr.send();
-
-    // 5. Una vez recibida la respuesta del servidor
-    xhr.onload = function () {
-
-        if (xhr.status != 200) { // analizar el estatus de la respuesta HTTP
-            // Ocurrió un error
-            alert(xhr.status + ': ' + xhr.statusText); // e.g. 404: Not Found
-            //cbErr(xhr.status + ': ' + xhr.statusText);
-
-        } else {
-            let datos = JSON.parse(xhr.response); //esta es la línea que hay que probar
-            // Ejecutar algo si todo está correcto
-            //console.log(datos); // Significa que fue exitoso
-            //cbOk(datos);
-
-            console.log(datos);
-
+        
             // 1. Crear XMLHttpRequest object
             let xhr2 = new XMLHttpRequest();
             // 2. Configurar:  PUT actualizar archivo
-            xhr2.open('DELETE', 'http://localhost:3000/Reviews/' + clave);
+            xhr2.open('DELETE', 'https://ratemyprofe.herokuapp.com/api/reviews/' + claveReview);
+            xhr2.setRequestHeader('x-auth-user', localStorage.token);
+            
             // 3. indicar tipo de datos JSON
             xhr2.setRequestHeader('Content-Type', 'application/json');
 
@@ -146,20 +127,11 @@ function aceptarRequest(clave) {
                     alert('No existe la petición a eliminar');
 
                 } else {
-                    //console.log(xhr.responseText); // Significa que fue exitoso
-                    //alert('Reseña eliminada');
-                    //solicitarUsuarios();
-                    // document.getElementById('usuarios').innerHTML = "";
-                    //solicitarUsuarios();
-                    //location.reload();
-                    //Eliminar el request
-                    eliminarRequest(clave);
+                    eliminarRequest(claveSugerencia);
                 }
             };
 
 
 
-        }
-    };
-
-}
+        
+    }

@@ -21,13 +21,15 @@ function activarBoton() {
 };
 
 function cancelar() {
-    window.location.href = "/index.html";
+    window.location.href = "./index.html";
+    // console.log("entramos");
 }
 
 function buscar() {
     let xhr = new XMLHttpRequest();
-    xhr.open('GET', `http://localhost:3000/profes?nombre=${maestro.value}`);
+    xhr.open('GET', `https://ratemyprofe.herokuapp.com/api/profes?nombre=${maestro.value}`);
     xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.setRequestHeader('x-auth-user', localStorage.token);
     xhr.send();
     xhr.onload = function () {
         if (xhr.status != 200) {
@@ -53,10 +55,10 @@ function addMateria(datos) {
             "profesor": maestro.value,
             "materia": materia.value,
             "numReviews": "0",
-            "experiencia general": "0",
+            "experienciaGeneral": "0",
             "dificultad": "0",
             "preparación": "0",
-            "carga trabajo": "0",
+            "cargaTrabajo": "0",
             "flexibilidad": "0",
             "ritmo": "0",
         }
@@ -70,9 +72,10 @@ function addMateria(datos) {
 
 function saveDetalleMateria(datos) {
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', "http://localhost:3000/detalleMaterias");
+    xhr.open('POST', "https://ratemyprofe.herokuapp.com/api/detalleMaterias");
     xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send([JSON.stringify(datos)]);
+    xhr.setRequestHeader('x-auth-user', localStorage.token);
+    xhr.send(JSON.stringify(datos));
     xhr.onload = function () {
         if (xhr.status != 201) {
             alert(xhr.status + ': ' + xhr.statusText);
@@ -85,14 +88,16 @@ function saveDetalleMateria(datos) {
 
 function saveMateriasProfe(datos) {
     let xhr = new XMLHttpRequest();
-    xhr.open('PUT', `http://localhost:3000/profes/${datos.id}`);
+    xhr.open('PUT', `https://ratemyprofe.herokuapp.com/api/profes/${datos.id}`);
     xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send([JSON.stringify(datos)]);
+    xhr.setRequestHeader('x-auth-user', localStorage.token);
+    xhr.send(JSON.stringify(datos));
     xhr.onload = function () {
         if (xhr.status != 200) {
             alert(xhr.status + ': ' + xhr.statusText);
         } else {
             alert("Relación registada exitosamente");
+            window.location.href = "./index.html";
         }
     }
 };

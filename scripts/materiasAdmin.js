@@ -24,7 +24,7 @@ async function filtrarDatos() {
     let xhreq = new XMLHttpRequest();
 
     // 2. Configurar: PUT actualizar archivo
-    let url = 'http://localhost:3000/materias';
+    let url = 'https://ratemyprofe.herokuapp.com/api/materias';
 
     //console.log(seleccion.value);
 
@@ -93,7 +93,7 @@ async function filtrarDatos() {
                 contenedor.appendChild(registro);
                 let requestDetalle = new XMLHttpRequest();
 
-                requestDetalle.open('GET', "http://localhost:3000/detalleMaterias?materia=" +
+                requestDetalle.open('GET', "https://ratemyprofe.herokuapp.com/api/detalleMaterias?materia=" +
                     element.nombre);
                 requestDetalle.setRequestHeader('Content-Type', 'application/json');
 
@@ -106,7 +106,7 @@ async function filtrarDatos() {
                         detalle.forEach(el => {
                             document.getElementById("profes" + id2).innerHTML +=
                                 `<div onclick="mostrarReseñas('${el.profesor}', '${el.materia}')"><span class="input-group-addon"><i class="fa fa-star"></i></span>
-                                 <p>${el["experiencia general"]}</p><p>${el.profesor}</p><anchor style="margin-left:150px;"><b>${el.numReviews + " "}</b>Reseñas</anchor></div>`;
+                                 <p>${el["experienciaGeneral"]}</p><p>${el.profesor}</p><anchor style="margin-left:150px;"><b>${el.numReviews + " "}</b>Reseñas</anchor></div>`;
                         });
                         id2++;
                     }
@@ -139,7 +139,7 @@ function editarM() {
 
 function buscar(mid) {
     let xhr = new XMLHttpRequest();
-    xhr.open('GET', `http://localhost:3000/materias?id=${mid}`);
+    xhr.open('GET', `https://ratemyprofe.herokuapp.com/api/materias?id=${mid}`);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send();
     xhr.onload = function () {
@@ -159,7 +159,7 @@ function buscar(mid) {
 
 function editarMateria(datos) {
     let xhr = new XMLHttpRequest();
-    xhr.open('PUT', `http://localhost:3000/materias/${datos.id}`);
+    xhr.open('PUT', `https://ratemyprofe.herokuapp.com/api/materias/${datos.id}`);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send([JSON.stringify(datos)]);
     xhr.onload = function () {
@@ -173,7 +173,7 @@ function editarMateria(datos) {
 let select2 = document.getElementById("selectDpto2");
 let xhr2 = new XMLHttpRequest();
 // 2. Configurar: PUT actualizar archivo
-xhr2.open('GET', "http://localhost:3000/departamentos");
+xhr2.open('GET', "https://ratemyprofe.herokuapp.com/api/departamentos");
 xhr2.setRequestHeader('Content-Type', 'application/json');
 // 4. Enviar solicitud
 xhr2.send();

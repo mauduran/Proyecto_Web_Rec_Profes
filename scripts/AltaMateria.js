@@ -24,7 +24,7 @@ function activarBoton() {
 };
 
 function cancelar() {
-    window.location.href = "/index.html";
+    window.location.href = "./index.html";
 }
 
 function guardarMateria() {
@@ -39,14 +39,18 @@ function guardarMateria() {
 
 function saveMateria(datos) {
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', "http://localhost:3000/materias");
+    xhr.open('POST', "https://ratemyprofe.herokuapp.com/api/materias");
     xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send([JSON.stringify(datos)]);
+    xhr.setRequestHeader('x-auth-user', localStorage.token);
+    // console.log(datos);
+    datos.descripción ="Aquí sale la descripción de la materia";
+    xhr.send(JSON.stringify(datos));
     xhr.onload = function () {
         if (xhr.status != 201) {
             alert(xhr.status + ': ' + xhr.statusText);
         } else {
             alert("Materia registada exitosamente");
+            window.location.href = "./index.html";
         }
     }
 };

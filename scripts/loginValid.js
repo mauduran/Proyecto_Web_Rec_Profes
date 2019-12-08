@@ -34,7 +34,7 @@ function login(event) {
         let pass = document.getElementById("password");
 
         let obj = {
-            correo: usr.value,
+            email: usr.value,
             password: pass.value
         };
 
@@ -42,10 +42,11 @@ function login(event) {
         // 1. Crear XMLHttpRequest object
         let xhr = new XMLHttpRequest();
 
-        xhr.open('GET', "http://localhost:3000/users?email=" + usr.value);
+        xhr.open('POST', "https://ratemyprofe.herokuapp.com/api/login");
+        xhr.setRequestHeader("Content-Type", "application/json")
 
 
-        xhr.send();
+        xhr.send(JSON.stringify(obj));
 
 
         xhr.onload = function () {
@@ -54,32 +55,26 @@ function login(event) {
             if (xhr.status != 200) { // analizar el estatus de la respuesta HTTP
                 // alert("Usuario Error")
                 // Ocurrió un error
-                alert("Login no se pudo concretar.\n" + xhr.status + " " + xhr.statusText);
+                alert("Login no se pudo concretar.\n Usuario y/o Contraseña incorractos.");
                 // document.getElementById("registroErrorAlert").style.display = "block";
 
 
             } else {
-
                 let obj = JSON.parse(xhr.responseText);
-                // console.log(obj.password + " " + pass.value);
-                if (obj.length == 0) {
-                    document.getElementById("registro_incorrect").style.display = "block";
-                } else if (obj[0].password == pass.value) {
+                localStorage.token = obj.token;
+                localStorage.expediente = obj.expediente;
+                localStorage.rol = obj.rol;
 
-                    localStorage.expediente = obj[0].expediente;
-                    localStorage.role = obj[0].rol;
-                    let newLoc = window.location.href
+                let newLoc = window.location.href
 
-                    newLoc = newLoc.split('/');
+                newLoc = newLoc.split('/');
 
-                    newLoc[newLoc.length-1] = "index.html";
+                newLoc[newLoc.length - 1] = "index.html";
 
-                    newLoc = newLoc.join("/");
+                newLoc = newLoc.join("/");
 
-                    window.location.href = newLoc;
-                } else {
-                    document.getElementById("registro_incorrect").style.display = "block";
-                }
+                window.location.href = newLoc;
+
             }
         };
     }

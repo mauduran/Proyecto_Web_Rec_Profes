@@ -1,8 +1,8 @@
 let nav = document.getElementById("navbar");
 
-if (localStorage.role == "Coordinador" || localStorage.role == "Estudiante") {
-    nav.innerHTML = `<img id="logo" src="/img/iteso.png" alt="">
-    <a class="navbar-brand" href="#">Rate my Profe ITESO</a>
+if (localStorage.rol == "Coordinador" || localStorage.rol == "Estudiante") {
+    nav.innerHTML = `<img id="logo" src="./img/iteso.png" alt="">
+    <a class="navbar-brand" href="index.html">Rate my Profe ITESO</a>
 
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
         aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
@@ -29,9 +29,9 @@ if (localStorage.role == "Coordinador" || localStorage.role == "Estudiante") {
         </li>
 
         </ul>`;
-} else if (localStorage.role == "Admin") {
+} else if (localStorage.rol == "Admin") {
 
-    nav.innerHTML = `<img id="logo" src="/img/iteso.png" alt="">
+    nav.innerHTML = `<img id="logo" src="./img/iteso.png" alt="">
     <a class="navbar-brand" href="#">Rate my Profe ITESO</a>
 
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
@@ -70,7 +70,7 @@ if (localStorage.role == "Coordinador" || localStorage.role == "Estudiante") {
     
 
 } else {
-    nav.innerHTML = `<img id="logo" src="/img/iteso.png" alt="">
+    nav.innerHTML = `<img id="logo" src="./img/iteso.png" alt="">
     <a class="navbar-brand" href="#">Rate my Profe ITESO</a>
 
     <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
@@ -115,6 +115,7 @@ function guardarB(){
 
 function logout() {
     localStorage.expediente = undefined;
-    localStorage.role = undefined;
+    localStorage.rol = undefined;
+    localStorage.token = undefined;
     window.location.reload();
 }

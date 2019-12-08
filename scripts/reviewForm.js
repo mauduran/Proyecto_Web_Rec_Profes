@@ -4,12 +4,11 @@ form.onchange = validateForm;
 
 let args = window.location.href.split('?');
 if (args[1] == undefined || args[2] == undefined) {
-    window.location.href = "profes.html";
+    window.location.href = "./profes.html";
 }
 
 
 let profe = args[1];
-
 
 let materia = args[2];
 
@@ -45,51 +44,15 @@ function postReview(event) {
     event.preventDefault();
 
 
-    let query = [];
-    // 1. Crear XMLHttpRequest object
-    let xhr = new XMLHttpRequest();
-
-    // 2. Configurar: PUT actualizar archivo
-    xhr.open('GET',
-        `http://localhost:3000/Reviews?expedienteEstudiante=${localStorage.expediente}&profesor=${profe}&Materia=${materia}`
-    );
-
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    // 4. Enviar solicitud
-
-
-    xhr.send();
-
-    // 5. Una vez recibida la respuesta del servidor
-    xhr.onload = function () {
-
-        if (xhr.status != 200) { // analizar el estatus de la respuesta HTTP
-
-            alert("fallo fatal");
-
-
-        } else {
-            query = xhr.response;
-
-            paso2();
-
-        }
-    };
-
-
-}
-
-function paso2() {
     let xhr3 = new XMLHttpRequest();
 
     // 2. Configurar: PUT actualizar archivo
     xhr3.open('GET',
-        `http://localhost:3000/Reviews?expedienteEstudiante=${localStorage.expediente}&profesor=${profe}&Materia=${materia}`
+        `https://ratemyprofe.herokuapp.com/api/reviews?expedienteEstudiante=${localStorage.expediente}&profesor=${profe}&materia=${materia}`
     );
 
     xhr3.setRequestHeader('Content-Type', 'application/json');
     // 4. Enviar solicitud
-
 
     xhr3.send();
 
@@ -97,27 +60,22 @@ function paso2() {
     xhr3.onload = function () {
 
         if (xhr3.status != 200) { // analizar el estatus de la respuesta HTTP
-
             alert("fallo fatal paso 2");
-
 
         } else {
             xhr3.response;
-
-
             paso3(JSON.parse(xhr3.response));
-
-
-
-
         }
     };
 }
 
 function paso3(resp) {
     if (resp.length > 0) {
+        console.log(JSON.stringify(resp));
+
         alert("Ya reseñaste esta materia");
-        window.location.href = `review.html?${profe}?${materia}`
+
+        window.location.href = `./review.html?${profe}?${materia}`
     } else {
         let overall, difficulty, preparation, workload, flexible, pace;
         let ovrl = document.querySelector("[name=exp]:checked").value;
@@ -132,12 +90,12 @@ function paso3(resp) {
             expedienteEstudiante: localStorage.expediente,
             profesor: profe,
             materia: materia,
-            ["experiencia general"]: ovrl,
-            dificultad: dif,
-            preparación: prep,
-            ["carga trabajo"]: carga,
-            flexibilidad: flx,
-            ritmo: rit,
+            experienciaGeneral: parseFloat(ovrl),
+            dificultad: parseFloat(dif),
+            preparación: parseFloat(prep),
+            cargaTrabajo: parseFloat(carga),
+            flexibilidad: parseFloat(flx),
+            ritmo: parseFloat(rit),
             takeAgain: "",
             Optativa: "",
             Reseña: document.getElementById("reseña").value,
@@ -160,15 +118,17 @@ function paso3(resp) {
 
         // 2. Configurar: PUT actualizar archivo
         xhr2.open('POST',
-            `http://localhost:3000/Reviews`
+            `https://ratemyprofe.herokuapp.com/api/reviews`
         );
 
         xhr2.setRequestHeader('Content-Type', 'application/json');
+        xhr2.setRequestHeader('x-auth-user', localStorage.token);
         // 4. Enviar solicitud
 
 
-        xhr2.send([JSON.stringify(newObj)]);
+        xhr2.send(JSON.stringify(newObj));
 
+        console.log(newObj);
         // 5. Una vez recibida la respuesta del servidor
         xhr2.onload = function () {
 
@@ -176,107 +136,16 @@ function paso3(resp) {
 
                 alert("ha habido un error");
 
+                console.log(JSON.parse(xhr2.response));
 
-            } else {
-                paso4(newObj);
+            } 
+            else {
+                alert("Reseña publicada");
+                window.location.href = `./review.html?${profe}?${materia}`
 
             }
         };
     }
-
-
-
-
-}
-
-
-function paso4(newObj) {
-
-    let x = new XMLHttpRequest();
-
-
-    // 2. Configurar: PUT actualizar archivo
-    x.open('GET',
-        `http://localhost:3000/detalleMaterias?profesor=${profe}&materia=${materia}`
-    );
-
-    x.setRequestHeader('Content-Type', 'application/json');
-    // 4. Enviar solicitud
-
-
-    x.send();
-
-    // 5. Una vez recibida la respuesta del servidor
-    x.onload = function () {
-
-        if (x.status != 200 && x.status != 201) { // analizar el estatus de la respuesta HTTP
-
-            alert("ha habido un error");
-            window.location.href = `review.html?${profesor}?${materia}`
-
-
-        } else {
-            actualizarEstadisticas(newObj, JSON.parse(x.response));
-
-        }
-    };
-}
-
-
-function actualizarEstadisticas(newObj, res) {
-
-    // console.log(JSON.stringify(newObj));
-    let revs = res[0].numReviews;
-
-    // [{"profesor":"Oscar González","materia":"Desarrollo de Aplicaciones y Servicios Web",
-    // "numReviews":"0","experiencia general":"0","dificultad":"0","preparación":"0",
-    // "carga trabajo":"0","flexibilidad":"0","ritmo":"0","id":1}]
-
-    // alert(newObj["carga trabajo"]);
-    let updatedObj = {
-        profesor: res[0].profesor,
-        materia: res[0].materia,
-        ["experiencia general"]: ((parseFloat(res[0]["experiencia general"]) * parseInt(revs) + parseInt(newObj[
-            "experiencia general"])) / (parseInt(revs) + 1)).toFixed(1),
-        dificultad: ((parseFloat(res[0]["dificultad"]) * parseInt(revs) + parseInt(newObj["experiencia general"])) / (parseInt(revs) + 1)).toFixed(1),
-        preparación: ((parseFloat(res[0].preparación) * parseInt(revs) + parseInt(newObj.preparación)) / (parseInt(revs) + 1)).toFixed(1),
-        ["carga trabajo"]: ((parseFloat(res[0]["carga trabajo"]) * parseInt(revs) + parseInt(newObj[
-            "carga trabajo"])) / (parseInt(revs) + 1)).toFixed(1),
-        flexibilidad: ((parseFloat(res[0].flexibilidad) * parseInt(revs) + parseInt(newObj.flexibilidad)) / (parseInt(revs) + 1)).toFixed(1),
-        ritmo: ((parseFloat(res[0].ritmo) * parseInt(revs) + parseInt(newObj.ritmo)) / (parseInt(revs) + 1)).toFixed(1),
-        numReviews: parseInt(revs) + 1
-
-    }
-
-    let x = new XMLHttpRequest();
-
-    console.log(res[0]);
-
-    // 2. Configurar: PUT actualizar archivo
-    x.open('PUT',
-        `http://localhost:3000/detalleMaterias/${res[0].id}`
-    );
-
-    
-
-    x.setRequestHeader('Content-Type', 'application/json');
-    // 4. Enviar solicitud
-
-    x.send(JSON.stringify(updatedObj));
-
-    // 5. Una vez recibida la respuesta del servidor
-    x.onload = function () {
-
-        if (x.status != 200 && x.status != 201) { // analizar el estatus de la respuesta HTTP
-            // alert("Usuario Error")
-            // Ocurrió un error
-            alert("ha habido un error");
-            window.location.href = `review.html?${profesor}?${materia}`;
-
-        } else{
-            window.location.href = `review.html?${profesor}?${materia}`;
-        }
-    };
 
 
 
@@ -289,7 +158,7 @@ function actualizarEstadisticas(newObj, res) {
 let xh = new XMLHttpRequest();
 
 // 2. Configurar: PUT actualizar archivo
-xh.open('GET', `http://localhost:3000/detalleMaterias?profesor=${profe}&materia=${materia}`);
+xh.open('GET', `https://ratemyprofe.herokuapp.com/api/detalleMaterias?profesor=${profe}&materia=${materia}`);
 
 xh.setRequestHeader('Content-Type', 'application/json');
 
@@ -310,10 +179,10 @@ xh.onload = function () {
         document.getElementById('numReviews').innerText = detalle.numReviews;
         document.getElementById('curso').innerText = detalle.materia;
         document.getElementById('docente').innerText = detalle.profesor;
-        document.getElementById("overall").innerText = detalle["experiencia general"];
+        document.getElementById("overall").innerText = detalle["experienciaGeneral"];
         document.getElementById("dificultad").innerText = detalle.dificultad;
         document.getElementById("preparacion").innerText = detalle.preparación;
-        document.getElementById("carga").innerText = detalle["carga trabajo"];
+        document.getElementById("carga").innerText = detalle["cargaTrabajo"];
         document.getElementById("flexibilidad").innerText = detalle.flexibilidad;
         document.getElementById("ritmo").innerText = detalle.ritmo;
 

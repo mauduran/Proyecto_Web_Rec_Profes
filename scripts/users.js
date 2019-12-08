@@ -1,5 +1,5 @@
-if (localStorage.role != 'Admin') {
-    window.location.href = "/index.html";
+if (localStorage.rol != 'Admin') {
+    window.location.href = "./index.html";
 }
 let idPresionado = 0;
 let idCardRegistry = document.getElementById("idCardRegistry");
@@ -9,7 +9,7 @@ console.log(idCardRegistry);
 let xhr3 = new XMLHttpRequest();
 
 // 2. Configurar: PUT actualizar archivo
-xhr3.open('GET', "http://localhost:3000/users");
+xhr3.open('GET', "https://ratemyprofe.herokuapp.com/api/users");
 
 xhr3.setRequestHeader('Content-Type', 'application/json');
 
@@ -59,7 +59,7 @@ function eliminarUsuario() {
     // 1. Crear XMLHttpRequest object
     let xhr = new XMLHttpRequest();
     // 2. Configurar:  PUT actualizar archivo
-    xhr.open('DELETE', 'http://localhost:3000/users/' + idPresionado);
+    xhr.open('DELETE', 'https://ratemyprofe.herokuapp.com/api/users/' + idPresionado);
     // 3. indicar tipo de datos JSON
     xhr.setRequestHeader('Content-Type', 'application/json');
 

@@ -3,9 +3,10 @@ let sel = document.getElementById("selectCarrera");
 let xhr3 = new XMLHttpRequest();
 
 // 2. Configurar: PUT actualizar archivo
-xhr3.open('GET', "http://localhost:3000/carreras");
+xhr3.open('GET', "https://ratemyprofe.herokuapp.com/api/carreras");
 
 xhr3.setRequestHeader('Content-Type', 'application/json');
+
 
 // 4. Enviar solicitud
 xhr3.send();

@@ -13,7 +13,7 @@ function filtrarDatos() {
     let xhreq = new XMLHttpRequest();
 
     // 2. Configurar: PUT actualizar archivo
-    let url = 'http://localhost:3000/profes';
+    let url = 'https://ratemyprofe.herokuapp.com/api/profes';
 
     //console.log(seleccion.value);
 
@@ -53,16 +53,12 @@ function filtrarDatos() {
         } else {
             let profes = JSON.parse(xhreq.response);
 
-            let id = 1;
-
-            let id2 = 1;
-
             profes.forEach(element => {
 
                 let registro = document.createElement('div');
                 registro.classList.add("reg-element");
                 registro.innerHTML = `        
-                <div class="jumbotron" data-toggle="collapse" data-target="#collapse${id}">
+                <div class="jumbotron" data-toggle="collapse" data-target="#collapse${element.nombre.split(" ").join("_")}">
                     <div class="editable" hidden>
                         <span class="del" aria-hidden="true">&times;</span>
                     </div>
@@ -72,10 +68,10 @@ function filtrarDatos() {
                     </div>
                 </div>
 
-                <div class="collapse" id="collapse${id}">
+                <div class="collapse" id="collapse${element.nombre.split(" ").join("_")}">
                     <div class="card">
-                        <p class="sub"><b>Antigüedad: </b>${id} años.</p>
-                        <div class="materias" id="materias${id}">
+                        <p class="sub"><b>Antigüedad: </b>${element.añosExp} años.</p>
+                        <div class="materias" id="materias${element.nombre.split(" ").join("_")}">
 
                         </div>
                     </div>
@@ -85,7 +81,7 @@ function filtrarDatos() {
 
                 let requestDetalle = new XMLHttpRequest();
 
-                requestDetalle.open('GET', "http://localhost:3000/detalleMaterias?profesor=" +
+                requestDetalle.open('GET', "https://ratemyprofe.herokuapp.com/api/detalleMaterias?profesor=" +
                     element.nombre);
 
                 requestDetalle.setRequestHeader('Content-Type', 'application/json');
@@ -99,16 +95,16 @@ function filtrarDatos() {
 
                         detalle.forEach(el => {
 
-                            document.getElementById("materias" + id2).innerHTML +=
+                            document.getElementById("materias" + el.profesor.split(" ").join("_")).innerHTML +=
                                 `<div onclick="mostrarReseñas('${el.profesor}', '${el.materia}')"><span class="input-group-addon"><i class="fa fa-star"></i></span>
-                    <p>${el["experiencia general"]}</p><p>${el.materia}</p><anchor style="margin-left:150px;"><b>${el.numReviews + " "}</b>Reseñas</anchor></div>`;
+                    <p>${el["experienciaGeneral"]}</p><p>${el.materia}</p><anchor style="margin-left:150px;"><b>${el.numReviews + " "}</b>Reseñas</anchor></div>`;
 
                         });
 
-                        id2++;
+
                     }
                 }
-                id++;
+
             });
 
             if (localStorage.role == "Admin" || localStorage.role == "Coordinador") {

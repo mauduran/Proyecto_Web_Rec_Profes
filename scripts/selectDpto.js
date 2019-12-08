@@ -3,7 +3,7 @@ let select = document.getElementById("selectDpto");
 let xhr = new XMLHttpRequest();
 
 // 2. Configurar: PUT actualizar archivo
-xhr.open('GET', "http://localhost:3000/departamentos");
+xhr.open('GET', "https://ratemyprofe.herokuapp.com/api/departamentos");
 
 xhr.setRequestHeader('Content-Type', 'application/json');
 

@@ -24,7 +24,7 @@ function activarBoton() {
 };
 
 function cancelar() {
-    window.location.href = "/index.html";
+    window.location.href = "./index.html";
 }
 
 function guardarMaestro() {
@@ -39,14 +39,17 @@ function guardarMaestro() {
 
 function saveMaestro(datos) {
     let xhr = new XMLHttpRequest();
-    xhr.open('POST', "http://localhost:3000/profes");
+    xhr.open('POST', "https://ratemyprofe.herokuapp.com/api/profes");
     xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send([JSON.stringify(datos)]);
+    xhr.setRequestHeader('x-auth-user', localStorage.token);
+    xhr.send(JSON.stringify(datos));
     xhr.onload = function () {
         if (xhr.status != 201) { 
             alert(xhr.status + ': ' + xhr.statusText); 
          } else {
             alert("Maestro registado exitosamente"); 
+            window.location.href = "./index.html";
         }
     }
+
 };
